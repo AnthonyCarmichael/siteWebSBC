@@ -4,6 +4,11 @@
     --rose: #de56d8;
     --turquoise: #05c1ca;
     --blue: #4E0CD3;
+
+    --darkPurple: #130517;
+    --darkPink: #c02186;
+    --midBlue: #2b4ba3;
+    --paleBlue: #31aadf;
 }
 
 /* BALISE GÉNÉRIQUE **************************************************/ 
@@ -15,7 +20,9 @@
 
 body {
     min-width:980px;
-    background-color: var(--blue);
+    background-color: black;
+    background:url("../img/background.jpg") no-repeat center;
+    background-size: cover;
 }
 
 header {
@@ -28,6 +35,7 @@ main {
     max-width:980px;
     min-height:80vh;
     border:5px solid var(--rouge);
+    background-color: white;
 
 }
 
@@ -54,7 +62,7 @@ h1 {
 }
 
 .menu-principal {
-    background-color: var(--rouge);
+    background-color: var(--darkBlue);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -84,7 +92,7 @@ h1 {
 }
 
 #logo {
-    width: 60px;
+    width: 100px;
 }
 
 #panier {

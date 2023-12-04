@@ -23,7 +23,7 @@
         </nav>
         <nav class="menu-principal flex"> 
             <ul class="flex">
-                <li><img id="logo" src="img/compagnieTemp.png" alt="compagnie"></li>
+                <li><img id="logo" src="img/logo.png" alt="compagnie"></li>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="infoSBC.php">SBC</a></li>
                 <li><a href="comparaison.php">Comparaison</a></li>
