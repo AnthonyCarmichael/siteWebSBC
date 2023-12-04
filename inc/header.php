@@ -23,11 +23,7 @@
         </nav>
         <nav class="menu-principal flex"> 
             <ul class="flex">
-<<<<<<< HEAD
                 <li><img id="logo" src="img/logo.png" alt="compagnie"></li>
-=======
-                <li><img id="logo" src="img/Sangeetic.png" alt="compagnie"></li>
->>>>>>> a65897584c83965362e79281925c377a8879938f
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="infoSBC.php">SBC</a></li>
                 <li><a href="comparaison.php">Comparaison</a></li>
