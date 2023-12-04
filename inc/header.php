@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1 class="center">Nom site web</h1>
+        <h1 class="center">Chip Wave</h1>
         <nav class="menu-connexion">
             <ul class="end">
                 <li><a href="inscription.php">Inscription</a></li>

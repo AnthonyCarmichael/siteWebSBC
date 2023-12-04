@@ -1,9 +1,9 @@
 /* GESTION DES COULEURS GLOBALS */
 :root {
-    --rouge: #95474c;
-    --grisfonce: #888887;
-    --grispale: #ededed;
-    --bleu: #4c6c84;
+    --darkBlue: #141444;
+    --rose: #de56d8;
+    --turquoise: #05c1ca;
+    --blue: #4E0CD3;
 }
 
 /* BALISE GÉNÉRIQUE **************************************************/ 
@@ -15,7 +15,7 @@
 
 body {
     min-width:980px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--blue);
 }
 
 header {
@@ -27,17 +27,17 @@ main {
     margin: auto;
     max-width:980px;
     min-height:80vh;
-    border:5px solid #d33e5c;
+    border:5px solid var(--rouge);
 
 }
 
 footer {
     margin:auto;
     padding: 10px;
-    background-color: #d33e5c;
+    background-color: var(--rouge);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    color: #ffeaea;
+    color: white;
     max-width:980px;
 }
 
@@ -46,7 +46,7 @@ h1 {
     margin-top: 20px;
     font-size: 1.5em;
     font-weight: lighter;
-    color: #472121;
+    color: black;
 }
 
 .menu-connexion ul {
@@ -54,7 +54,7 @@ h1 {
 }
 
 .menu-principal {
-    background-color: #d33e5c;
+    background-color: var(--rouge);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -75,12 +75,12 @@ h1 {
 
 .menu-principal a {
     text-decoration: none;
-    color: #ffeaea;
+    color: white;
 }
 
 .menu-connexion a {
     text-decoration: none;
-    color: #472121;
+    color: black;
 }
 
 #logo {
