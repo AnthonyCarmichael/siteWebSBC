@@ -42,5 +42,5 @@
             <?php // }  ?>
         </nav>
     </header>
-    <main>
+    <main id="<?= $page?>">
 

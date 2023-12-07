@@ -43,7 +43,7 @@ main {
 footer {
     margin:auto;
     padding: 10px;
-    background-color: var(--rouge);
+    background-color: var(--darkBlue);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     color: white;
@@ -106,6 +106,10 @@ h1 {
     text-align: center;
 }
 
+.display-none {
+    display: none;
+}
+
 .flex {
     display: flex;
 }
@@ -128,3 +132,9 @@ h1 {
 .col-12 {width: 100%;}
 
 /* SPÉCIFIQUE À LA PAGE **********************************************/ 
+
+
+/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/ 
+/*p[class*='prix-'] {
+    seffa
+}*/
