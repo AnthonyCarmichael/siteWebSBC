@@ -16,6 +16,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 body {
@@ -34,8 +35,8 @@ main {
     margin: auto;
     max-width:980px;
     min-height:80vh;
-    border:5px solid var(--rouge);
-    background-color: white;
+    border-top:5px solid black;
+    background-color: var(--darkBlue);
 
 }
 
@@ -52,9 +53,10 @@ footer {
 /* HEADER ************************************************************/
 h1 {
     margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: lighter;
-    color: black;
+    font-size: 6em;
+    font-family: 'Whisper', cursive;
+    color: var(--darkPink);
+
 }
 
 .menu-connexion ul {
@@ -63,8 +65,8 @@ h1 {
 
 .menu-principal {
     background-color: var(--darkBlue);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
+
 }
 
 .menu-principal ul:nth-of-type(1) {
@@ -83,12 +85,11 @@ h1 {
 
 .menu-principal a {
     text-decoration: none;
-    color: white;
+
 }
 
 .menu-connexion a {
     text-decoration: none;
-    color: black;
 }
 
 #logo {
