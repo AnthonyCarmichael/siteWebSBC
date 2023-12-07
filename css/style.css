@@ -61,9 +61,19 @@ h2
     color: white;
 }
 
+h3
+{
+    color: white;
+}
+
+#index p{
+    color: white;
+}
+
 .menu-connexion ul {
     list-style: none;
 }
+
 
 .menu-principal {
     background-color: var(--darkBlue);
