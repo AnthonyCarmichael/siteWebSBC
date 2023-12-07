@@ -16,7 +16,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
+
 }
 
 body {
@@ -43,9 +43,6 @@ main {
 footer {
     margin:auto;
     padding: 10px;
-    background-color: var(--darkBlue);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     color: white;
     max-width:980px;
 }
@@ -57,6 +54,11 @@ h1 {
     font-family: 'Whisper', cursive;
     color: var(--darkPink);
 
+}
+
+h2
+{
+    color: white;
 }
 
 .menu-connexion ul {
@@ -85,11 +87,12 @@ h1 {
 
 .menu-principal a {
     text-decoration: none;
-
+    color: white;
 }
 
 .menu-connexion a {
     text-decoration: none;
+    color: white;
 }
 
 #logo {
