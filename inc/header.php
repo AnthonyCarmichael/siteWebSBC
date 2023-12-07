@@ -42,5 +42,7 @@
             <?php // }  ?>
         </nav>
     </header>
+    <?php $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    ?>
     <main id="<?= $page?>">
 
