@@ -35,8 +35,8 @@ main {
     margin: auto;
     max-width:980px;
     min-height:80vh;
-    border-top:5px solid black;
-    background-color: var(--darkBlue);
+    margin-top: 5px;
+    background-color: #141444da;
 
 }
 
