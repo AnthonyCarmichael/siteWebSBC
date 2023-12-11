@@ -1,11 +1,11 @@
 <?php
 class Commande
 {
-    private $_idCommande;
+    private $_id_commande;
     private $_nbProduit;
     private $_prix;
-    private $_dateCommande;
-    private $_idClient;
+    private $_date_commande;
+    private $_id_client;
     private $_tabSBC = array();
 
     public function __construct($params = array()){
@@ -37,7 +37,7 @@ class Commande
      *
      * @return  self
      */ 
-    public function set_tabSBC($_tabSBC)
+    public function set_tabSBC(array $_tabSBC)
     {
         $this->_tabSBC = $_tabSBC;
 
@@ -45,41 +45,41 @@ class Commande
     }
 
     /**
-     * Get the value of _idClient
+     * Get the value of _id_client
      */ 
-    public function get_idClient()
+    public function get_id_client()
     {
-        return $this->_idClient;
+        return $this->_id_client;
     }
 
     /**
-     * Set the value of _idClient
+     * Set the value of _id_client
      *
      * @return  self
      */ 
-    public function set_idClient($_idClient)
+    public function set_id_client($_id_client)
     {
-        $this->_idClient = $_idClient;
+        $this->_id_client = $_id_client;
 
         return $this;
     }
 
     /**
-     * Get the value of _dateCommande
+     * Get the value of _date_commande
      */ 
-    public function get_dateCommande()
+    public function get_date_commande()
     {
-        return $this->_dateCommande;
+        return $this->_date_commande;
     }
 
     /**
-     * Set the value of _dateCommande
+     * Set the value of _date_commande
      *
      * @return  self
      */ 
-    public function set_dateCommande($_dateCommande)
+    public function set_date_commande($_date_commande)
     {
-        $this->_dateCommande = $_dateCommande;
+        $this->_date_commande = $_date_commande;
 
         return $this;
     }
@@ -125,21 +125,21 @@ class Commande
     }
 
     /**
-     * Get the value of _idCommande
+     * Get the value of _id_commande
      */ 
-    public function get_idCommande()
+    public function get_id_commande()
     {
-        return $this->_idCommande;
+        return $this->_id_commande;
     }
 
     /**
-     * Set the value of _idCommande
+     * Set the value of _id_commande
      *
      * @return  self
      */ 
-    public function set_idCommande($_idCommande)
+    public function set_id_commande($_id_commande)
     {
-        $this->_idCommande = $_idCommande;
+        $this->_id_commande = $_id_commande;
 
         return $this;
     }
