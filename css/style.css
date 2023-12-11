@@ -35,8 +35,8 @@ main {
     margin: auto;
     max-width: 980px;
     min-height: 80vh;
-    border-top: 5px solid black;
-    background-color: var(--darkBlue);
+    margin-top:  5px;
+    background-color: #141444da;
 
 }
 
@@ -191,23 +191,3 @@ h3 {
 /*p[class*='prix-'] {
     seffa
 }*/
-
-.caroussel {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
-.imgCaroussel {
-    display: none;
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
