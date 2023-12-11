@@ -1,6 +1,9 @@
 <?php include_once("inc/header.php"); ?>
 <?php
-    $cm = new CommandeManager($bdd);
+    $commandeManager = new CommandeManager($bdd);
+    $arrCommande = array();
+    $arrCommande = $commandeManager->getCommandeClient(6);
+    
 ?>
 
 
