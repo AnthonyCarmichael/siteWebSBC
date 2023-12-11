@@ -1,5 +1,5 @@
 <?php
-    class CommandesManager {
+    class CommandeManager {
         private $_db;
         
         const GET_COMMANDE_BY_CLIENT = "SELECT * FROM commande co
