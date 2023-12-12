@@ -1,22 +1,36 @@
 window.onload = function() {
-    let selectMenu = document.querySelector("article select[name='sbc']");
+    //let selectMenu = document.querySelector("article select[name='sbc']");
+    let selectMenu = document.querySelectorAll("compareSelect");
 
-    if (selectMenu != null) {
-        selectMenu.addEventListener('change', function() {
-            let pricesArray = document.querySelectorAll("p[class*='prix-']");
-            let classListString, indexOfSpace;
+    for(let i = 0; selectMenu.length; i++){
 
-            for (let i = 0; i < pricesArray.length; i++) {
-                pricesArray[i].classList.add('display-none');
+        if (selectMenu[i] != null) {
+            selectMenu[i].addEventListener('change', function(e) {
+                let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
 
-                classListString = pricesArray[i].classList.toString();
-                indexOfSpace = classListString.indexOf(' ');
+                let pricesArray = document.querySelectorAll("p[class*='prix-']")[idSelect];
+                let imgArray = document.querySelectorAll("img[class*='img-']")[idSelect];
+                let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace;
 
-                if (selectMenu.value === classListString.substring(5, indexOfSpace)) {
-                    pricesArray[i].classList.remove('display-none');
+                for (let i = 0; i < pricesArray.length; i++) {
+                    pricesArray[i].classList.add('display-none');
+                    imgArray[i].classList.add('display-none');
+
+                    priceclassListString = pricesArray[i].classList.toString();
+                    priceIndexOfSpace = priceclassListString.indexOf(' ');
+
+                    imgclassListString = imgArray[i].classList.toString();
+                    imgIndexOfSpace = imgclassListString.indexOf(' ');
+
+                    if (selectMenu[i].value === priceclassListString.substring(5, priceIndexOfSpace)) {
+                        pricesArray[i].classList.remove('display-none');
+                    }
+
+                    if (selectMenu[i].value === imgclassListString.substring(4, imgIndexOfSpace)) {
+                        imgArray[i].classList.remove('display-none');
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-
 };

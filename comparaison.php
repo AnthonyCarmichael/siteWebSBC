@@ -14,36 +14,47 @@
 
 <div>
     <article>
-        <select name="sbc" id="sbc">
+        <select name="sbc" id="select-0" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
-                echo '<option value="'.$sbcs[0]['id_SBC']. '" selected>'.$sbcs[0]['modele'].'</option>';
+                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modele'] . '</option>';
                 foreach($sbcs as $sbc)
-                    echo '<option value="'.$sbc['id_SBC']. '">'.$sbc['modele'].'</option>'
+                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modele'] . '</option>'
             ?>
         </select>
-        <img src="" alt="">
+        
         <?php
             foreach($sbcs as $sbc)
-                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">'.$sbc['prix'].'</p>';
+                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modele'] . '.jpg" alt="' . $sbc['modele'] . '.jpg">';
+        ?>
+
+        <?php
+            foreach($sbcs as $sbc)
+                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">' . $sbc['prix'] . '</p>';
         ?>
 
         <input type="button" value="Commander">
         <a href="">En savoir plus ></a>
     </article>
+
     <article>
-        <select name="sbc" id="sbc">
+        <select name="sbc" id="select-1" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
-                echo '<option value="'.$sbcs[0]['id_SBC']. '" selected>'.$sbcs[0]['modele'].'</option>';
+                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modele'] . '</option>';
                 foreach($sbcs as $sbc)
-                    echo '<option value="'.$sbc['id_SBC']. '">'.$sbc['modele'].'</option>'
+                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modele'] . '</option>'
             ?>
         </select>
-        <img src="" alt="">
+        
         <?php
             foreach($sbcs as $sbc)
-                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">'.$sbc['prix'].'</p>';
+                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modele'] . '.jpg" alt="' . $sbc['modele'] . '.jpg">';
+        ?>
+
+        <?php
+            foreach($sbcs as $sbc)
+                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">' . $sbc['prix'] . '</p>';
         ?>
 
         <input type="button" value="Commander">

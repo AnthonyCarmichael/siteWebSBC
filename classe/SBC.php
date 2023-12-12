@@ -7,8 +7,10 @@
         private $_longueur;
         private $_largeur;
         private $_prix;
-        private $_id_processeur;
-        private $_id_marque;
+        private $_nbCoeur;
+        private $_marqueSBC;
+        private $_marqueProcesseur;
+        private $_modeleProcesseur;
 
         //Constructeur
         public function __construct($params = array()) {
@@ -20,7 +22,7 @@
             }
             }
         }
-        
+
         /**
          * Get the value of _id_SBC
          */ 
@@ -162,41 +164,81 @@
         }
 
         /**
-         * Get the value of _id_processeur
+         * Get the value of _nbCoeur
          */ 
-        public function get_id_processeur()
+        public function get_nbCoeur()
         {
-                return $this->_id_processeur;
+                return $this->_nbCoeur;
         }
 
         /**
-         * Set the value of _id_processeur
+         * Set the value of _nbCoeur
          *
          * @return  self
          */ 
-        public function set_id_processeur($_id_processeur)
+        public function set_nbCoeur($_nbCoeur)
         {
-                $this->_id_processeur = $_id_processeur;
+                $this->_nbCoeur = $_nbCoeur;
 
                 return $this;
         }
 
         /**
-         * Get the value of _id_marque
+         * Get the value of _marqueSBC
          */ 
-        public function get_id_marque()
+        public function get_marqueSBC()
         {
-                return $this->_id_marque;
+                return $this->_marqueSBC;
         }
 
         /**
-         * Set the value of _id_marque
+         * Set the value of _marqueSBC
          *
          * @return  self
          */ 
-        public function set_id_marque($_id_marque)
+        public function set_marqueSBC($_marqueSBC)
         {
-                $this->_id_marque = $_id_marque;
+                $this->_marqueSBC = $_marqueSBC;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of _marqueProcesseur
+         */ 
+        public function get_marqueProcesseur()
+        {
+                return $this->_marqueProcesseur;
+        }
+
+        /**
+         * Set the value of _marqueProcesseur
+         *
+         * @return  self
+         */ 
+        public function set_marqueProcesseur($_marqueProcesseur)
+        {
+                $this->_marqueProcesseur = $_marqueProcesseur;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of _modeleProcesseur
+         */ 
+        public function get_modeleProcesseur()
+        {
+                return $this->_modeleProcesseur;
+        }
+
+        /**
+         * Set the value of _modeleProcesseur
+         *
+         * @return  self
+         */ 
+        public function set_modeleProcesseur($_modeleProcesseur)
+        {
+                $this->_modeleProcesseur = $_modeleProcesseur;
 
                 return $this;
         }
