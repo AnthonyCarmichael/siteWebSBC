@@ -21,17 +21,23 @@ window.onload = function() {
 
 };
 
-let imgActuel = 0;
-imgVu();
 
-function imgVu() {
-  let i;
-  let img = document.getElementsByClassName("imgCaroussel");
-  for (i = 0; i < img.length; i++) {
-    img[i].style.display = "none";
-  }
-  imgActuel++;
-  if (imgActuel > img.length) {imgActuel = 1}
-  img[imgActuel-1].style.display = "block";
-  setTimeout(imgVu, 5000);
+let main = document.querySelector("main");
+if(main.id == "index")
+{
+    let imgActuel = 0;
+    imgVu();
+    
+    function imgVu() {
+      let i;
+      let img = document.getElementsByClassName("imgCaroussel");
+      for (i = 0; i < img.length; i++) {
+        img[i].style.display = "none";
+      }
+      imgActuel++;
+      if (imgActuel > img.length) {imgActuel = 1}
+      img[imgActuel-1].style.display = "block";
+      setTimeout(imgVu, 5000);
+    }
 }
+
