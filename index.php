@@ -4,15 +4,15 @@
 <div class="caroussel">
 
     <div class="imgCaroussel fade">
-        <img src="img/logo.png" style="width:100%">
+        <img src="img/banniere1.png" style="width:100%">
     </div>
 
     <div class="imgCaroussel fade">
-        <img src="img/background.jpg" style="width:100%">
+        <img src="img/banniere2.png" style="width:100%">
     </div>
 
     <div class="imgCaroussel fade">
-        <img src="img/panier.png" style="width:100%">
+        <img src="img/banniere3.png" style="width:100%">
     </div>
 </div>
 <br>
