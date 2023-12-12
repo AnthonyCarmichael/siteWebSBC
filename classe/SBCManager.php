@@ -3,7 +3,7 @@ require_once 'SBC.php';
 
 class SBCManager
 {
-    const SELECT_SBCs = "SELECT id_SBC, sbc.modele, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
+    const SELECT_SBCs = "SELECT id_SBC, sbc.modele AS modeleSBC, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
                             FROM sbc AS sbc
                             INNER JOIN processeur AS p ON sbc.id_processeur = p.id_processeur
                             INNER JOIN marque AS m on sbc.id_marque = m.id_marque
@@ -14,7 +14,7 @@ class SBCManager
                             WHERE id_SBC = ";
 
     const MARQUE_FILTER = "m.nom LIKE CONCAT('%', :marqueSBC, '%')";
-    const MODELE_FILTER = "modele LIKE CONCAT('%', :modele, '%')";
+    const MODELE_FILTER = "sbc.modele LIKE CONCAT('%', :modeleSBC, '%')";
 
     private $_bdd;
 
@@ -54,13 +54,13 @@ class SBCManager
         $bindArray[":marqueSBC"] = $formArray['marqueSBC'];
       }
        
-      if (isset($formArray['modele']) && !empty($formArray['modele'])) {
+      if (isset($formArray['modeleSBC']) && !empty($formArray['modeleSBC'])) {
        if(!empty($whereClause)){
            $whereClause .= " AND ";
        }
        $whereClause .= self::MODELE_FILTER;
-       $bindArray[":modele"] = $formArray['modele'];
-     }
+       $bindArray[":modeleSBC"] = $formArray['modeleSBC'];
+       }
     
     
         if (empty($whereClause))

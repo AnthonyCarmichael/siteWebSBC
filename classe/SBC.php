@@ -1,7 +1,7 @@
 <?php
     class SBC{
         private $_id_SBC;
-        private $_modele;
+        private $_modeleSBC;
         private $_garantie;
         private $_RAM;
         private $_longueur;
@@ -46,9 +46,9 @@
         /**
          * Get the value of _modele
          */ 
-        public function get_modele()
+        public function get_modeleSBC()
         {
-                return $this->_modele;
+                return $this->_modeleSBC;
         }
 
         /**
@@ -56,9 +56,9 @@
          *
          * @return  self
          */ 
-        public function set_modele($_modele)
+        public function set_modeleSBC($_modeleSBC)
         {
-                $this->_modele = $_modele;
+                $this->_modeleSBC = $_modeleSBC;
 
                 return $this;
         }
