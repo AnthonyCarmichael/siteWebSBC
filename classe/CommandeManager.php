@@ -88,7 +88,6 @@
                 array_push($arrSBC, $sbc);
 
                 $commande = $this->getCommandeById($bddResult['id_commande']);
-                //$Commande ne contient pas la bonne chose!!!!!
                // print_r($commande);
                 if ($commande->get_id_commande() != $tempIdCommande ) {
                     $commande->set_tabSBC($arrSBC);
