@@ -1,11 +1,23 @@
-<?php
+<?php 
+// Prétraitement //////////////////////////////////////////////////////////////////
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }  
 include_once("inc/autoloader.php");
 $bdd = PDOFactory::getMySQLConnection();
 
+if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
+    $clientManager = new ClientManager($bdd); 
+    $client = $clientManager->clientExiste($_REQUEST['username'], $_REQUEST['mdp']);
+    $_SESSION['client'] = serialize($client);
+    
+} else if (isset($_REQUEST['action']) && $_REQUEST['action'] == "logout"){
+    $_SESSION = array();
+    session_destroy(); 
+} 
+///////////////////////////////////////////////////////////////////////////////////
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,7 +62,9 @@ $bdd = PDOFactory::getMySQLConnection();
             <?php // }  ?>
         </nav>
     </header>
-    <?php $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    <?php 
+        // Chaque main a un id correspondant a son nom de page
+        $page = substr($_SERVER['REQUEST_URI'], 12, -4);
     ?>
     <main id="<?= $page?>">
 

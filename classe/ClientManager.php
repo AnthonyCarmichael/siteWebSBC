@@ -3,7 +3,7 @@ class ClientManager
 {
     private $_db;
     
-    const CLIENT_EXISTE = "SELECT id_client , nom, prenom FROM client WHERE nom_utilisateur = :username AND mdp = :mdp"; //TESTÉ
+    const CLIENT_EXISTE = "SELECT * FROM client WHERE nom_utilisateur = :username AND mdp = :mdp"; //TESTÉ
 
     const PAYS_EXISTE = "SELECT id_pays FROM pays WHERE nom = :nomPays"; //TESTÉ
     const INSERT_PAYS = "INSERT INTO pays (nom) 

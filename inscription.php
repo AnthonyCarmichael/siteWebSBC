@@ -24,7 +24,7 @@
 
         <div class="row">
             <label class="white" for="nom">Nom d'utilisateur: </label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="nomUtilisateur" id="username">
         </div>
 
         <div class="row">
