@@ -166,3 +166,56 @@ nav a:hover {
 /*p[class*='prix-'] {
     seffa
 }*/
+
+#infoSBC img{
+    width: 100%;
+    height: 100%;
+}
+
+#infoSBC h2{
+    margin-bottom: 20px;
+}
+
+#infoSBC form{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#infoSBC input{
+    height: 35px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+#infoSBC article div:first-of-type{
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#infoSBC article div:last-of-type{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    color: var(--paleBlue);
+}
+
+#infoSBC .ajout{
+    background-color: var(--turquoise);
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    height: 15px;
+    margin-left: 20px;
+    width: 5px;
+    padding: 5px;
+    text-align: center;
+} 
+
+#infoSBC .ajout:hover{
+    background-color: var(--rose);
+    transition: 1s;
+}
