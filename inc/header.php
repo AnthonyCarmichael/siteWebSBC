@@ -45,7 +45,7 @@ $bdd = PDOFactory::getMySQLConnection();
             <ul class="flex"> 
                 <li><a href="infoClient.php">Gestion de compte</a></li>
                 <li><a href="wishList.php">Liste de souhait</a></li>
-                <li><a href="panier.php"><img id="logoPanier" src="img/panier.png" alt="panier"></a></li>
+                <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
             </ul>
             <?php // }  ?>
         </nav>

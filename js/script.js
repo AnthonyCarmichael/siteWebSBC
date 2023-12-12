@@ -21,6 +21,7 @@ window.onload = function() {
 
 };
 
+/*
 let imgActuel = 0;
 imgVu();
 
@@ -35,3 +36,29 @@ function imgVu() {
   img[imgActuel-1].style.display = "block";
   setTimeout(imgVu, 5000);
 }
+*/
+// Pour le hover sur le panier dans le header
+let panierHover = document.querySelector("#logoPanier img");
+console.log(panierHover);
+panierHover.addEventListener("mouseover", changeImgUrl);
+
+function changeImgUrl(evt) {
+    newImg = document.createElement("img");
+    newImg.setAttribute("src","img/panierRose.png");
+    newImg.setAttribute("alt","panier");
+    evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+    evt.target.remove();
+    let panierRoseHover = document.querySelector("#logoPanier img");
+   //console.log(panierRoseHover);
+    panierRoseHover.addEventListener("mouseout", resetUrl);
+}
+function resetUrl(evt) {
+    newImg = document.createElement("img");
+    newImg.setAttribute("src","img/panier.png");
+    newImg.setAttribute("alt","panier");
+    evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+    evt.target.remove();
+    let panierResetHover = document.querySelector("#logoPanier img");
+    panierResetHover.addEventListener("mouseover", changeImgUrl);
+}
+
