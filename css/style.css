@@ -11,7 +11,7 @@
     --paleBlue: #31aadf;
 }
 
-/* BALISE GÉNÉRIQUE **************************************************/ 
+/* BALISE GÉNÉRIQUE **************************************************/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,31 +20,31 @@
 }
 
 body {
-    min-width:980px;
+    min-width: 980px;
     background-color: black;
-    background:url("../img/background.jpg") no-repeat center;
+    background: url("../img/background.jpg") no-repeat center;
     background-size: cover;
 }
 
 header {
-    margin:auto;
-    max-width:980px;
+    margin: auto;
+    max-width: 980px;
 }
 
 main {
     margin: auto;
-    max-width:980px;
-    min-height:80vh;
-    border-top:5px solid black;
-    background-color: var(--darkBlue);
+    max-width: 980px;
+    min-height: 80vh;
+    margin-top:  5px;
+    background-color: #141444da;
 
 }
 
 footer {
-    margin:auto;
+    margin: auto;
     padding: 10px;
     color: white;
-    max-width:980px;
+    max-width: 980px;
 }
 
 /* HEADER ************************************************************/
@@ -56,9 +56,24 @@ h1 {
 
 }
 
-h2
-{
+h2 {
     color: white;
+}
+
+h3 {
+    color: white;
+}
+
+#index p {
+    color: white;
+}
+
+#index section {
+    display: flex;
+}
+
+#index div {
+    margin: 10px;
 }
 
 .menu-connexion ul {
@@ -68,20 +83,19 @@ h2
 .menu-principal {
     background-color: var(--darkBlue);
     border-radius: 5px;
-
 }
 
 .menu-principal ul:nth-of-type(1) {
     width: 60%;
     list-style: none;
-    justify-content: space-around;   
+    justify-content: space-around;
     align-items: center;
 }
 
 .menu-principal ul:nth-of-type(2) {
     width: 40%;
     list-style: none;
-    justify-content: space-around;   
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -95,16 +109,23 @@ h2
     color: white;
 }
 
+nav a:hover {
+    color: var(--darkPink);
+}
+
 #logo {
     width: 100px;
 }
 
-#panier {
+#logoPanier img {
     width: 40px;
 }
 
 
-/* CLASS *************************************************************/ 
+/* CLASS *************************************************************/
+.white {
+    color:white;
+}
 .center {
     text-align: center;
 }
@@ -130,7 +151,7 @@ h2
 .col-3 {width: 25%;}
 .col-4 {width: 33.33%;}
 .col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
+.col-6 {width: 50%; background-color: #05c1ca;}
 .col-7 {width: 58.33%;}
 .col-8 {width: 66.66%;}
 .col-9 {width: 75%;}
@@ -138,63 +159,10 @@ h2
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-/* SPÉCIFIQUE À LA PAGE **********************************************/ 
+/* SPÉCIFIQUE À LA PAGE ****************************************************************/
 
 
-/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/ 
+/* Comparaison**********************************************/
 /*p[class*='prix-'] {
     seffa
 }*/
-/* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
-#infoSBC img{
-    width: 100%;
-    height: 100%;
-}
-
-#infoSBC h2{
-    margin-bottom: 20px;
-}
-
-#infoSBC form{
-    width: 95%;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#infoSBC input{
-    height: 35px;
-    border-radius: 5px;
-    margin: auto;
-}
-
-#infoSBC article div:first-of-type{
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    margin-bottom: 15px;
-}
-
-#infoSBC article div:last-of-type{
-    width: 80%;
-    margin: auto;
-    margin-bottom: 20px;
-    color: var(--paleBlue);
-}
-
-#infoSBC .ajout{
-    background-color: var(--turquoise);
-    border-radius: 2px;
-    text-decoration: none;
-    color: white;
-    height: 15px;
-    margin-left: 20px;
-    width: 5px;
-    padding: 5px;
-    text-align: center;
-} 
-
-#infoSBC .ajout:hover{
-    background-color: var(--rose);
-    transition: 1s;
-} 

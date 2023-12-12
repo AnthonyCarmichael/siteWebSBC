@@ -34,3 +34,46 @@ window.onload = function() {
         }
     }
 };
+
+let panierHover = document.querySelector("#logoPanier img");
+console.log(panierHover);
+panierHover.addEventListener("mouseover", changeImgUrl);
+
+function changeImgUrl(evt) {
+    newImg = document.createElement("img");
+    newImg.setAttribute("src","img/panierRose.png");
+    newImg.setAttribute("alt","panier");
+    evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+    evt.target.remove();
+    let panierRoseHover = document.querySelector("#logoPanier img");
+   //console.log(panierRoseHover);
+    panierRoseHover.addEventListener("mouseout", resetUrl);
+}
+function resetUrl(evt) {
+    newImg = document.createElement("img");
+    newImg.setAttribute("src","img/panier.png");
+    newImg.setAttribute("alt","panier");
+    evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+    evt.target.remove();
+    let panierResetHover = document.querySelector("#logoPanier img");
+    panierResetHover.addEventListener("mouseover", changeImgUrl);
+}
+
+let main = document.querySelector("main");
+if(main.id == "index")
+{
+    let imgActuel = 0;
+    imgVu();
+    
+    function imgVu() {
+      let i;
+      let img = document.getElementsByClassName("imgCaroussel");
+      for (i = 0; i < img.length; i++) {
+        img[i].style.display = "none";
+      }
+      imgActuel++;
+      if (imgActuel > img.length) {imgActuel = 1}
+      img[imgActuel-1].style.display = "block";
+      setTimeout(imgVu, 5000);
+    }
+}

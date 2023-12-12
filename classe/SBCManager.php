@@ -7,8 +7,8 @@ class SBCManager
                             FROM sbc AS sbc
                             INNER JOIN processeur AS p ON sbc.id_processeur = p.id_processeur
                             INNER JOIN marque AS m on sbc.id_marque = m.id_marque
-                            INNER JOIN marque AS mp on p.id_marque = mp.id_marque";       
-                            
+                            INNER JOIN marque AS mp on p.id_marque = mp.id_marque";
+    
     const SELECT_ID_SBC = "SELECT id_SBC 
                             FROM SBC 
                             WHERE id_SBC = ";
@@ -78,6 +78,16 @@ class SBCManager
         array_push($SBCObjArray, new SBC($row));
 
         return $SBCObjArray;
+    }
+
+    public function getSBCById($idSBC) {
+        
+        $query = $this->_bdd->prepare(self::SELECT_SBC_BY_ID);
+        $query->execute(array(':idSBC' => $idSBC)); 
+        $dbResult = $query->fetch();
+        assert(!empty($dbResult), 'Le ou les identifiant(s) fourni(s) n\'a pas ou n\'ont pas été trouvé(s) dans la base de données.');
+
+        return new SBC($dbResult);
     }
 }
 ?>

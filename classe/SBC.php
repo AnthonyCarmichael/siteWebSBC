@@ -15,11 +15,11 @@
         //Constructeur
         public function __construct($params = array()) {
             foreach($params as $k => $v) {               
-            $methodName = "set_" . $k; 
+                $methodName = "set_" . $k; 
 
-            if(method_exists($this, $methodName)) {
-                $this->$methodName($v);
-            }
+                if(method_exists($this, $methodName)) {
+                        $this->$methodName($v);
+                }
             }
         }
 

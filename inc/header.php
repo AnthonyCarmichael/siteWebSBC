@@ -1,3 +1,11 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}  
+include_once("inc/autoloader.php");
+$bdd = PDOFactory::getMySQLConnection();
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -37,10 +45,12 @@
             <ul class="flex"> 
                 <li><a href="infoClient.php">Gestion de compte</a></li>
                 <li><a href="wishList.php">Liste de souhait</a></li>
-                <li><a href="panier.php"><img id="panier" src="img/panier.png" alt="panier"></a></li>
+                <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
             </ul>
             <?php // }  ?>
         </nav>
     </header>
+    <?php $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    ?>
     <main id="<?= $page?>">
 
