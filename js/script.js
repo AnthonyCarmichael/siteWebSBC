@@ -1,26 +1,65 @@
 window.onload = function() {
-    let selectMenu = document.querySelector("article select[name='sbc']");
+    //let selectMenu = document.querySelector("article select[name='sbc']");
+    let selectMenu = document.querySelectorAll("compareSelect");
 
-    if (selectMenu != null) {
-        selectMenu.addEventListener('change', function() {
-            let pricesArray = document.querySelectorAll("p[class*='prix-']");
-            let classListString, indexOfSpace;
+    for(let i = 0; selectMenu.length; i++){
 
-            for (let i = 0; i < pricesArray.length; i++) {
-                pricesArray[i].classList.add('display-none');
+        if (selectMenu[i] != null) {
+            selectMenu[i].addEventListener('change', function(e) {
+                let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
 
-                classListString = pricesArray[i].classList.toString();
-                indexOfSpace = classListString.indexOf(' ');
+                let pricesArray = document.querySelectorAll("p[class*='prix-']")[idSelect];
+                let imgArray = document.querySelectorAll("img[class*='img-']")[idSelect];
+                let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace;
 
-                if (selectMenu.value === classListString.substring(5, indexOfSpace)) {
-                    pricesArray[i].classList.remove('display-none');
+                for (let i = 0; i < pricesArray.length; i++) {
+                    pricesArray[i].classList.add('display-none');
+                    imgArray[i].classList.add('display-none');
+
+                    priceclassListString = pricesArray[i].classList.toString();
+                    priceIndexOfSpace = priceclassListString.indexOf(' ');
+
+                    imgclassListString = imgArray[i].classList.toString();
+                    imgIndexOfSpace = imgclassListString.indexOf(' ');
+
+                    if (selectMenu[i].value === priceclassListString.substring(5, priceIndexOfSpace)) {
+                        pricesArray[i].classList.remove('display-none');
+                    }
+
+                    if (selectMenu[i].value === imgclassListString.substring(4, imgIndexOfSpace)) {
+                        imgArray[i].classList.remove('display-none');
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-
 };
 
+let panierHover = document.querySelector("#logoPanier img");
+console.log(panierHover);
+if (panierHover) {
+    
+panierHover.addEventListener("mouseover", changeImgUrl);
+    function changeImgUrl(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/panierRose.png");
+        newImg.setAttribute("alt","panier");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let panierRoseHover = document.querySelector("#logoPanier img");
+    //console.log(panierRoseHover);
+        panierRoseHover.addEventListener("mouseout", resetUrl);
+    }
+    function resetUrl(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/panier.png");
+        newImg.setAttribute("alt","panier");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let panierResetHover = document.querySelector("#logoPanier img");
+        panierResetHover.addEventListener("mouseover", changeImgUrl);
+    }
+}
 
 let main = document.querySelector("main");
 if(main.id == "index")
@@ -40,4 +79,3 @@ if(main.id == "index")
       setTimeout(imgVu, 5000);
     }
 }
-

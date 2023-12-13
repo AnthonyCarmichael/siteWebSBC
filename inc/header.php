@@ -1,11 +1,25 @@
-<?php
+<?php 
+// Prétraitement //////////////////////////////////////////////////////////////////
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }  
 include_once("inc/autoloader.php");
 $bdd = PDOFactory::getMySQLConnection();
 
+if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
+    $clientManager = new ClientManager($bdd); 
+    $client = $clientManager->clientExiste($_REQUEST['username'], $_REQUEST['mdp']);
+    if($client != null)
+    {
+        $_SESSION['client'] = serialize($client);
+    }
+} else if (isset($_REQUEST['action']) && $_REQUEST['action'] == "logout"){
+    $_SESSION = array();
+    session_destroy(); 
+} 
+///////////////////////////////////////////////////////////////////////////////////
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,16 +55,21 @@ $bdd = PDOFactory::getMySQLConnection();
 
             <!-- Si le client est connecter, d'autre lien s'affiche -->
             <!-- Le if est en commentaire pour tester le css même si y'a pas de client connecter -->
-            <?php //if(isset($_SESSION['client'])){ ?>
+            <?php if(isset($_SESSION['client'])){ ?>
             <ul class="flex"> 
                 <li><a href="infoClient.php">Gestion de compte</a></li>
                 <li><a href="wishList.php">Liste de souhait</a></li>
-                <li><a href="panier.php"><img id="logoPanier" src="img/panier.png" alt="panier"></a></li>
+                <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
             </ul>
-            <?php // }  ?>
+            <?php  }  ?>
         </nav>
     </header>
-    <?php $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    <?php 
+        // Chaque main a un id correspondant a son nom de page
+        $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+        if ($page == null) {
+            $page = "index";
+        }
     ?>
     <main id="<?= $page?>">
 

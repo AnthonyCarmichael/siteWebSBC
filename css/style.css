@@ -68,7 +68,6 @@ h3 {
     list-style: none;
 }
 
-
 .menu-principal {
     background-color: var(--darkBlue);
     border-radius: 5px;
@@ -98,16 +97,23 @@ h3 {
     color: white;
 }
 
+nav a:hover {
+    color: var(--darkPink);
+}
+
 #logo {
     width: 100px;
 }
 
-#logoPanier {
+#logoPanier img {
     width: 40px;
 }
 
 
 /* CLASS *************************************************************/
+.white {
+    color:white;
+}
 .center {
     text-align: center;
 }
@@ -120,62 +126,31 @@ h3 {
     display: flex;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 .end {
     text-align: end;
 }
 
-.col-1 {
-    width: 8.33%;
-}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-
-/* SPÉCIFIQUE À LA PAGE **********************************************/
+/* SPÉCIFIQUE À LA PAGE ****************************************************************/
 
 
-/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
+/* Comparaison**********************************************/
 /*p[class*='prix-'] {
     seffa
 }*/
@@ -228,13 +203,124 @@ h3 {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-
+  
 @keyframes fade {
-    from {
-        opacity: .4
-    }
+    from {opacity: .4}
+    to {opacity: 1}
+}
 
-    to {
-        opacity: 1
-    }
+/* Inscription **********************************************/
+#inscription fieldset {
+    width:70%;
+    margin:15px auto;
+    background-color: rgba(0, 0, 0, 0.387);
+    padding: 5px;
+    border: none;
+}
+
+#inscription legend {
+    font-weight:bold;
+}
+
+#inscription .register input,#inscription .register select {
+    margin: 0px 25px 10px 5px;
+    width: 215px;
+}
+
+#inscription .profil label {
+    min-width: 58px;
+}
+
+#inscription #nom {
+    width:252px;
+}
+
+#inscription .coord label {
+    min-width: 81px;
+}
+
+#inscription .info-cond input,#inscription .info-cond select {
+    width: 165px;
+}
+
+#inscription .register button {
+    width: 80px;
+
+}
+
+#inscription .remise {
+    width:70%;
+    margin: auto;
+}
+
+/* Connexion **********************************************/
+
+#connexion form {
+    padding-top: 50px;
+    width: 400px;
+    margin: auto;
+}
+
+#connexion input {
+    width: 250px;
+}
+
+#connexion form div {
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Info SBC **********************************************/
+
+#infoSBC img{
+    width: 100%;
+    height: 100%;
+}
+
+#infoSBC h2{
+    margin-bottom: 20px;
+}
+
+#infoSBC form{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#infoSBC input{
+    height: 35px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+#infoSBC article div:first-of-type{
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#infoSBC article div:last-of-type{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    color: var(--paleBlue);
+}
+
+#infoSBC .ajout{
+    background-color: var(--turquoise);
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    height: 15px;
+    margin-left: 20px;
+    width: 5px;
+    padding: 5px;
+    text-align: center;
+} 
+
+#infoSBC .ajout:hover{
+    background-color: var(--rose);
+    transition: 1s;
 }
