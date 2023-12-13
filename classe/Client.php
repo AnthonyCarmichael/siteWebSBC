@@ -1,12 +1,12 @@
 <?php
 class Client
 {
-    private $_idClient;
+    private $_id_client;
     private $_prenom;    
     private $_nom;
     private $_tel;
     private $_courriel;
-    private $_nomUtilisateur;
+    private $_nom_utilisateur;
     private $_mdp;
     private $_adresse;
     private $_ville;
@@ -27,7 +27,7 @@ class Client
     
     public function __serialize(){
         return [
-            "idClient" => $this->_idClient,
+            "id_client" => $this->_id_client,
             "prenom" => $this->_prenom,
             "nom" => $this->_nom,
             "courriel" => $this->_courriel,
@@ -36,13 +36,13 @@ class Client
             "adresse" => $this->_adresse,
             "ville" => $this->_ville,
             "province" => $this->_province,
-            "nomUtilisateur" => $this->_nomUtilisateur,
+            "nom_utilisateur" => $this->_nom_utilisateur,
             "tel" => $this->_tel
         ];
     }
 
     public function __unserialize($data){
-        $this->_idClient = $data["idClient"];
+        $this->_id_client = $data["id_client"];
         $this->_prenom = $data["prenom"];
         $this->_nom = $data["nom"];
         $this->_courriel = $data["courriel"];
@@ -52,26 +52,26 @@ class Client
         $this->_ville = $data["ville"];
         $this->_province = $data["province"];
         $this->_tel = $data["tel"];
-        $this->_nomUtilisateur = $data["nomUtilisateur"];
+        $this->_nom_utilisateur = $data["nom_utilisateur"];
 
     }
 
     /**
-     * Get the value of _idClient
+     * Get the value of _id_client
      */ 
-    public function get_idClient()
+    public function get_id_client()
     {
-        return $this->_idClient;
+        return $this->_id_client;
     }
 
     /**
-     * Set the value of _idClient
+     * Set the value of _id_client
      *
      * @return  self
      */ 
-    public function set_idClient($_idClient)
+    public function set_id_client($_id_client)
     {
-        $this->_idClient = $_idClient;
+        $this->_id_client = $_id_client;
 
         return $this;
     }
@@ -157,21 +157,21 @@ class Client
     }
 
     /**
-     * Get the value of _nomUtilisateur
+     * Get the value of _nom_utilisateur
      */ 
-    public function get_nomUtilisateur()
+    public function get_nom_utilisateur()
     {
-        return $this->_nomUtilisateur;
+        return $this->_nom_utilisateur;
     }
 
     /**
-     * Set the value of _nomUtilisateur
+     * Set the value of _nom_utilisateur
      *
      * @return  self
      */ 
-    public function set_nomUtilisateur($_nomUtilisateur)
+    public function set_nom_utilisateur($_nom_utilisateur)
     {
-        $this->_nomUtilisateur = $_nomUtilisateur;
+        $this->_nom_utilisateur = $_nom_utilisateur;
 
         return $this;
     }

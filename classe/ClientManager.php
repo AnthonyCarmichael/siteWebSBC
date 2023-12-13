@@ -3,7 +3,12 @@ class ClientManager
 {
     private $_db;
     
-    const CLIENT_EXISTE = "SELECT * FROM client WHERE nom_utilisateur = :username AND mdp = :mdp"; //TESTÉ
+    const CLIENT_EXISTE = "SELECT c.id_client, c.prenom, c.nom, c.tel, c.courriel, c.nom_utilisateur, c.mdp, c.adresse, v.nom AS ville, pr.nom AS province, p.nom  AS pays
+      FROM client c
+      INNER JOIN pays p ON p.id_pays = c.id_pays
+      INNER JOIN province pr ON pr.id_province = c.id_province
+      INNER JOIN ville v ON v.id_ville = c.id_ville
+        WHERE nom_utilisateur = :username AND mdp = :mdp"; // TESTÉ";
 
     const PAYS_EXISTE = "SELECT id_pays FROM pays WHERE nom = :nomPays"; //TESTÉ
     const INSERT_PAYS = "INSERT INTO pays (nom) VALUES (:nomPays)"; // TESTÉ
@@ -118,6 +123,7 @@ class ClientManager
         $query->execute($loginArray);
   
         if($bddResult = $query->fetch()){
+          //print_r($bddResult);
           return new Client($bddResult);
         } else {
           return null;
@@ -142,7 +148,7 @@ class ClientManager
                               ':id_ville' => $this->addVille($clientObj),
                               ':id_province' => $this->addProvince($clientObj),
                               ':id_pays' => $this->addPays($clientObj));
-        print_r($clientArray);
+        //print_r($clientArray);
         assert($query->execute($clientArray), 'Le client n\'a pas pu être inséré dans la table "tblClient".');
   
         return $this->_db->lastInsertId();
