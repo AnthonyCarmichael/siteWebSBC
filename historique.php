@@ -44,7 +44,12 @@
 
                 </aside>
                 <?php 
-                
+                $tabSBC = $commande->get_tabSBC();
+                print_r($tabSBC);
+                foreach ($tabSBC as $sbc) {
+                    ?> <img src=<?php echo "img/".$sbc->get_modele().".jpg";?> alt=<?php echo $sbc->get_modele();?>>
+                    <?php
+                }
                 ?>
             </article>
             <?php

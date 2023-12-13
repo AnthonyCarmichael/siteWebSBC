@@ -371,7 +371,12 @@ nav a:hover {
 
     justify-content: space-between;
 }
+
 #historique div p {
 
     width: 20%;
+}
+
+#historique img {
+    width: 100px;
 }
