@@ -224,6 +224,25 @@ nav a:hover {
     width: 80px;
 }
 
+/* Connexion **********************************************/
+
+#connexion form {
+    padding-top: 50px;
+    width: 400px;
+    margin: auto;
+}
+
+#connexion input {
+
+    width: 250px;
+
+}
+
+#connexion form div {
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 /* Info SBC **********************************************/
 
 #infoSBC img{
