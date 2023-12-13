@@ -191,8 +191,9 @@ nav a:hover {
 #inscription fieldset {
     width:70%;
     margin:15px auto;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.387);
     padding: 5px;
+    border: none;
 }
 
 #inscription legend {
@@ -222,6 +223,12 @@ nav a:hover {
 
 #inscription .register button {
     width: 80px;
+
+}
+
+#inscription .remise {
+    width:70%;
+    margin: auto;
 }
 
 /* Connexion **********************************************/
@@ -233,9 +240,7 @@ nav a:hover {
 }
 
 #connexion input {
-
     width: 250px;
-
 }
 
 #connexion form div {
