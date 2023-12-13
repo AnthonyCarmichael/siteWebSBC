@@ -127,6 +127,7 @@ nav a:hover {
     display: flex;
 }
 
+
 .wrap {
     flex-wrap: wrap;
 }
@@ -153,6 +154,17 @@ nav a:hover {
 .bouton:hover {
     background-color: var(--rose);
     transition: 1s;
+}
+
+.modif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    /*width: 40%;*/
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.387);
 }
 
 .col-1 {width: 8.33%;}
@@ -212,6 +224,17 @@ nav a:hover {
 
 #infoClient form {
     color: white;
+}
+
+#infoClient label {
+    width: 100%;
+}
+
+#infoClient button {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
 }
 
 /*Caroussel*/

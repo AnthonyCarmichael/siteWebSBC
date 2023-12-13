@@ -49,7 +49,7 @@ if (isset($_REQUEST['action'])) {
                 </li>
             </ul>
         </section>
-    <?php
+        <?php
     } elseif ($_REQUEST['action'] == "connexion") {
         if (isset($_SESSION['client'])) {
             ?>
@@ -57,7 +57,7 @@ if (isset($_REQUEST['action'])) {
             <h2 class="center">Bienvenue
                 <?= $client->get_prenom() . " " . $client->get_nom(); ?>
                 </h1>
-            <?php
+                <?php
         } else {
             ?>
                 <section id="connexion">
@@ -96,9 +96,41 @@ if (isset($_REQUEST['action'])) {
         $client = unserialize($_SESSION['client']);
         $client->set_prenom($_REQUEST['prenom']);
         $client->set_nom($_REQUEST['nom']);
-        
+
 
         $cm->modifInfoPerso($client->get_id_client(), $_REQUEST['prenom'], $_REQUEST['nom']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementInfoContact") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_courriel($_REQUEST['courriel']);
+        $client->set_tel($_REQUEST['tel']);
+
+
+        $cm->modifInfoContact($client->get_id_client(), $_REQUEST['courriel'], $_REQUEST['tel']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementInfoConnexion") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_nom_utilisateur($_REQUEST['nom_utilisateur']);
+        $client->set_mdp($_REQUEST['mdp']);
+
+
+        $cm->modifInfoConnexion($client->get_id_client(), $_REQUEST['nom_utilisateur'], $_REQUEST['mdp']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementAdresse") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_adresse($_REQUEST['adresse']);
+        $client->set_ville($_REQUEST['ville']);
+        $client->set_province($_REQUEST['province']);
+        $client->set_pays($_REQUEST['pays']);
+
+
+        $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
         $_SESSION['client'] = serialize($client);
     }
 } ?>
