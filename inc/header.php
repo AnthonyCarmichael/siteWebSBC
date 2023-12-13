@@ -67,6 +67,9 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
     <?php 
         // Chaque main a un id correspondant a son nom de page
         $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+        if ($page == null) {
+            $page = "index";
+        }
     ?>
     <main id="<?= $page?>">
 
