@@ -3,7 +3,12 @@ class ClientManager
 {
   private $_db;
 
-  const CLIENT_EXISTE = "SELECT * FROM client WHERE nom_utilisateur = :username AND mdp = :mdp"; //TESTÉ
+  const CLIENT_EXISTE = "SELECT c.id_client, c.prenom, c.nom, c.tel, c.courriel, c.nom_utilisateur, c.mdp, c.adresse, v.nom AS ville, pr.nom AS province, p.nom  AS pays
+      FROM client c
+      INNER JOIN pays p ON p.id_pays = c.id_pays
+      INNER JOIN province pr ON pr.id_province = c.id_province
+      INNER JOIN ville v ON v.id_ville = c.id_ville
+        WHERE nom_utilisateur = :username AND mdp = :mdp"; // TESTÉ";
 
   const MODIF_INFO_PERSO = "UPDATE client SET prenom = :prenom, nom = :nom WHERE id_client = :id_client";
 
@@ -134,6 +139,7 @@ class ClientManager
     $query->execute($loginArray);
 
     if ($bddResult = $query->fetch()) {
+          //print_r($bddResult);
       return new Client($bddResult);
     } else {
       return null;

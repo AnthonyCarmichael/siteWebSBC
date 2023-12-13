@@ -24,7 +24,7 @@ if (isset($_REQUEST['action'])) {
                             <?= $client->get_tel(); ?>
                         </li>
                         <li><span>Nom d'utilisateur: </span>
-                            <?= $client->get_nomUtilisateur(); ?>
+                            <?= $client->get_nom_utilisateur(); ?>
                         </li>
                         <li><span>Mot de passe: </span>
                             <?= $client->get_mdp(); ?>

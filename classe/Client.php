@@ -27,7 +27,7 @@ class Client
     
     public function __serialize(){
         return [
-            "idClient" => $this->_id_client,
+            "id_client" => $this->_id_client,
             "prenom" => $this->_prenom,
             "nom" => $this->_nom,
             "courriel" => $this->_courriel,
@@ -42,7 +42,7 @@ class Client
     }
 
     public function __unserialize($data){
-        $this->_id_client = $data["idClient"];
+        $this->_id_client = $data["id_client"];
         $this->_prenom = $data["prenom"];
         $this->_nom = $data["nom"];
         $this->_courriel = $data["courriel"];

@@ -135,69 +135,22 @@ nav a:hover {
     text-align: end;
 }
 
-.bouton {
-    background-color: #370d43;
-    border-radius: 2px;
-    text-decoration: none;
-    color: white;
-    /*height: 15px;*/
-    /*margin-left: 20px;*/
-    padding: 5px;
-    text-align: center;
+.bold {
+    font-weight: bold;
 }
 
-.bouton:hover {
-    background-color: var(--rose);
-    transition: 1s;
-}
-
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
 /* SPÉCIFIQUE À LA PAGE ****************************************************************/
 
@@ -389,4 +342,20 @@ nav a:hover {
 #infoSBC .ajout:hover {
     background-color: var(--rose);
     transition: 1s;
+}
+
+/* Historique **********************************************/
+
+#historique aside {
+    background-color: #1c0620;
+    margin: 10px;
+}
+
+#historique div {
+
+    justify-content: space-between;
+}
+#historique div p {
+
+    width: 20%;
 }
