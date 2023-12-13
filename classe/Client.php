@@ -9,7 +9,7 @@ class Client
     private $_nom_utilisateur;
     private $_mdp;
     private $_adresse;
-    private $_id_ville;
+    private $_ville;
     private $_province;
     private $_pays;
 
@@ -34,7 +34,7 @@ class Client
             "mdp" => $this->_mdp,
             "pays" => $this->_pays,
             "adresse" => $this->_adresse,
-            "ville" => $this->_id_ville,
+            "ville" => $this->_ville,
             "province" => $this->_province,
             "nom_utilisateur" => $this->_nom_utilisateur,
             "tel" => $this->_tel
@@ -49,7 +49,7 @@ class Client
         $this->_mdp = $data["mdp"];
         $this->_pays = $data["pays"];
         $this->_adresse = $data["adresse"];
-        $this->_id_ville = $data["ville"];
+        $this->_ville = $data["ville"];
         $this->_province = $data["province"];
         $this->_tel = $data["tel"];
         $this->_nom_utilisateur = $data["nom_utilisateur"];
@@ -217,21 +217,21 @@ class Client
     }
 
     /**
-     * Get the value of _id_ville
+     * Get the value of _ville
      */ 
-    public function get_id_ville()
+    public function get_ville()
     {
-        return $this->_id_ville;
+        return $this->_ville;
     }
 
     /**
-     * Set the value of _id_ville
+     * Set the value of _ville
      *
      * @return  self
      */ 
-    public function set_id_ville($_id_ville)
+    public function set_ville($_ville)
     {
-        $this->_id_ville = $_id_ville;
+        $this->_ville = $_ville;
 
         return $this;
     }

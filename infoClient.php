@@ -97,7 +97,7 @@ if (isset($_REQUEST['action'])) {
                 <?= $client->get_adresse(); ?>
             </p>
             <p><span>Ville: </span>
-                <?= $client->get_id_ville(); ?>
+                <?= $client->get_ville(); ?>
             </p>
             <p><span>Province: </span>
                 <?= $client->get_province(); ?>
