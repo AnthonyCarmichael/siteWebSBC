@@ -18,7 +18,7 @@
             <label class="white" for="courriel">Courriel: </label>
             <input type="email" name="courriel" id="courriel">
 
-            <label class="white" for="tel">Téléphone: </label>
+            <label class="white" for="tel">Téléphone: </label> <!-- Gérer le format du téléphone -->
             <input type="tel" name="tel" id="tel">
         </div>
 
@@ -41,7 +41,7 @@
             <input type="text" name="pays" id="pays">
 
             <label class="white" for="province">Province: </label>
-            <input class="white" type="text" name="province" id="province">
+            <input type="text" name="province" id="province">
         </div>
 
         <div class="row">

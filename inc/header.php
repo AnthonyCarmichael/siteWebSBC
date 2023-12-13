@@ -9,8 +9,10 @@ $bdd = PDOFactory::getMySQLConnection();
 if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
     $clientManager = new ClientManager($bdd); 
     $client = $clientManager->clientExiste($_REQUEST['username'], $_REQUEST['mdp']);
-    $_SESSION['client'] = serialize($client);
-    
+    if($client != null)
+    {
+        $_SESSION['client'] = serialize($client);
+    }
 } else if (isset($_REQUEST['action']) && $_REQUEST['action'] == "logout"){
     $_SESSION = array();
     session_destroy(); 
