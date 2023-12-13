@@ -133,7 +133,7 @@ class ClientManager
     public function addClient($clientObj) {
         assert(is_a($clientObj, 'Client'), 'La classe "ClientManager" doit recevoir une instance (un objet) de la classe "Client" pour qu\'un nouveau client soit ajouté à la base de données.');
         
-        assert(!$this->clientExiste($clientObj->get_nomUtilisateur(), $clientObj->get_mdp()), 'L\'utilisateur existe déjà dans la base de données. L\'inscription a donc été abandonnée.');
+        assert(!$this->clientExiste($clientObj->get_nom_utilisateur(), $clientObj->get_mdp()), 'L\'utilisateur existe déjà dans la base de données. L\'inscription a donc été abandonnée.');
   
         $query = $this->_db->prepare(self::INSERT_CLIENT);
         
@@ -142,7 +142,7 @@ class ClientManager
                               ':nom' => $clientObj->get_nom(),
                               ':tel' => $clientObj->get_tel(),
                               ':courriel' => $clientObj->get_courriel(),
-                              ':nom_utilisateur' => $clientObj->get_nomUtilisateur(),
+                              ':nom_utilisateur' => $clientObj->get_nom_utilisateur(),
                               ':mdp' => $clientObj->get_mdp(),
                               ':adresse' => $clientObj->get_adresse(),
                               ':id_ville' => $this->addVille($clientObj),
