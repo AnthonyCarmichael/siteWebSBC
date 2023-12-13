@@ -19,7 +19,7 @@
             <input type="email" name="courriel" id="courriel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="adresse@domaine." required>
 
             <label class="white" for="tel">Téléphone: </label> 
-            <input type="tel" name="tel" id="tel" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" placeholder="(666) 666-6666" required> <!-- Peut-être le gèrer en JS si on a le temps -->
+            <input type="tel" name="tel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(666) 666-6666" required> <!-- Peut-être le gèrer en JS si on a le temps -->
         </div>
 
         <div class="row">
