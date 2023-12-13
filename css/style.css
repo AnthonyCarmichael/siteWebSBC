@@ -191,7 +191,8 @@ h3 {
 }
 
 #index div {
-    margin: 10px;
+    margin: 5px;
+    padding-top: 5px;
 }
 
 
@@ -220,6 +221,7 @@ h3 {
 
 .imgCaroussel {
     display: none;
+    
 }
 
 .fade {
