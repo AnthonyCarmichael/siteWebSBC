@@ -167,6 +167,62 @@ nav a:hover {
     seffa
 }*/
 
+.caroussel {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+  
+.imgCaroussel {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Inscription **********************************************/
+#inscription fieldset {
+    width:70%;
+    margin:15px auto;
+    background-color: black;
+    padding: 5px;
+}
+
+#inscription legend {
+    font-weight:bold;
+}
+
+#inscription .register input,#inscription .register select {
+    margin: 0px 25px 10px 5px;
+    width: 215px;
+}
+
+#inscription .profil label {
+    min-width: 58px;
+}
+
+#inscription #nom {
+    width:252px;
+}
+
+#inscription .coord label {
+    min-width: 81px;
+}
+
+#inscription .info-cond input,#inscription .info-cond select {
+    width: 165px;
+}
+
+#inscription .register button {
+    width: 80px;
+}
 #infoSBC img{
     width: 100%;
     height: 100%;

@@ -1,5 +1,5 @@
 <?php include_once("inc/header.php"); ?>
-    <h2 class="center">Créer un compte</h1>
+<h2 class="center">Créer un compte</h1>
     
 <form action="traitement.php" method="post" class="register">
 
