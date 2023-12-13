@@ -16,7 +16,7 @@
                             <li><span>Nom: </span><?= $client->get_nom(); ?></li>
                             <li><span>Courriel: </span><?= $client->get_courriel(); ?></li>
                             <li><span>Téléphone: </span><?= $client->get_tel(); ?></li>
-                            <li><span>Nom d'utilisateur: </span><?= $client->get_nomUtilisateur(); ?></li>
+                            <li><span>Nom d'utilisateur: </span><?= $client->get_nom_utilisateur(); ?></li>
                             <li><span>Mot de passe: </span><?= $client->get_mdp(); ?></li>
                         </ul>
                     </li>
