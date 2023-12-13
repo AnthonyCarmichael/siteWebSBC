@@ -88,7 +88,7 @@ const SELECT_SBC_BY_ID = "SELECT id_SBC, sbc.modele, garantie, RAM, longueur, la
     }
 
     public function getSBCById($idSBC) {
-        print_r($idSBC);
+        //print_r($idSBC);
         $query = $this->_bdd->prepare(self::SELECT_SBC_BY_ID);
         $query->execute(array(':id' => $idSBC)); 
         $dbResult = $query->fetch();

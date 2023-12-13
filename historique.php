@@ -4,8 +4,8 @@
     $arrCommande = array();
     $client = unserialize($_SESSION['client']);
     $arrCommande = $commandeManager->getCommandeClient($client->get_id_Client());
-    print_r($client);
-    print_r($arrCommande);
+    //print_r($client);
+    //print_r($arrCommande);
 ?>
 
 
