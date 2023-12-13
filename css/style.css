@@ -35,7 +35,7 @@ main {
     margin: auto;
     max-width: 980px;
     min-height: 80vh;
-    margin-top:  5px;
+    margin-top: 5px;
     background-color: #141444da;
 
 }
@@ -62,18 +62,6 @@ h2 {
 
 h3 {
     color: white;
-}
-
-#index p {
-    color: white;
-}
-
-#index section {
-    display: flex;
-}
-
-#index div {
-    margin: 10px;
 }
 
 .menu-connexion ul {
@@ -192,22 +180,59 @@ h3 {
     seffa
 }*/
 
+/*Page index*/
+
+#index p {
+    color: white;
+}
+
+#index section {
+    display: flex;
+}
+
+#index div {
+    margin: 10px;
+}
+
+
+/*Page infos clients*/
+#infoClient ul {
+    color: white;
+    list-style-type: none;
+}
+
+#infoClient div {
+    display: flex;
+    align-content: center;
+}
+
+#infoClient form {
+    color: white;
+}
+
+/*Caroussel*/
+
 .caroussel {
     max-width: 1000px;
     position: relative;
     margin: auto;
-  }
-  
-  .imgCaroussel {
+}
+
+.imgCaroussel {
     display: none;
-  }
+}
 
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
