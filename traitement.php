@@ -67,14 +67,14 @@ if (isset($_REQUEST['action'])) {
                         Le nom d'utilisateur ou le mot de passe ne correspond.
                     </p>
 
-                    <form action="traitement.php" method="post" class="login">
+                    <form id="seConnecter" action="traitement.php" method="post" class="login">
 
-                        <div class="row">
+                        <div class="flex">
                             <label class="white" for="username">Nom d'utilisateur: </label>
                             <input type="text" name="username" id="username">
-                        </div>
+                            </div>
 
-                        <div class="row">
+                        <div class="flex">
                             <label class="white" for="mdp">Mot de passe: </label>
                             <input type="password" name="mdp" id="mdp">
                         </div>

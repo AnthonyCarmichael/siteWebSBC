@@ -79,6 +79,7 @@
             $arrSBC = array();
             $arrCommande = array();
             $tempIdCommande = 0;
+            $bddResult=array();
       
             while($bddResult = $query->fetch()){  
               //Get l'objet SBC selon son id pour l'ajouter dans la commande. 
@@ -89,6 +90,7 @@
 
                 $commande = $this->getCommandeById($bddResult['id_commande']);
                 //print_r($commande);
+
                 if ($commande->get_id_commande() != $tempIdCommande ) {
                     $commande->set_tabSBC($arrSBC);
                     array_push($arrCommande,$commande);
@@ -96,6 +98,11 @@
                     $tempIdCommande = $bddResult['id_commande'];
                 }
             }
+            //gestion de la derniere commande
+            $commande->set_tabSBC($arrSBC);
+            array_push($arrCommande,$commande);
+            $arrSBC = array();
+           // $tempIdCommande = $bddResult['id_commande'];
             
             //print_r($arrCommande);
             return $arrCommande;
