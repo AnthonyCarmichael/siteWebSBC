@@ -14,7 +14,7 @@
 
     <?php 
         $cpt = sizeof($arrCommande);
-        $arrCommande = array_reverse($arrCommande);
+        //$arrCommande = array_reverse($arrCommande);
         foreach ($arrCommande as $commande) {?>
             <article id = "commande">
                 <aside id="headCommande"> <?php

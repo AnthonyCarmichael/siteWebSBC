@@ -80,29 +80,40 @@
             $arrCommande = array();
             $tempIdCommande = 0;
             $bddResult=array();
-      
+            $sbcManager = new SBCManager($this->_db);
+            $first = true;
+
             while($bddResult = $query->fetch()){  
               //Get l'objet SBC selon son id pour l'ajouter dans la commande. 
-                $sbcManager = new SBCManager($this->_db);
-            
-                $sbc = $sbcManager->getSBCById($bddResult['id_SBC']);
-                array_push($arrSBC, $sbc);
-
-                $commande = $this->getCommandeById($bddResult['id_commande']);
-                //print_r($commande);
-
-                if ($commande->get_id_commande() != $tempIdCommande ) {
+                if ($first == true) {
+                    $tempIdCommande = $bddResult['id_commande'] ;
+                    $commande = $this->getCommandeById($tempIdCommande);
+                    //print_r($commande);
+                    $first = false;
+                }
+                
+                if ($bddResult['id_commande'] != $tempIdCommande ) {
                     $commande->set_tabSBC($arrSBC);
                     array_push($arrCommande,$commande);
                     $arrSBC = array();
                     $tempIdCommande = $bddResult['id_commande'];
+                    $commande = $this->getCommandeById($tempIdCommande);
+                    $sbc = $sbcManager->getSBCById($bddResult['id_SBC']);
+                    array_push($arrSBC, $sbc);
                 }
+                else
+                {
+                    $sbc = $sbcManager->getSBCById($bddResult['id_SBC']);
+                    array_push($arrSBC, $sbc);
+                }
+
             }
             //gestion de la derniere commande
+            
             $commande->set_tabSBC($arrSBC);
             array_push($arrCommande,$commande);
             $arrSBC = array();
-           // $tempIdCommande = $bddResult['id_commande'];
+            //$tempIdCommande = $bddResult['id_commande'];
             
             //print_r($arrCommande);
             return $arrCommande;
