@@ -279,3 +279,51 @@ nav a:hover {
     background-color: var(--rose);
     transition: 1s;
 }
+
+/* Suggestion SBC **********************************************/
+
+#suggestionSBC h2{
+    padding: 15px;
+}
+
+#suggestionSBC form{
+    width: 95%;
+    margin: auto;
+}
+
+#suggestionSBC fieldset{
+    background-color: var(--turquoise);
+}
+
+#suggestionSBC fieldset>div{
+    padding: 2%;
+}
+
+#suggestionSBC div>div{
+    margin: 2%;
+}
+
+#suggestionSBC legend{
+    color: white;
+    font-size: xx-large;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+#suggestionSBC input{
+    border-radius: 3px;
+    height: 25px;
+}
+
+#suggestionSBC input[class*='suggestion-'] {
+    margin: auto;
+    margin-top: 15px;
+}
+
+#suggestionSBC .suggestion-annuler{
+    background-color: var(--darkPink);
+}
+
+#suggestionSBC .suggestion-envoyer{
+    background-color: var(--paleBlue);
+}

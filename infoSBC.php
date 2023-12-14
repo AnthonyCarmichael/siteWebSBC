@@ -50,25 +50,25 @@
             }
             }else{?>
                 <section class="flex wrap">
-                <?php foreach($SBCs as $SBC){?>
-                    <article class="col-4">
-                        <div>                
-                            <a href="img/<?=$SBC->get_modeleSBC();?>.jpg"><img src="img/<?=$SBC->get_modeleSBC();?>.jpg" alt="<?=$SBC->get_modeleSBC();?>.jpg"></a>
-                        </div>
-        
-                        <div>
-                            <p><?=$SBC->get_marqueSBC(). ' ' .$SBC->get_modeleSBC(). ' ' .$SBC->get_RAM() . ' Go ' . $SBC->get_longueur() . ' par '. $SBC->get_largeur() . ' mm';?></p>
-                            <p>Processeur <?=$SBC->get_marqueProcesseur(). ' ' . $SBC->get_modeleProcesseur() . ' ' . $SBC->get_nbCoeur();?> Coeurs</p>
-                            <p>Prix: <?=$SBC->get_prix();?>$</p>
-                            <p><?php $annees = 0; $jours = $SBC->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
-                        </div>
-        
-                        <a class="ajout" href="addPanier.php?id=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
-                        <a class="ajout" href="addSouhait.php?id=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
-                    </article>
-                <?php }?> 
+                    <?php foreach($SBCs as $SBC){?>
+                        <article class="col-4">
+                            <div>                
+                                <a href="img/<?=$SBC->get_modeleSBC();?>.jpg"><img src="img/<?=$SBC->get_modeleSBC();?>.jpg" alt="<?=$SBC->get_modeleSBC();?>.jpg"></a>
+                            </div>
+            
+                            <div>
+                                <p><?=$SBC->get_marqueSBC(). ' ' .$SBC->get_modeleSBC(). ' ' .$SBC->get_RAM() . ' Go ' . $SBC->get_longueur() . ' par '. $SBC->get_largeur() . ' mm';?></p>
+                                <p>Processeur <?=$SBC->get_marqueProcesseur(). ' ' . $SBC->get_modeleProcesseur() . ' ' . $SBC->get_nbCoeur();?> Coeurs</p>
+                                <p>Prix: <?=$SBC->get_prix();?>$</p>
+                                <p><?php $annees = 0; $jours = $SBC->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
+                            </div>
+            
+                            <a class="ajout" href="addPanier.php?id=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
+                            <a class="ajout" href="addSouhait.php?id=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
+                        </article>
+                    <?php }?> 
+                </section>
             <?php }?>
-        </section>
 
 <?php include_once('inc/footer.php'); ?>
 
