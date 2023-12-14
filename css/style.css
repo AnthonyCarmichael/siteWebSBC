@@ -314,17 +314,17 @@ nav a:hover {
 
 /* Connexion **********************************************/
 
-#connexion form {
+#seConnecter {
     padding-top: 50px;
     width: 400px;
     margin: auto;
 }
 
-#connexion input {
+#seConnecter input {
     width: 250px;
 }
 
-#connexion form div {
+#seConnecter div {
     justify-content: space-between;
     margin-bottom: 10px;
 }

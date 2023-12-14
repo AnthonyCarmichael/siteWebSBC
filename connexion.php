@@ -2,7 +2,7 @@
 
 <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour acheter un de nos SBC</h1>
 
-<form action="traitement.php" method="post" class="login">
+<form id="seConnecter" action="traitement.php" method="post" class="login">
 
     <div class="flex">
         <label class="white" for="username">Nom d'utilisateur: </label>

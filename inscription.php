@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <label class="white" for="courriel">Courriel: </label>
-            <input type="email" name="courriel" id="courriel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="adresse@domaine." required>
+            <input type="email" name="courriel" id="courriel" placeholder="adresse@domaine." required> <!-- pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" -->
 
             <label class="white" for="tel">Téléphone: </label> 
             <input type="tel" name="tel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="666-666-6666" required> <!-- Peut-être le gèrer en JS si on a le temps -->
@@ -24,7 +24,7 @@
 
         <div class="row">
             <label class="white" for="nom">Nom d'utilisateur: </label>
-            <input type="text" name="nomUtilisateur" id="username" required>
+            <input type="text" name="nom_utilisateur" id="username" required>
         </div>
 
         <div class="row">

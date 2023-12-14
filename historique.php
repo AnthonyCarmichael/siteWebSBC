@@ -14,7 +14,7 @@
 
     <?php 
         $cpt = sizeof($arrCommande);
-        $arrCommande = array_reverse($arrCommande);
+        //$arrCommande = array_reverse($arrCommande);
         foreach ($arrCommande as $commande) {?>
             <article id = "commande">
                 <aside id="headCommande"> <?php
@@ -39,13 +39,14 @@
                         <p class="white"><?php echo $commande->get_date_commande();?></p>
                         <p class="white"><?php echo $commande->get_date_commande();?></p>
                         <p class="white"><?php echo $commande->get_date_commande();?></p>
-                        <p class="white"><?php echo $commande->get_date_commande();?></p>
+                        <p class="white"><?php echo $commande->get_id_commande();?></p>
                     </div>
 
                 </aside>
                 <?php 
                 $tabSBC = $commande->get_tabSBC();
-                print_r($tabSBC);
+                //print_r($tabSBC);
+                echo '<br><br><br>';
                 foreach ($tabSBC as $sbc) {
                     ?> <img src=<?php echo "img/".$sbc->get_modele().".jpg";?> alt=<?php echo $sbc->get_modele();?>>
                     <?php
