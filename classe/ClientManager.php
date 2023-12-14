@@ -107,13 +107,13 @@ class ClientManager
 
   private function addVille($clientObj)
   { // À TESTER
-    $idVille = $this->villeExiste($clientObj->get_id_ville());
+    $idVille = $this->villeExiste($clientObj->get_ville());
 
     if ($idVille)
       return $idVille;
     else {
       $query = $this->_db->prepare(self::INSERT_VILLE);
-      assert($query->execute(array(':nomVille' => $clientObj->get_id_ville())), 'L\'adresse n\'a pas pu être insérée dans la table "tblAdresse".');
+      assert($query->execute(array(':nomVille' => $clientObj->get_ville())), 'L\'adresse n\'a pas pu être insérée dans la table "tblAdresse".');
 
       return $this->_db->lastInsertId();
     }
