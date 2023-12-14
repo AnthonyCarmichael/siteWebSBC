@@ -23,6 +23,48 @@
                 <?= $client->get_prenom() . " " . $client->get_nom(); ?>
                 </h1>
                 <?php
+        }
+        elseif ($_REQUEST['action'] == "connexion") 
+        {
+            if (isset($_SESSION['client'])) 
+            {?>
+                <?php $client = unserialize($_SESSION['client']); ?>
+                <h2 class="center">Bienvenue
+                    <?= $client->get_prenom() . " " . $client->get_nom(); ?>
+                    </h1>
+                <?php
+            } 
+            else 
+            {
+            ?>
+                <section id="connexion">
+
+                    <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour accéder aux fonctionnalités</h2>
+                    <p class="white center">
+                        Le nom d'utilisateur ou le mot de passe ne correspond.
+                    </p>
+
+                    <form action="traitement.php" method="post" class="login">
+
+                        <div class="row">
+                            <label class="white" for="username">Nom d'utilisateur: </label>
+                            <input type="text" name="username" id="username">
+                        </div>
+
+                        <div class="row">
+                            <label class="white" for="mdp">Mot de passe: </label>
+                            <input type="password" name="mdp" id="mdp">
+                        </div>
+
+                        <input type="hidden" name="action" value="connexion">
+
+                        <div class="row">
+                            <button type="submit">Se connecter</button>
+                        </div>
+                    </form>
+                </section>
+                <?php
+            }
         } elseif ($_REQUEST['action'] == "suggestion") { 
             $SBCObj = new SBC($_REQUEST);
 
@@ -98,37 +140,10 @@
                 echo "Produit inexistant";
             $panier->add($SBC[0]);
             echo 'Le produit a été ajouté à votre panier. <a href="javascript:history.back()">Retourner sur le catalogue</a>';
-        } else {
-            ?>
-                <section id="connexion">
-
-                    <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour accéder aux fonctionnalités</h2>
-                    <p class="white center">
-                        Le nom d'utilisateur ou le mot de passe ne correspond.
-                    </p>
-
-                    <form action="traitement.php" method="post" class="login">
-
-                        <div class="row">
-                            <label class="white" for="username">Nom d'utilisateur: </label>
-                            <input type="text" name="username" id="username">
-                        </div>
-
-                        <div class="row">
-                            <label class="white" for="mdp">Mot de passe: </label>
-                            <input type="password" name="mdp" id="mdp">
-                        </div>
-
-                        <input type="hidden" name="action" value="connexion">
-
-                        <div class="row">
-                            <button type="submit">Se connecter</button>
-                        </div>
-                    </form>
-                </section>
-                <?php
+        
+        
         }
-    } 
 
+    } 
     include_once("inc/footer.php"); 
 ?>
