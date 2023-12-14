@@ -180,13 +180,14 @@ nav a:hover {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-/* SPÉCIFIQUE À LA PAGE ****************************************************************/
+/* SPÉCIFIQUE À LA PAGE **********************************************/ 
 
 
-/* Comparaison**********************************************/
+/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/ 
 /*p[class*='prix-'] {
     seffa
 }*/
+/* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
 
 /*Page index*/
 
@@ -342,7 +343,7 @@ nav a:hover {
 #infoSBC form {
     width: 95%;
     margin: auto;
-    margin-top: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -383,18 +384,50 @@ nav a:hover {
     transition: 1s;
 }
 
-/* Historique **********************************************/
+/* Suggestion SBC **********************************************/
 
-#historique aside {
-    background-color: #1c0620;
-    margin: 10px;
+#suggestionSBC h2{
+    padding: 15px;
 }
 
-#historique div {
-
-    justify-content: space-between;
+#suggestionSBC form{
+    width: 95%;
+    margin: auto;
 }
-#historique div p {
 
-    width: 20%;
+#suggestionSBC fieldset{
+    background-color: var(--turquoise);
+}
+
+#suggestionSBC fieldset>div{
+    padding: 2%;
+}
+
+#suggestionSBC div>div{
+    margin: 2%;
+}
+
+#suggestionSBC legend{
+    color: white;
+    font-size: xx-large;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+#suggestionSBC input{
+    border-radius: 3px;
+    height: 25px;
+}
+
+#suggestionSBC input[class*='suggestion-'] {
+    margin: auto;
+    margin-top: 15px;
+}
+
+#suggestionSBC .suggestion-annuler{
+    background-color: var(--darkPink);
+}
+
+#suggestionSBC .suggestion-envoyer{
+    background-color: var(--paleBlue);
 }
