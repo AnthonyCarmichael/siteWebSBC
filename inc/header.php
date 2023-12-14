@@ -55,18 +55,21 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
 
             <!-- Si le client est connecter, d'autre lien s'affiche -->
             <!-- Le if est en commentaire pour tester le css même si y'a pas de client connecter -->
-            <?php //if(isset($_SESSION['client'])){ ?>
+            <?php if(isset($_SESSION['client'])){ ?>
             <ul class="flex"> 
                 <li><a href="infoClient.php">Gestion de compte</a></li>
                 <li><a href="wishList.php">Liste de souhait</a></li>
                 <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
             </ul>
-            <?php // }  ?>
+            <?php  }  ?>
         </nav>
     </header>
     <?php 
         // Chaque main a un id correspondant a son nom de page
         $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+        if ($page == null) {
+            $page = "index";
+        }
     ?>
     <main id="<?= $page?>">
 

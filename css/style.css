@@ -35,7 +35,7 @@ main {
     margin: auto;
     max-width: 980px;
     min-height: 80vh;
-    margin-top:  5px;
+    margin-top: 5px;
     background-color: #141444da;
 
 }
@@ -62,18 +62,6 @@ h2 {
 
 h3 {
     color: white;
-}
-
-#index p {
-    color: white;
-}
-
-#index section {
-    display: flex;
-}
-
-#index div {
-    margin: 10px;
 }
 
 .menu-connexion ul {
@@ -124,8 +112,9 @@ nav a:hover {
 
 /* CLASS *************************************************************/
 .white {
-    color:white;
+    color: white;
 }
+
 .center {
     text-align: center;
 }
@@ -138,12 +127,44 @@ nav a:hover {
     display: flex;
 }
 
+
 .wrap {
     flex-wrap: wrap;
 }
 
 .end {
     text-align: end;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bouton {
+    background-color: #370d43;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    /*height: 15px;*/
+    /*margin-left: 20px;*/
+    padding: 5px;
+    text-align: center;
+}
+
+.bouton:hover {
+    background-color: var(--rose);
+    transition: 1s;
+}
+
+.modif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    /*width: 40%;*/
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.387);
 }
 
 .col-1 {width: 8.33%;}
@@ -168,39 +189,98 @@ nav a:hover {
 }*/
 /* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
 
+/*Page index*/
+
+#index p {
+    color: white;
+}
+
+#index section {
+    display: flex;
+}
+
+#index div {
+    margin: 5px;
+    padding-top: 5px;
+}
+
+
+/*Page infos clients*/
+#infoClient section {
+    color: white;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+#infoClient div {
+    margin: 10px;
+    /*width: 40%;*/
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.387);
+}
+
+#infoClient form {
+    color: white;
+}
+
+#infoClient label {
+    width: 100%;
+}
+
+#infoClient button {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
+}
+
+/*Caroussel*/
+
 .caroussel {
     max-width: 1000px;
     position: relative;
     margin: auto;
 }
-  
+
 .imgCaroussel {
     display: none;
+
 }
 
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-  
+
 @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 /* Inscription **********************************************/
 #inscription fieldset {
-    width:70%;
-    margin:15px auto;
-    background-color: black;
+    width: 70%;
+    margin: 15px auto;
+    background-color: rgba(0, 0, 0, 0.387);
     padding: 5px;
+    border: none;
 }
 
 #inscription legend {
-    font-weight:bold;
+    font-weight: bold;
 }
 
-#inscription .register input,#inscription .register select {
+#inscription .register input,
+#inscription .register select {
     margin: 0px 25px 10px 5px;
     width: 215px;
 }
@@ -210,60 +290,84 @@ nav a:hover {
 }
 
 #inscription #nom {
-    width:252px;
+    width: 252px;
 }
 
 #inscription .coord label {
     min-width: 81px;
 }
 
-#inscription .info-cond input,#inscription .info-cond select {
+#inscription .info-cond input,
+#inscription .info-cond select {
     width: 165px;
 }
 
 #inscription .register button {
     width: 80px;
+
+}
+
+#inscription .remise {
+    width: 70%;
+    margin: auto;
+}
+
+/* Connexion **********************************************/
+
+#connexion form {
+    padding-top: 50px;
+    width: 400px;
+    margin: auto;
+}
+
+#connexion input {
+    width: 250px;
+}
+
+#connexion form div {
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 /* Info SBC **********************************************/
 
-#infoSBC img{
+#infoSBC img {
     width: 100%;
     height: 100%;
 }
 
-#infoSBC h2{
+#infoSBC h2 {
     margin-bottom: 20px;
 }
 
-#infoSBC form{
+#infoSBC form {
     width: 95%;
     margin: auto;
     padding-top: 20px;
     margin-bottom: 20px;
 }
 
-#infoSBC input{
+#infoSBC input {
     height: 35px;
     border-radius: 5px;
     margin: auto;
 }
 
-#infoSBC article div:first-of-type{
+#infoSBC article div:first-of-type {
     width: 80%;
     height: 50%;
     margin: auto;
     margin-bottom: 15px;
 }
 
-#infoSBC article div:last-of-type{
+#infoSBC article div:last-of-type {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
     color: var(--paleBlue);
 }
 
-#infoSBC .ajout{
+#infoSBC .ajout {
     background-color: var(--turquoise);
     border-radius: 2px;
     text-decoration: none;
@@ -273,13 +377,14 @@ nav a:hover {
     width: 5px;
     padding: 5px;
     text-align: center;
-} 
+}
 
-#infoSBC .ajout:hover{
+#infoSBC .ajout:hover {
     background-color: var(--rose);
     transition: 1s;
 }
 
+<<<<<<< HEAD
 /* Suggestion SBC **********************************************/
 
 #suggestionSBC h2{
@@ -327,3 +432,25 @@ nav a:hover {
 #suggestionSBC .suggestion-envoyer{
     background-color: var(--paleBlue);
 }
+=======
+/* Historique **********************************************/
+
+#historique aside {
+    background-color: #1c0620;
+    margin: 10px;
+}
+
+#historique div {
+
+    justify-content: space-between;
+}
+
+#historique div p {
+
+    width: 20%;
+}
+
+#historique img {
+    width: 100px;
+}
+>>>>>>> 7559560d81bc27f731756009762ba9f645c546c6

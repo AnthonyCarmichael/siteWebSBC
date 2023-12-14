@@ -108,9 +108,9 @@ class SBCManager
     }
 
     public function getSBCById($idSBC) {
-        
+        //print_r($idSBC);
         $query = $this->_bdd->prepare(self::SELECT_SBC_BY_ID);
-        $query->execute(array(':idSBC' => $idSBC)); 
+        $query->execute(array(':id' => $idSBC)); 
         $dbResult = $query->fetch();
         assert(!empty($dbResult), 'Le ou les identifiant(s) fourni(s) n\'a pas ou n\'ont pas été trouvé(s) dans la base de données.');
 

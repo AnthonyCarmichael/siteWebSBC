@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
     $page = "traitement";
     include_once("inc/header.php");
@@ -15,64 +16,98 @@
             $client = new Client($_REQUEST);
             print_r($client);
             $cm->addClient($client);
+=======
+<?php include_once("inc/header.php"); ?>
+<?php
+if (isset($_REQUEST['action'])) {
+    if ($_REQUEST['action'] == "inscription") {
+        $cm = new ClientManager($bdd);
+        $client = new Client($_REQUEST);
+        print_r($client);
+        $cm->addClient($client);
+        ?>
+        <section class="white">
+            <ul class="traitement">
+                <li>Profil
+                    <ul>
+                        <li><span>Prénom: </span>
+                            <?= $client->get_prenom(); ?>
+                        </li>
+                        <li><span>Nom: </span>
+                            <?= $client->get_nom(); ?>
+                        </li>
+                        <li><span>Courriel: </span>
+                            <?= $client->get_courriel(); ?>
+                        </li>
+                        <li><span>Téléphone: </span>
+                            <?= $client->get_tel(); ?>
+                        </li>
+                        <li><span>Nom d'utilisateur: </span>
+                            <?= $client->get_nom_utilisateur(); ?>
+                        </li>
+                        <li><span>Mot de passe: </span>
+                            <?= $client->get_mdp(); ?>
+                        </li>
+                    </ul>
+                </li>
+                <li>Coordonnées
+                    <ul>
+                        <li><span>Pays: </span>
+                            <?= $client->get_pays(); ?>
+                        </li>
+                        <li><span>Adresse: </span>
+                            <?= $client->get_adresse(); ?>
+                        </li>
+                        <li><span>Ville: </span>
+                            <?= $client->get_ville(); ?>
+                        </li>
+                        <li><span>Province: </span>
+                            <?= $client->get_province(); ?>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <?php
+    } elseif ($_REQUEST['action'] == "connexion") {
+        if (isset($_SESSION['client'])) {
+>>>>>>> 7559560d81bc27f731756009762ba9f645c546c6
             ?>
-            <section class="white">
-                <ul class="traitement">
-                    <li>Profil
-                        <ul>
-                            <li><span>Prénom: </span><?= $client->get_prenom(); ?></li>
-                            <li><span>Nom: </span><?= $client->get_nom(); ?></li>
-                            <li><span>Courriel: </span><?= $client->get_courriel(); ?></li>
-                            <li><span>Téléphone: </span><?= $client->get_tel(); ?></li>
-                            <li><span>Nom d'utilisateur: </span><?= $client->get_nomUtilisateur(); ?></li>
-                            <li><span>Mot de passe: </span><?= $client->get_mdp(); ?></li>
-                        </ul>
-                    </li>
-                    <li>Coordonnées
-                        <ul>
-                            <li><span>Pays: </span><?= $client->get_pays(); ?></li>
-                            <li><span>Adresse: </span><?= $client->get_adresse(); ?></li>
-                            <li><span>Ville: </span><?= $client->get_ville(); ?></li>
-                            <li><span>Province: </span><?= $client->get_province(); ?></li>
-                        </ul>
-                    </li>
-                </ul>
-            </section><?php 
-        } 
-        elseif ($_REQUEST['action'] == "connexion")
-        { 
-            if (isset($_SESSION['client'])) {
-                ?>
-                <?php $client = unserialize($_SESSION['client']);?>
-                <h2 class="center">Bienvenue <?= $client->get_prenom() . " " . $client->get_nom(); ?> </h1>
-                <?php 
-            }
-            else {
-                ?>
-                <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour accéder aux fonctionnalités</h2>
-                <p class="white center">
-                    Le nom d'utilisateur ou le mot de passe ne correspond.
-                </p>
+            <?php $client = unserialize($_SESSION['client']); ?>
+            <h2 class="center">Bienvenue
+                <?= $client->get_prenom() . " " . $client->get_nom(); ?>
+                </h1>
+                <?php
+        } else {
+            ?>
+                <section id="connexion">
 
-                <form action="traitement.php" method="post" class="login">
+                    <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour accéder aux fonctionnalités</h2>
+                    <p class="white center">
+                        Le nom d'utilisateur ou le mot de passe ne correspond.
+                    </p>
 
-                    <div class="row">
-                        <label class="white" for="username">Nom d'utilisateur: </label>
-                        <input type="text" name="username" id="username">
+                    <form action="traitement.php" method="post" class="login">
+
+                        <div class="row">
+                            <label class="white" for="username">Nom d'utilisateur: </label>
+                            <input type="text" name="username" id="username">
                         </div>
 
-                    <div class="row">
-                        <label class="white" for="mdp">Mot de passe: </label>
-                        <input type="password" name="mdp" id="mdp">
-                    </div>
+                        <div class="row">
+                            <label class="white" for="mdp">Mot de passe: </label>
+                            <input type="password" name="mdp" id="mdp">
+                        </div>
 
-                    <input type="hidden" name="action" value="connexion">
+                        <input type="hidden" name="action" value="connexion">
 
-                    <div class="row">
-                        <button type="submit">Se connecter</button>
-                    </div>
-                </form>
+                        <div class="row">
+                            <button type="submit">Se connecter</button>
+                        </div>
+                    </form>
+                </section>
                 <?php
+<<<<<<< HEAD
             }
         }
         elseif ($_REQUEST['action'] == "suggestion")
@@ -89,7 +124,54 @@
 
                 //mail($destinataire, $sujet, $message, $hote);
             }
+=======
+>>>>>>> 7559560d81bc27f731756009762ba9f645c546c6
         }
-    } ?>
 
-<?php include_once("inc/footer.php"); ?>
+
+    } elseif ($_REQUEST['action'] == "changementInfoPerso") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_prenom($_REQUEST['prenom']);
+        $client->set_nom($_REQUEST['nom']);
+
+
+        $cm->modifInfoPerso($client->get_id_client(), $_REQUEST['prenom'], $_REQUEST['nom']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementInfoContact") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_courriel($_REQUEST['courriel']);
+        $client->set_tel($_REQUEST['tel']);
+
+
+        $cm->modifInfoContact($client->get_id_client(), $_REQUEST['courriel'], $_REQUEST['tel']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementInfoConnexion") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_nom_utilisateur($_REQUEST['nom_utilisateur']);
+        $client->set_mdp($_REQUEST['mdp']);
+
+
+        $cm->modifInfoConnexion($client->get_id_client(), $_REQUEST['nom_utilisateur'], $_REQUEST['mdp']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "changementAdresse") {
+        $cm = new ClientManager($bdd);
+
+        $client = unserialize($_SESSION['client']);
+        $client->set_adresse($_REQUEST['adresse']);
+        $client->set_ville($_REQUEST['ville']);
+        $client->set_province($_REQUEST['province']);
+        $client->set_pays($_REQUEST['pays']);
+
+
+        $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
+        $_SESSION['client'] = serialize($client);
+    }
+} ?>
+
+    <?php include_once("inc/footer.php"); ?>

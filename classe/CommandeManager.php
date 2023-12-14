@@ -88,7 +88,7 @@
                 array_push($arrSBC, $sbc);
 
                 $commande = $this->getCommandeById($bddResult['id_commande']);
-               // print_r($commande);
+                //print_r($commande);
                 if ($commande->get_id_commande() != $tempIdCommande ) {
                     $commande->set_tabSBC($arrSBC);
                     array_push($arrCommande,$commande);
