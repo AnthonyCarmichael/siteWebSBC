@@ -79,7 +79,17 @@
             $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
             $_SESSION['client'] = serialize($client);
         } elseif(isset($_REQUEST['idSouhait'])) {
-            setcookie('favoris', $_GET['idSouhait']);
+            if(isset($_COOKIE['favoris'])){
+                $tab = array(
+                    $_COOKIE['favoris']
+                );
+
+                array_push($tab, $_REQUEST['idSouhait']);
+
+                $_COOKIE['favoris'] = $tab;
+            } else {
+                setcookie('favoris', $_GET['idSouhait']);
+            }
             
             echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur le catalogue</a> ';
         } elseif(isset($_REQUEST['idPanier'])) {
