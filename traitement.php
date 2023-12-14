@@ -1,12 +1,14 @@
 <?php 
-    $page = "traitement";
-    include_once("inc/header.php");
     include_once("inc/header.php");
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';
     require_once './classe/panier.php';
+
     $bdd = PDOFactory::getMySQLConnection();
     $SBCManager = new SBCManager($bdd); 
+
+    $SBCs = $SBCManager->getSBCs();
+    $panier = new panier();
 
     if(isset($_REQUEST['action'])) 
     {
@@ -21,9 +23,7 @@
                 <?= $client->get_prenom() . " " . $client->get_nom(); ?>
                 </h1>
                 <?php
-        }     
-        elseif ($_REQUEST['action'] == "suggestion")
-        { 
+        } elseif ($_REQUEST['action'] == "suggestion") { 
             $SBCObj = new SBC($_REQUEST);
 
             if($SBCManager->addSBC($SBCObj)){
@@ -36,7 +36,7 @@
 
                 //mail($destinataire, $sujet, $message, $hote);
             }
-        }elseif ($_REQUEST['action'] == "changementInfoPerso") {
+        } elseif ($_REQUEST['action'] == "changementInfoPerso") {
             $cm = new ClientManager($bdd);
 
             $client = unserialize($_SESSION['client']);
@@ -78,6 +78,16 @@
 
             $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
             $_SESSION['client'] = serialize($client);
+        } elseif(isset($_REQUEST['idSouhait'])) {
+            setcookie('favoris', $_GET['idSouhait']);
+            
+            echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur le catalogue</a> ';
+        } elseif(isset($_REQUEST['idPanier'])) {
+            $SBC = $SBCManager->getSBCId($_GET['idPanier']);
+            if(empty($SBC))
+                echo "Produit inexistant";
+            $panier->add($SBC[0]);
+            echo 'Le produit a été ajouté à votre panier. <a href="javascript:history.back()">Retourner sur le catalogue</a>';
         } else {
             ?>
                 <section id="connexion">
@@ -107,7 +117,8 @@
                     </form>
                 </section>
                 <?php
-            }
-} ?>
+        }
+    } 
 
-    <?php include_once("inc/footer.php"); ?>
+    include_once("inc/footer.php"); 
+?>

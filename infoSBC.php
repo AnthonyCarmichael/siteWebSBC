@@ -1,9 +1,11 @@
 <?php 
-    $page = "infoSBC";
+    setcookie('favoris', '0', time()+3600*24);
+  
     include_once("inc/header.php");
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';
     require_once './classe/panier.php';
+
     $bdd = PDOFactory::getMySQLConnection();
     $SBCManager = new SBCManager($bdd);
 
@@ -41,8 +43,8 @@
                                     <p><?php $annees = 0; $jours = $SBCObj->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
                                 </div>
                 
-                                <a class="ajout" href="addPanier.php?id=<?=$SBCObj->get_id_SBC();?>">Ajouter au panier</a>
-                                <a class="ajout" href="addSouhait.php?id=<?=$SBCObj->get_id_SBC();?>">Ajouter aux favoris</a>
+                                <a class="ajout" href="traitement.php?idPanier=<?=$SBCObj->get_id_SBC();?>">Ajouter au panier</a>
+                                <a class="ajout" href="traitement.php?idSouhait=<?=$SBCObj->get_id_SBC();?>">Ajouter aux favoris</a>
                             </article>
                         <?php }?>
                     </section>
@@ -63,8 +65,8 @@
                                 <p><?php $annees = 0; $jours = $SBC->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
                             </div>
             
-                            <a class="ajout" href="addPanier.php?id=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
-                            <a class="ajout" href="addSouhait.php?id=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
+                            <a class="ajout" href="traitement.php?idPanier=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
+                            <a class="ajout" href="traitement.php?idSouhait=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
                         </article>
                     <?php }?> 
                 </section>
