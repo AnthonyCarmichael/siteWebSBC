@@ -107,7 +107,6 @@ if (isset($_REQUEST['action'])) {
                     </form>
                 </section>
                 <?php
-<<<<<<< HEAD
             }
         }
         elseif ($_REQUEST['action'] == "suggestion")
@@ -124,8 +123,6 @@ if (isset($_REQUEST['action'])) {
 
                 //mail($destinataire, $sujet, $message, $hote);
             }
-=======
->>>>>>> 7559560d81bc27f731756009762ba9f645c546c6
         }
 
 

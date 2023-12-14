@@ -384,7 +384,6 @@ nav a:hover {
     transition: 1s;
 }
 
-<<<<<<< HEAD
 /* Suggestion SBC **********************************************/
 
 #suggestionSBC h2{
@@ -432,25 +431,3 @@ nav a:hover {
 #suggestionSBC .suggestion-envoyer{
     background-color: var(--paleBlue);
 }
-=======
-/* Historique **********************************************/
-
-#historique aside {
-    background-color: #1c0620;
-    margin: 10px;
-}
-
-#historique div {
-
-    justify-content: space-between;
-}
-
-#historique div p {
-
-    width: 20%;
-}
-
-#historique img {
-    width: 100px;
-}
->>>>>>> 7559560d81bc27f731756009762ba9f645c546c6
