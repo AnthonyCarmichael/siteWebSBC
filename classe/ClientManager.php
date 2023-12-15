@@ -184,11 +184,12 @@ class ClientManager
     $query->execute($loginArray);
   }
 
-  public function modifInfoContact(string $courriel, string $tel)
+  public function modifInfoContact(int $id_client, string $courriel, string $tel)
   {
     $query = $this->_db->prepare(self::MODIF_INFO_CONTACT);
 
     $loginArray = array(
+      ':id_client' => $id_client,
       ':courriel' => $courriel,
       ':tel' => $tel
     );
@@ -196,11 +197,12 @@ class ClientManager
     $query->execute($loginArray);
   }
 
-  public function modifInfoConnexion(string $user, string $mdp)
+  public function modifInfoConnexion(int $id_client, string $user, string $mdp)
   {
     $query = $this->_db->prepare(self::MODIF_INFO_CONNEXION);
 
     $loginArray = array(
+      ':id_client' => $id_client,
       ':nom_utilisateur' => $user,
       ':mdp' => $mdp
     );
@@ -208,15 +210,16 @@ class ClientManager
     $query->execute($loginArray);
   }
 
-  public function modifAdresse(string $adresse, string $ville, string $province, string $pays)
+  public function modifAdresse(Client $client, int $id_client, string $adresse, string $ville, string $province, string $pays)
   {
     $query = $this->_db->prepare(self::MODIF_ADRESSE);
 
     $loginArray = array(
+      ':id_client' => $id_client,
       ':adresse' => $adresse,
-      ':id_ville' => $this->addVille($ville),
-      ':id_province' => $this->addProvince($province),
-      ':id_pays' => $this->addPays($pays)
+      ':id_ville' => $this->addVille($client),
+      ':id_province' => $this->addProvince($client),
+      ':id_pays' => $this->addPays($client)
     );
 
     $query->execute($loginArray);

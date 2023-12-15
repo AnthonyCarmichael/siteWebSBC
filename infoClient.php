@@ -3,58 +3,68 @@
 $client = unserialize($_SESSION['client']);
 if (isset($_REQUEST['action'])) {
     if ($_REQUEST['action'] == "modificationInfoPerso") { ?>
-        <form action="traitement.php" method="post" class="register">
-            <label for="prenom">Prénom: </label>
-            <input type="text" name="prenom" id="prenom" required>
-
-            <label for="nom">Nom: </label>
-            <input type="text" name="nom" id="nom" required>
-
-            <input type="hidden" name="action" value="changementInfoPerso">
-            <button type="submit" class="bouton">Confirmer les modifications</button>
-        </form>
-    <?php } else if ($_REQUEST['action'] == "modificationContact") { ?>
-            <form action="traitement.php" method="post" class="register">
-                <label for="courriel">Courriel: </label>
-                <input type="email" name="courriel" id="courriel" required>
-
-                <label for="tel">Téléphone: </label>
-                <input type="tel" name="tel" id="tel" required>
-
-                <input type="hidden" name="action" value="changementInfoContact">
-                <button type="submit" class="bouton">Confirmer les modifications</button>
+        <section class="center">
+            <form action="traitement.php" method="post" class="modif center">
+                
+                    <label for="prenom">Prénom: </label>
+                    <input type="text" name="prenom" id="prenom" required>
+                
+                    <label for="nom">Nom: </label>
+                    <input type="text" name="nom" id="nom" required>
+    
+                    <input type="hidden" name="action" value="changementInfoPerso">
+                    <button type="submit" class="bouton">Confirmer les modifications</button>
             </form>
-    <?php } else if ($_REQUEST['action'] == "modificationConnexion") { ?>
-                <form action="traitement.php" method="post" class="register">
-                    <label for="nom_utilisateur">Nom d'utilisateur: </label>
-                    <input type="nom_utilisateur" name="nom_utilisateur" id="nom_utilisateur" required>
+        </section>
+    <?php } else if ($_REQUEST['action'] == "modificationContact") { ?>
+            <section class="center">
+                <form action="traitement.php" method="post" class="modif center">
+                    <label for="courriel">Courriel: </label>
+                    <input type="email" name="courriel" id="courriel" required>
 
-                    <label for="mdp">Mot de passe: </label>
-                    <input type="password" name="mdp" id="mdp" required>
+                    <label for="tel">Téléphone: </label>
+                    <input type="tel" name="tel" id="tel" required>
 
-                    <input type="hidden" name="action" value="changementInfoConexion">
+                    <input type="hidden" name="action" value="changementInfoContact">
                     <button type="submit" class="bouton">Confirmer les modifications</button>
                 </form>
-    <?php } else if ($_REQUEST['action'] == "modificationAdresse") { ?>
-                    <form action="traitement.php" method="post" class="register">
-                        <label for="adresse">Adresse: </label>
-                        <input type="text" name="adresse" id="adresse" required>
+            </section>
+    <?php } else if ($_REQUEST['action'] == "modificationConnexion") { ?>
+                <section class="center">
+                    <form action="traitement.php" method="post" class="modif center">
 
-                        <label for="ville">Ville: </label>
-                        <input type="text" name="ville" id="ville" required>
+                        <label for="nom_utilisateur">Nom d'utilisateur: </label>
+                        <input type="nom_utilisateur" name="nom_utilisateur" id="nom_utilisateur" required>
 
-                        <label for="province">Province: </label>
-                        <input type="text" name="province" id="province" required>
+                        <label for="mdp">Mot de passe: </label>
+                        <input type="password" name="mdp" id="mdp" required>
 
-                        <label for="pays">Pays: </label>
-                        <input type="text" name="pays" id="pays" required>
-
-                        <input type="hidden" name="action" value="changementAdresse">
+                        <input type="hidden" name="action" value="changementInfoConnexion">
                         <button type="submit" class="bouton">Confirmer les modifications</button>
                     </form>
+                </section>
+    <?php } else if ($_REQUEST['action'] == "modificationAdresse") { ?>
+                    <section class="center">
+                        <form action="traitement.php" method="post" class="modif center">
+                            <label for="adresse">Adresse: </label>
+                            <input type="text" name="adresse" id="adresse" required>
+
+                            <label for="ville">Ville: </label>
+                            <input type="text" name="ville" id="ville" required>
+
+                            <label for="province">Province: </label>
+                            <input type="text" name="province" id="province" required>
+
+                            <label for="pays">Pays: </label>
+                            <input type="text" name="pays" id="pays" required>
+
+                            <input type="hidden" name="action" value="changementAdresse">
+                            <button type="submit" class="bouton">Confirmer les modifications</button>
+                        </form>
+                    </section>
     <?php }
 } else { ?>
-<h2 class="center">Vos informations</h2>
+    <h2 class="center">Vos informations</h2>
     <section>
         <div class="col-6 center">
             <p><span>Prénom: </span>

@@ -14,18 +14,18 @@
 
 <div>
     <article>
-        <select name="sbc" id="select-0" class="compareSelect">
+        <select name="sbc-0" id="select-0" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
-                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modele'] . '</option>';
+                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modeleSBC'] . '</option>';
                 foreach($sbcs as $sbc)
-                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modele'] . '</option>'
+                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modeleSBC'] . '</option>'
             ?>
         </select>
         
         <?php
             foreach($sbcs as $sbc)
-                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modele'] . '.jpg" alt="' . $sbc['modele'] . '.jpg">';
+                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modeleSBC'] . '.jpg" alt="' . $sbc['modeleSBC'] . '.jpg">';
         ?>
 
         <?php
@@ -38,18 +38,18 @@
     </article>
 
     <article>
-        <select name="sbc" id="select-1" class="compareSelect">
+        <select name="sbc-1" id="select-1" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
-                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modele'] . '</option>';
+                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modeleSBC'] . '</option>';
                 foreach($sbcs as $sbc)
-                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modele'] . '</option>'
+                    echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modeleSBC'] . '</option>'
             ?>
         </select>
         
         <?php
             foreach($sbcs as $sbc)
-                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modele'] . '.jpg" alt="' . $sbc['modele'] . '.jpg">';
+                echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modeleSBC'] . '.jpg" alt="' . $sbc['modeleSBC'] . '.jpg">';
         ?>
 
         <?php

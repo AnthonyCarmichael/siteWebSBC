@@ -136,6 +136,7 @@ nav a:hover {
     display: flex;
 }
 
+
 .wrap {
     flex-wrap: wrap;
 }
@@ -160,6 +161,17 @@ nav a:hover {
     transition: 1s;
 }
 
+.modif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    /*width: 40%;*/
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.387);
+}
+
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -173,13 +185,14 @@ nav a:hover {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-/* SPÉCIFIQUE À LA PAGE ****************************************************************/
+/* SPÉCIFIQUE À LA PAGE **********************************************/ 
 
 
-/* Comparaison**********************************************/
+/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/ 
 /*p[class*='prix-'] {
     seffa
 }*/
+/* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
 
 /*Page index*/
 
@@ -217,6 +230,17 @@ nav a:hover {
 
 #infoClient form {
     color: white;
+}
+
+#infoClient label {
+    width: 100%;
+}
+
+#infoClient button {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
 }
 
 /*Caroussel*/
@@ -321,10 +345,10 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-#infoSBC form {
+#infoSBC form.recherche {
     width: 95%;
     margin: auto;
-    margin-top: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -345,24 +369,65 @@ nav a:hover {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
-    color: var(--paleBlue);
 }
 
-#infoSBC .ajout {
+#infoSBC form.panier {
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
+
+#infoSBC form.favoris {
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+/* Suggestion SBC **********************************************/
+
+#suggestionSBC h2{
+    padding: 15px;
+}
+
+#suggestionSBC form{
+    width: 95%;
+    margin: auto;
+}
+
+#suggestionSBC fieldset{
     background-color: var(--turquoise);
-    border-radius: 2px;
-    text-decoration: none;
-    color: white;
-    height: 15px;
-    margin-left: 20px;
-    width: 5px;
-    padding: 5px;
-    text-align: center;
 }
 
-#infoSBC .ajout:hover {
-    background-color: var(--rose);
-    transition: 1s;
+#suggestionSBC fieldset>div{
+    padding: 2%;
+}
+
+#suggestionSBC div>div{
+    margin: 2%;
+}
+
+#suggestionSBC legend{
+    color: white;
+    font-size: xx-large;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+#suggestionSBC input{
+    border-radius: 3px;
+    height: 25px;
+}
+
+#suggestionSBC input[class*='suggestion-'] {
+    margin: auto;
+    margin-top: 15px;
+}
+
+#suggestionSBC .suggestion-annuler{
+    background-color: var(--darkPink);
+
+}
+
+#suggestionSBC .suggestion-envoyer{
+    background-color: var(--paleBlue);
 }
 
 /* Historique **********************************************/

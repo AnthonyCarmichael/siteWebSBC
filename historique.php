@@ -56,7 +56,7 @@
                 foreach ($tabSBC as $sbc) {
                     ?> 
                         <div id="infoSpecifique" class="flex">
-                            <img src=<?php echo "img/".$sbc->get_modele().".jpg";?> alt=<?php echo $sbc->get_modele();?>>
+                            <img src=<?php echo "img/".$sbc->get_modeleSBC().".jpg";?> alt=<?php echo $sbc->get_modeleSBC();?>>
 
                             <div class="white">
                                 <p>Marque: <?php echo $sbc->get_marqueProcesseur();?></p>
