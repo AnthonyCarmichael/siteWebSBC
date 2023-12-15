@@ -119,7 +119,7 @@ if (isset($_REQUEST['action'])) {
         $i = 0;
         foreach ($_COOKIE as $cookie) {
             $i++;
-            setcookie("favoris$i");
+            //setcookie("favoris$i");
         }
         $i-=2;
         setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
