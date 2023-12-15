@@ -136,6 +136,12 @@ if (isset($_REQUEST['action'])) {
 
 
     }
+    elseif (($_GET['action']) == "delCommande") {
+        $client = unserialize($_SESSION['client']);
+        $commandeManager = new CommandeManager($bdd);
+        $commandeManager->delCommande($client->get_id_client(),$_GET['idCommande']);
+        echo '<h2 class="center">Commande supprimé</h2>';
+    }
 
 }
 include_once("inc/footer.php");
