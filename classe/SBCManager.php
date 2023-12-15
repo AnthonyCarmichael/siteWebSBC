@@ -3,11 +3,13 @@ require_once 'SBC.php';
 
 class SBCManager
 {
-    const SELECT_SBCs = "SELECT id_SBC, sbc.modele AS modeleSBC, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
+    const SELECT_SBCs = "SELECT sbc.id_SBC, sbc.modele AS modeleSBC, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur, c.nom AS certification
                             FROM sbc AS sbc
                             INNER JOIN processeur AS p ON sbc.id_processeur = p.id_processeur
                             INNER JOIN marque AS m on sbc.id_marque = m.id_marque
-                            INNER JOIN marque AS mp on p.id_marque = mp.id_marque";
+                            INNER JOIN marque AS mp on p.id_marque = mp.id_marque
+                            INNER JOIN certification_SBC AS csbc on sbc.id_SBC = csbc.id_SBC
+                            INNER JOIN certification AS c on csbc.id_certification = c.id_certification";
 
     const SELECT_SBC_BY_ID = "SELECT id_SBC, sbc.modele AS modeleSBC, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
                                 FROM sbc AS sbc

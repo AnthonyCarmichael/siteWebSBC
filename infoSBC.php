@@ -62,6 +62,7 @@ $SBCs = $SBCManager->getSBCs();
                                 echo $annees . ' an ' . $jours . ' jours de garantie';
                             } ?>
                         </p>
+                    <p>Certification: <a href="infoCertification.php?id=<?=$SBCObj->get_id_SBC();?>"><?=$SBCObj->get_certification();?></a></p>
                     </div>
 
                     <form class="panier" action="traitement.php" method="get">
@@ -114,6 +115,7 @@ $SBCs = $SBCManager->getSBCs();
                             echo $annees . ' an ' . $jours . ' jours de garantie';
                         } ?>
                     </p>
+                    <p>Certification: <a href="infoCertification.php?id=<?=$SBC->get_id_SBC();?>"><?=$SBC->get_certification();?></a></p>
                 </div>
 
                 <form class="panier" action="traitement.php" method="get">
