@@ -2,32 +2,39 @@ window.onload = function() {
     //let selectMenu = document.querySelector("article select[name='sbc']");
     let selectMenu = document.querySelectorAll(".compareSelect");
 
+
     for(let i = 0; i < selectMenu.length; i++){
 
-        if (selectMenu[i] != null) {
+        if (selectMenu[i] != undefined) {
             selectMenu[i].addEventListener('change', function(e) {
-                let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
+                //let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
 
-                let pricesArray = document.querySelectorAll("p[class*='prix-']")[idSelect];
-                let imgArray = document.querySelectorAll("img[class*='img-']")[idSelect];
+                let pricesArray = document.querySelectorAll("#" + e.target.id + " ~ p[class*='prix-'");
+                let imgArray = document.querySelectorAll("#" + e.target.id + " ~ img[class*='img-'");
                 let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace;
+                
+                console.log(pricesArray);
+                console.log(imgArray);
 
-                for (let i = 0; i < pricesArray.length; i++) {
-                    pricesArray[i].classList.add('display-none');
-                    imgArray[i].classList.add('display-none');
+                for (let j = 0; j < pricesArray.length; j++) {
+                    pricesArray[j].classList.add('display-none');
 
-                    priceclassListString = pricesArray[i].classList.toString();
+                    priceclassListString = pricesArray[j].classList.toString();
                     priceIndexOfSpace = priceclassListString.indexOf(' ');
 
-                    imgclassListString = imgArray[i].classList.toString();
-                    imgIndexOfSpace = imgclassListString.indexOf(' ');
-
-                    if (selectMenu[i].value === priceclassListString.substring(5, priceIndexOfSpace)) {
-                        pricesArray[i].classList.remove('display-none');
+                    if (e.target.value === priceclassListString.substring(5, priceIndexOfSpace)) {
+                        pricesArray[j].classList.remove('display-none');
                     }
+                }
+                
+                for (let j = 0; j < imgArray.length; j++) {
+                    imgArray[j].classList.add('display-none');
 
-                    if (selectMenu[i].value === imgclassListString.substring(4, imgIndexOfSpace)) {
-                        imgArray[i].classList.remove('display-none');
+                    imgclassListString = imgArray[j].classList.toString();
+                    imgIndexOfSpace = imgclassListString.indexOf(' ');                
+
+                    if (e.target.value === imgclassListString.substring(4, imgIndexOfSpace)) {
+                        imgArray[j].classList.remove('display-none');
                     }
                 }
             });

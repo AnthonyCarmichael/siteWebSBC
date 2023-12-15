@@ -14,7 +14,7 @@
 
 <div>
     <article>
-        <select name="sbc-0" id="select-0" class="compareSelect">
+        <select name="sbc-0" id="select-1" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
                 echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modeleSBC'] . '</option>';
@@ -25,20 +25,28 @@
         
         <?php
             foreach($sbcs as $sbc)
+            {
                 echo '<img class="img-' . $sbc['id_SBC'] . ' display-none" src="img/' . $sbc['modeleSBC'] . '.jpg" alt="' . $sbc['modeleSBC'] . '.jpg">';
-        ?>
+                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">' . $sbc['prix'] . '</p>';?>
 
-        <?php
-            foreach($sbcs as $sbc)
-                echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none">' . $sbc['prix'] . '</p>';
-        ?>
+                <form class="formPanier-<?=$sbc['id_SBC']?> display-none" action="traitement.php" method="get">
+                    <input type="hidden" name="action" value="idPanier">
+                    <input type="hidden" name="idPanier" value="<?= $sbc['id_SBC']; ?>">
+                    <input type="submit" class="bouton" value="Ajouter au panier">
+                </form>
 
-        <input type="button" value="Commander">
-        <a href="">En savoir plus ></a>
+                <form class="formFavoris-<?=$sbc['id_SBC']?> display-none" action="traitement.php" method="get">
+                    <input type="hidden" name="action" value="favoris">
+                    <input type="hidden" name="favoris" value="<?= $sbc['id_SBC']; ?>">
+                    <input type="submit" class="bouton" value="Ajouter aux favoris">
+                </form>
+
+                <a class="savoir-<?=$sbc['id_SBC']?> display-none" href="infoSBC.php?idSBC=<?=$sbc['id_SBC']?>">En savoir plus ></a>
+        <?php }?>
     </article>
 
     <article>
-        <select name="sbc-1" id="select-1" class="compareSelect">
+        <select name="sbc-1" id="select-2" class="compareSelect">
             <?php
                 $sbcs = $SBCManager->selectAllSBC();
                 echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modeleSBC'] . '</option>';
@@ -59,6 +67,17 @@
 
         <input type="button" value="Commander">
         <a href="">En savoir plus ></a>
+
+        <form class="panier" action="traitement.php" method="get">
+            <input type="hidden" name="action" value="idPanier">
+            <input type="hidden" name="idPanier" value="<?= $SBC->get_id_SBC(); ?>">
+            <input type="submit" class="bouton" value="Ajouter au panier">
+        </form>
+        <form class="favoris" action="traitement.php" method="get">
+            <input type="hidden" name="action" value="favoris">
+            <input type="hidden" name="favoris" value="<?= $SBC->get_id_SBC(); ?>">
+            <input type="submit" class="bouton" value="Ajouter aux favoris">
+        </form>
     </article>
 
 </div>

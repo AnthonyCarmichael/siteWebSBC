@@ -11,7 +11,6 @@
         private $_marqueSBC;
         private $_marqueProcesseur;
         private $_modeleProcesseur;
-        private $_certification;
 
         //Constructeur
         public function __construct($params = array()) {
@@ -240,26 +239,6 @@
         public function set_modeleProcesseur($_modeleProcesseur)
         {
                 $this->_modeleProcesseur = $_modeleProcesseur;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of _certification
-         */ 
-        public function get_certification()
-        {
-                return $this->_certification;
-        }
-
-        /**
-         * Set the value of _certification
-         *
-         * @return  self
-         */ 
-        public function set_certification($_certification)
-        {
-                $this->_certification = $_certification;
 
                 return $this;
         }

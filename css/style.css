@@ -360,6 +360,15 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
+#infoSBC .certification{
+    color: var(--turquoise);
+}
+
+#infoSBC .certification:hover{
+    color: var(--rose);
+    transition: 1s;
+}
+
 #infoSBC article div:last-of-type {
     width: 80%;
     margin: auto;
