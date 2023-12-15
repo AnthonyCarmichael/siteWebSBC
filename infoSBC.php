@@ -1,29 +1,29 @@
-<?php 
-    setcookie('favoris', '0', time()+3600*24);
-  
-    include_once("inc/header.php");
-    require_once './classe/PDOFactory.php';
-    require_once './classe/SBCManager.php';
-    require_once './classe/panier.php';
+<?php
+setcookie('favoris', '0', time() + 3600 * 24);
 
-    $bdd = PDOFactory::getMySQLConnection();
-    $SBCManager = new SBCManager($bdd);
+include_once("inc/header.php");
+require_once './classe/PDOFactory.php';
+require_once './classe/SBCManager.php';
+require_once './classe/panier.php';
 
-    $SBCs = $SBCManager->getSBCs();
+$bdd = PDOFactory::getMySQLConnection();
+$SBCManager = new SBCManager($bdd);
+
+$SBCs = $SBCManager->getSBCs();
 ?>
 
-    <form class="flex wrap" action="infoSBC.php" method="post" id="filtre">
-        <input class="col-4" type="text" placeholder="Recherche par marque" name="marqueSBC" id="marqueSBC">
-        <input class="col-4" type="text" placeholder="Recherche par modéle" name="modeleSBC" id="modeleSBC">
+<form class="flex wrap" action="infoSBC.php" method="post" id="filtre">
+    <input class="col-4" type="text" placeholder="Recherche par marque" name="marqueSBC" id="marqueSBC">
+    <input class="col-4" type="text" placeholder="Recherche par modéle" name="modeleSBC" id="modeleSBC">
 
-        <input type="hidden" name="action" value="filtre">
-        <input class="col-2" type="submit" value="search">
-    </form>
+    <input type="hidden" name="action" value="filtre">
+    <input class="col-2" type="submit" value="search">
+</form>
 
-    <?php if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'filtre') {
-                echo '<h2 class="center">Résultat(s) de la recherche</h2>';
+<?php if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'filtre') {
+    echo '<h2 class="center">Résultat(s) de la recherche</h2>';
 
-                $SBCObjArray = $SBCManager->selectSBCs($_REQUEST);
+    $SBCObjArray = $SBCManager->selectSBCs($_REQUEST);
 
                 if (empty($SBCObjArray))
                     echo '<p>Vos filtres n\'ont retourné aucun résultat.</p>';
@@ -66,11 +66,14 @@
                             </div>
             
                             <a class="bouton" href="traitement.php?idPanier=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
-                            <a class="bouton" href="traitement.php?idSouhait=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
+                            <form class="favoris" action="traitement.php" method="get">
+                    <input type="hidden" name="action" value="favoris">
+                    <input type="hidden" name="favoris" value="<?= $SBC->get_id_SBC(); ?>">
+                    <input type="submit" class="bouton" value="Ajouter au favoris">
+                </form>
                         </article>
                     <?php }?> 
                 </section>
             <?php }?>
 
 <?php include_once('inc/footer.php'); ?>
-
