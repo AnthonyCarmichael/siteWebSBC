@@ -1,5 +1,14 @@
 <?php include_once("inc/header.php"); ?>
+<?php 
 
+    if (isset($_SESSION['client'])) { ?>
+        <?php $client = unserialize($_SESSION['client']); ?>
+        <h2 class="center">Bienvenue
+        <?= $client->get_prenom() . " " . $client->get_nom(); ?>
+        </h2>
+        <?php
+    }
+?>
 <div class="caroussel">
 
     <div class="imgCaroussel fade">

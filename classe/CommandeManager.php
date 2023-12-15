@@ -111,10 +111,11 @@
 
             }
             //gestion de la derniere commande
-            
-            $commande->set_tabSBC($arrSBC);
-            array_push($arrCommande,$commande);
-            $arrSBC = array();
+            if ($tempIdCommande != 0) {
+                $commande->set_tabSBC($arrSBC);
+                array_push($arrCommande,$commande);
+                $arrSBC = array();
+            }
             //$tempIdCommande = $bddResult['id_commande'];
             
             //print_r($arrCommande);

@@ -57,7 +57,7 @@ h1 {
 }
 
 h2 {
-    padding-top: 20px;
+    padding: 20px;
     color: white;
 }
 
@@ -202,6 +202,11 @@ nav a:hover {
 
 #index section {
     display: flex;
+}
+
+#traitement #rappelIndex div {
+    margin: 5px;
+    padding-top: 5px;
 }
 
 #index div {

@@ -62,7 +62,7 @@ panierHover.addEventListener("mouseover", changeImgUrl);
 }
 
 let main = document.querySelector("main");
-if(main.id == "index")
+if(main.id == "index" || main.id == "traitement")
 {
     let imgActuel = 0;
     imgVu();
