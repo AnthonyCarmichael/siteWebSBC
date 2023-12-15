@@ -1,35 +1,36 @@
-<?php 
+<?php
 // Prétraitement //////////////////////////////////////////////////////////////////
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}  
+}
 include_once("inc/autoloader.php");
 $bdd = PDOFactory::getMySQLConnection();
 
-if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
-    $clientManager = new ClientManager($bdd); 
+if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
+    $clientManager = new ClientManager($bdd);
     $client = $clientManager->clientExiste($_REQUEST['username'], $_REQUEST['mdp']);
-    if($client != null)
-    {
+    if ($client != null) {
         $_SESSION['client'] = serialize($client);
     }
-} else if (isset($_REQUEST['action']) && $_REQUEST['action'] == "logout"){
+} else if (isset($_REQUEST['action']) && $_REQUEST['action'] == "logout") {
     $_SESSION = array();
-    session_destroy(); 
-} 
+    session_destroy();
+}
 ///////////////////////////////////////////////////////////////////////////////////
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
     <script src="js/script.js" defer></script>
     <title>SBC</title>
 </head>
+
 <body>
     <header>
         <h1 class="center">Chip Wave</h1>
@@ -37,14 +38,14 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
             <ul class="end">
                 <li><a href="inscription.php">Inscription</a></li>
 
-                <?php if(isset($_SESSION['client'])){ ?>
+                <?php if (isset($_SESSION['client'])) { ?>
                     <li><a href="traitement.php?action=logout">Se déconnecter</a></li>
                 <?php } else { ?>
-                    <li><a href="connexion.php">Se connecter</a></li>                    
+                    <li><a href="connexion.php">Se connecter</a></li>
                 <?php } ?>
             </ul>
         </nav>
-        <nav class="menu-principal flex"> 
+        <nav class="menu-principal flex">
             <ul class="flex">
                 <li><img id="logo" src="img/logo.png" alt="compagnie"></li>
                 <li><a href="index.php">Accueil</a></li>
@@ -55,21 +56,20 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion"){
 
             <!-- Si le client est connecter, d'autre lien s'affiche -->
             <!-- Le if est en commentaire pour tester le css même si y'a pas de client connecter -->
-            <?php if(isset($_SESSION['client'])){ ?>
-            <ul class="flex"> 
-                <li><a href="infoClient.php">Gestion de compte</a></li>
-                <li><a href="wishList.php">Liste de souhait</a></li>
-                <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
-            </ul>
-            <?php  }  ?>
+            <?php if (isset($_SESSION['client'])) { ?>
+                <ul class="flex">
+                    <li><a href="infoClient.php">Gestion de compte</a></li>
+                    <li><a href="wishList.php">Liste de souhait</a></li>
+                    <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
+                </ul>
+            <?php } ?>
         </nav>
     </header>
-    <?php 
-        // Chaque main a un id correspondant a son nom de page
-        $page = substr($_SERVER['REQUEST_URI'], 12, -4);
-        if ($page == null) {
-            $page = "index";
-        }
+    <?php
+    // Chaque main a un id correspondant a son nom de page
+    $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    if ($page == null) {
+        $page = "index";
+    }
     ?>
-    <main id="<?= $page?>">
-
+    <main id="<?= $page ?>">

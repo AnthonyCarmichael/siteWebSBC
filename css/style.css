@@ -161,7 +161,7 @@ nav a:hover {
     transition: 1s;
 }
 
-.modif{
+.modif {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,23 +172,58 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.387);
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-1 {
+    width: 8.33%;
+}
 
-/* SPÉCIFIQUE À LA PAGE **********************************************/ 
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* SPÉCIFIQUE À LA PAGE **********************************************/
 
 
-/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/ 
+/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
 /*p[class*='prix-'] {
     seffa
 }*/
@@ -383,35 +418,35 @@ nav a:hover {
 
 /* Suggestion SBC **********************************************/
 
-#suggestionSBC h2{
+#suggestionSBC h2 {
     padding: 15px;
 }
 
-#suggestionSBC form{
+#suggestionSBC form {
     width: 95%;
     margin: auto;
 }
 
-#suggestionSBC fieldset{
+#suggestionSBC fieldset {
     background-color: var(--turquoise);
 }
 
-#suggestionSBC fieldset>div{
+#suggestionSBC fieldset>div {
     padding: 2%;
 }
 
-#suggestionSBC div>div{
+#suggestionSBC div>div {
     margin: 2%;
 }
 
-#suggestionSBC legend{
+#suggestionSBC legend {
     color: white;
     font-size: xx-large;
     font-style: italic;
     margin-left: 15px;
 }
 
-#suggestionSBC input{
+#suggestionSBC input {
     border-radius: 3px;
     height: 25px;
 }
@@ -421,12 +456,12 @@ nav a:hover {
     margin-top: 15px;
 }
 
-#suggestionSBC .suggestion-annuler{
+#suggestionSBC .suggestion-annuler {
     background-color: var(--darkPink);
 
 }
 
-#suggestionSBC .suggestion-envoyer{
+#suggestionSBC .suggestion-envoyer {
     background-color: var(--paleBlue);
 }
 
@@ -468,4 +503,28 @@ nav a:hover {
 
 #historique #commande {
     padding-bottom: 30px;
+}
+
+/* Wishlist **********************************************/
+#wishList #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+}
+
+#wishList img {
+    width: 100px;
+}
+
+#wishList p {
+    /*padding: 15px;*/
+    width: 225px;
+}
+
+#wishList p#prix {
+    /*padding: 15px;*/
+    width: 100px;
+    padding-left: 10px;
 }
