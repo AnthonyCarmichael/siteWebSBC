@@ -1,8 +1,8 @@
 window.onload = function() {
     //let selectMenu = document.querySelector("article select[name='sbc']");
-    let selectMenu = document.querySelectorAll("compareSelect");
+    let selectMenu = document.querySelectorAll(".compareSelect");
 
-    for(let i = 0; selectMenu.length; i++){
+    for(let i = 0; i < selectMenu.length; i++){
 
         if (selectMenu[i] != null) {
             selectMenu[i].addEventListener('change', function(e) {

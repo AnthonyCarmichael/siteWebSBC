@@ -29,7 +29,7 @@
                     echo '<p>Vos filtres n\'ont retourné aucun résultat.</p>';
 
                 else {?>
-                    <section class="flex wrap">
+                    <section class="flex wrap white">
                         <?php foreach($SBCObjArray as $SBCObj){?>
                             <article class="col-4">
                                 <div>                
@@ -43,15 +43,15 @@
                                     <p><?php $annees = 0; $jours = $SBCObj->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
                                 </div>
                 
-                                <a class="ajout" href="traitement.php?idPanier=<?=$SBCObj->get_id_SBC();?>">Ajouter au panier</a>
-                                <a class="ajout" href="traitement.php?idSouhait=<?=$SBCObj->get_id_SBC();?>">Ajouter aux favoris</a>
+                                <a class="bouton" href="traitement.php?idPanier=<?=$SBCObj->get_id_SBC();?>">Ajouter au panier</a>
+                                <a class="bouton" href="traitement.php?idSouhait=<?=$SBCObj->get_id_SBC();?>">Ajouter aux favoris</a>
                             </article>
                         <?php }?>
                     </section>
                 <?php
             }
             }else{?>
-                <section class="flex wrap">
+                <section class="flex wrap white">
                     <?php foreach($SBCs as $SBC){?>
                         <article class="col-4">
                             <div>                
@@ -65,8 +65,8 @@
                                 <p><?php $annees = 0; $jours = $SBC->get_garantie(); while($jours >= 365){$annees += 1; $jours -= 365;}if($annees <= 0){echo $jours . ' jours de garantie';}elseif($jours <= 0){echo $annees . ' an de garantie';}else{echo $annees . ' an ' . $jours . ' jours de garantie';} ?> </p>
                             </div>
             
-                            <a class="ajout" href="traitement.php?idPanier=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
-                            <a class="ajout" href="traitement.php?idSouhait=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
+                            <a class="bouton" href="traitement.php?idPanier=<?=$SBC->get_id_SBC();?>">Ajouter au panier</a>
+                            <a class="bouton" href="traitement.php?idSouhait=<?=$SBC->get_id_SBC();?>">Ajouter aux favoris</a>
                         </article>
                     <?php }?> 
                 </section>

@@ -364,24 +364,12 @@ nav a:hover {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
-    color: var(--paleBlue);
 }
 
-#infoSBC .ajout {
-    background-color: var(--turquoise);
-    border-radius: 2px;
-    text-decoration: none;
-    color: white;
+#infoSBC .bouton {
     height: 15px;
     margin-left: 20px;
     width: 5px;
-    padding: 5px;
-    text-align: center;
-}
-
-#infoSBC .ajout:hover {
-    background-color: var(--rose);
-    transition: 1s;
 }
 
 /* Suggestion SBC **********************************************/
