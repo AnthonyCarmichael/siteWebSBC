@@ -9,7 +9,7 @@ class SBCManager
                             INNER JOIN marque AS m on sbc.id_marque = m.id_marque
                             INNER JOIN marque AS mp on p.id_marque = mp.id_marque";
 
-    const SELECT_SBC_BY_ID = "SELECT id_SBC, sbc.modele, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
+    const SELECT_SBC_BY_ID = "SELECT id_SBC, sbc.modele AS modeleSBC, garantie, RAM, longueur, largeur, prix, nbCoeur, m.nom AS marqueSBC, mp.nom AS marqueProcesseur, p.modele AS modeleProcesseur
                                 FROM sbc AS sbc
                                 INNER JOIN processeur AS p ON sbc.id_processeur = p.id_processeur
                                 INNER JOIN marque AS m on sbc.id_marque = m.id_marque
