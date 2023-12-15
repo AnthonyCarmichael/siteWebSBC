@@ -57,6 +57,7 @@ h1 {
 }
 
 h2 {
+    padding-top: 20px;
     color: white;
 }
 
@@ -119,6 +120,14 @@ nav a:hover {
     text-align: center;
 }
 
+.end {
+    text-align: end;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 .display-none {
     display: none;
 }
@@ -129,10 +138,6 @@ nav a:hover {
 
 .wrap {
     flex-wrap: wrap;
-}
-
-.end {
-    text-align: end;
 }
 
 .bold {
@@ -362,21 +367,40 @@ nav a:hover {
 
 /* Historique **********************************************/
 
-#historique aside {
-    background-color: #1c0620;
-    margin: 10px;
+#historique #commande {
+    background-color: #1c06208d;
+    margin: auto;
+    width: 90%;
+
 }
 
-#historique div {
+#historique aside {
+    background-color: #481851be;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+#historique #headCommande div {
     justify-content: space-between;
 }
 
-#historique div p {
+
+#historique #headCommande div p {
 
     width: 20%;
 }
 
 #historique img {
     width: 100px;
+}
+
+#historique #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 10px;
+}
+
+#historique #commande {
+    padding-bottom: 30px;
 }

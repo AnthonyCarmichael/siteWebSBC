@@ -101,6 +101,12 @@ if (isset($_REQUEST['action'])) {
         $cm->modifInfoPerso($client->get_id_client(), $_REQUEST['prenom'], $_REQUEST['nom']);
         $_SESSION['client'] = serialize($client);
     }
+    elseif (($_GET['action']) == "delCommande") {
+        $client = unserialize($_SESSION['client']);
+        $commandeManager = new CommandeManager($bdd);
+        $commandeManager->delCommande($client->get_id_client(),$_GET['idCommande']);
+        echo '<h2 class="center">Commande supprimé</h2>';
+    }
 } ?>
 
     <?php include_once("inc/footer.php"); ?>
