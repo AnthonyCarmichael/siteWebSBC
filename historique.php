@@ -76,7 +76,7 @@
                 $interval = $dateCommande->diff($dateToday);
                 if ($interval->format("%a")<7) {?>
                     <div class="end">
-                        <a class="bouton" href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande();?>">Il reste <?php echo 7-$interval->format("%a"); ?> jours pour annuler la commande</a>
+                        <a class="bouton" href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande();?>">Il reste <?php echo 8-$interval->format("%a"); ?> jours pour annuler la commande</a>
                     </div><?php
                 }
                 elseif ($interval->format("%a")==7) {?>
