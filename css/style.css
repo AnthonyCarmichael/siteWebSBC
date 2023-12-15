@@ -340,7 +340,7 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-#infoSBC form {
+#infoSBC form.recherche {
     width: 95%;
     margin: auto;
     padding-top: 20px;
@@ -366,10 +366,14 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-#infoSBC .bouton {
-    height: 15px;
-    margin-left: 20px;
-    width: 5px;
+#infoSBC form.panier {
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
+
+#infoSBC form.favoris {
+    padding-left: 30px;
+    padding-top: 5px;
 }
 
 /* Suggestion SBC **********************************************/

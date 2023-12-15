@@ -2,7 +2,9 @@
 $bdd = PDOFactory::getMySQLConnection();
 $sm = new SBCManager($bdd);
 
-print_r($_COOKIE); ?>
+print_r($_COOKIE);
+setcookie("favoris0"); 
+setcookie("favoris2"); ?>
 <h2 class="center">Votre liste de souhait</h2>
 
 <?php $souhait = $_COOKIE;
