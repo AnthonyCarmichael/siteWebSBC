@@ -74,17 +74,17 @@ if (isset($_REQUEST['action'])) {
                         Le nom d'utilisateur ou le mot de passe ne correspond.
                     </p>
 
-                    <form id="seConnecter" action="traitement.php" method="post" class="login">
+                        <form id="seConnecter" action="traitement.php" method="post" class="login">
 
                         <div class="flex">
                             <label class="white" for="username">Nom d'utilisateur: </label>
                             <input type="text" name="username" id="username">
                         </div>
 
-                        <div class="flex">
-                            <label class="white" for="mdp">Mot de passe: </label>
-                            <input type="password" name="mdp" id="mdp">
-                        </div>
+                            <div class="flex">
+                                <label class="white" for="mdp">Mot de passe: </label>
+                                <input type="password" name="mdp" id="mdp">
+                            </div>
 
                         <input type="hidden" name="action" value="connexion">
 
@@ -148,33 +148,40 @@ if (isset($_REQUEST['action'])) {
             $client->set_pays($_REQUEST['pays']);
 
 
-            $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
-            $_SESSION['client'] = serialize($client);
-        } elseif ($_REQUEST['action'] == "favoris") {
-            $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
-            $i = 0;
-            foreach ($_COOKIE as $cookie) {
-                $i++;
-                setcookie("favoris$i");
-            }
-            $i -= 2;
-            setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
-            print_r($_REQUEST['favoris']);
-            print_r($_COOKIE);
-
-            echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur le catalogue</a> ';
-        } elseif (isset($_REQUEST['idPanier'])) {
-            $SBC = $SBCManager->getSBCId($_GET['idPanier']);
-            if (empty($SBC))
-                echo "Produit inexistant";
-            $panier->add($SBC[0]);
-            echo 'Le produit a été ajouté à votre panier. <a href="javascript:history.back()">Retourner sur le catalogue</a>';
-        } elseif (($_GET['action']) == "delCommande") {
-            $client = unserialize($_SESSION['client']);
-            $commandeManager = new CommandeManager($bdd);
-            $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
-            echo '<h2 class="center">Commande supprimé</h2>';
+        $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
+        $_SESSION['client'] = serialize($client);
+    } elseif ($_REQUEST['action'] == "favoris") {
+        $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
+        $i = 0;
+        foreach ($_COOKIE as $cookie) {
+            $i++;
+            //setcookie("favoris$i");
         }
+        $i -= 2;
+        setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
+
+        echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+    } elseif ($_REQUEST['action'] == "retireFavoris") {
+        $favorisRetire = $_REQUEST['retireFavoris'];
+        
+        setcookie("favoris$favorisRetire");
+
+        echo 'Le produit a été retiré de votre liste de souhaits. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+    } elseif (isset($_REQUEST['idPanier'])) {
+        $SBC = $SBCManager->getSBCId($_GET['idPanier']);
+        if (empty($SBC))
+            echo "Produit inexistant";
+        $panier->add($SBC[0]);
+        echo 'Le produit a été ajouté à votre panier. <a href="javascript:history.back()">Retourner sur la page précédente</a>';
+
+
+    } elseif (($_GET['action']) == "delCommande") {
+        $client = unserialize($_SESSION['client']);
+        $commandeManager = new CommandeManager($bdd);
+        $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
+        echo '<h2 class="center">Commande supprimé</h2>';
     }
-    include_once("inc/footer.php");
-    ?>
+
+}
+include_once("inc/footer.php");
+?>
