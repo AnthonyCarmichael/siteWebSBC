@@ -68,12 +68,12 @@ $SBCs = $SBCManager->getSBCs();
                     <form class="panier" action="traitement.php" method="get">
                         <input type="hidden" name="action" value="idPanier">
                         <input type="hidden" name="idPanier" value="<?= $SBCObj->get_id_SBC(); ?>">
-                        <input type="submit" class="bouton" value="Ajouter au favoris">
+                        <input type="submit" class="bouton" value="Ajouter aux panier">
                     </form>
                     <form class="favoris" action="traitement.php" method="get">
                         <input type="hidden" name="action" value="favoris">
                         <input type="hidden" name="favoris" value="<?= $SBCObj->get_id_SBC(); ?>">
-                        <input type="submit" class="bouton" value="Ajouter aux panier">
+                        <input type="submit" class="bouton" value="Ajouter au favoris">
                     </form>
                 </article>
             <?php } ?>
