@@ -89,7 +89,7 @@ $dateToday = new DateTime("now");
 
                 $dateCommande = new DateTime($commande->get_date_commande());
                 $interval = $dateCommande->diff($dateToday);
-                if ($interval->format("%a") < 6) { ?>
+                if ($interval->format("%a") < 7) { ?>
                     <div class="end">
                         <a class="bouton"
                             href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande(); ?>">Il reste
@@ -97,7 +97,7 @@ $dateToday = new DateTime("now");
                         </a>
                     </div>
                     <?php
-                } elseif ($interval->format("%a") == 6) { ?>
+                } elseif ($interval->format("%a") == 7) { ?>
                     <div class="end">
                         <a class="bouton"
                             href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande(); ?>">Dernier
