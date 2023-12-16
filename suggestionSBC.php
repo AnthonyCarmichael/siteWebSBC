@@ -4,7 +4,6 @@
     include_once("inc/header.php");
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';
-    require_once './classe/panier.php';
     $bdd = PDOFactory::getMySQLConnection();
     $SBCManager = new SBCManager($bdd); 
 ?>
