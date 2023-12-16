@@ -206,6 +206,11 @@ if (isset($_REQUEST['action'])) {
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
         echo '<h2 class="center">Commande supprimé</h2>';
+    }elseif (($_GET['action']) == "commander") {
+        $client = unserialize($_SESSION['client']);
+        $commandeManager = new CommandeManager($bdd);
+        $commandeManager->addCommande($client->get_id_client());
+        echo '<h2 class="center">Commande passée</h2>';
     }
 
 }
