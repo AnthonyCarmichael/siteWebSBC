@@ -24,11 +24,11 @@ foreach ($panier as $sbc) {
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>
                 </p>
 
-                <p>Quantité:
+                <p id="petit">Quantité:
                     <?php echo $_COOKIE["calcul$j"]; ?>
                 </p>
 
-                <p id="prix">Prix:
+                <p id="petit">Prix:
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_prix(); ?>$
                 </p>
 
