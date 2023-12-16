@@ -89,19 +89,12 @@ $dateToday = new DateTime("now");
 
                 $dateCommande = new DateTime($commande->get_date_commande());
                 $interval = $dateCommande->diff($dateToday);
-                if ($interval->format("%a") < 5) { ?>
+                if ($interval->format("%a") < 6) { ?>
                     <div class="end">
                         <a class="bouton"
                             href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande(); ?>">Il reste
                             <?php echo 7 - $interval->format("%a"); ?> jours pour annuler la commande
                         </a>
-                    </div>
-                    <?php
-                } elseif ($interval->format("%a") == 5) { ?>
-                    <div class="end">
-                        <a class="bouton"
-                            href="traitement.php?action=delCommande&idCommande=<?php echo $commande->get_id_commande(); ?>">Dernier
-                            jour pour annuler la commande</a>
                     </div>
                     <?php
                 } elseif ($interval->format("%a") == 6) { ?>
