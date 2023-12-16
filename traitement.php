@@ -176,16 +176,15 @@ if (isset($_REQUEST['action'])) {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
         $j = 1;
+        $k = $_REQUEST['panier'];
         foreach ($_COOKIE as $cookie) {
             $i++;
             if (isset($_COOKIE["panier$i"]) && $_COOKIE["panier$i"] == $_REQUEST['panier']) {
-                $j++;
+                $j = $_COOKIE["calcul$k"] + 1;
             }
         }
 
         $i -= 2;
-
-        $k = $_REQUEST['panier'];
 
         if ($j == 1) {
             setcookie("panier$i", $_REQUEST['panier'], time() + (86400 * 30));
@@ -206,7 +205,7 @@ if (isset($_REQUEST['action'])) {
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
         echo '<h2 class="center">Commande supprimé</h2>';
-    }elseif (($_GET['action']) == "commander") {
+    } elseif (($_GET['action']) == "commander") {
         $client = unserialize($_SESSION['client']);
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->addCommande($client->get_id_client());
