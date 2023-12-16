@@ -60,13 +60,11 @@ $dateToday = new DateTime("now");
                         </div>
 
                         <form class="panier" action="traitement.php" method="get">
-                            <input type="hidden" name="action" value="idPanier">
-                            <input type="hidden" name="idPanier" value="<?= $sbc->get_id_SBC(); ?>">
+                            <input type="hidden" name="action" value="panier">
+                            <input type="hidden" name="panier" value="<?= $sbc->get_id_SBC(); ?>">
                             <input type="submit" class="bouton" value="Ajouter au panier">
                         </form>
                     </div>
-
-
                 <?php
                 }
 
