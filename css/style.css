@@ -658,11 +658,17 @@ nav a:hover {
         width: 200px;
     }
 
-    #panier p#petit {
-        /*padding: 15px;*/
-        width: 100px;
-        padding-left: 10px;
-    }
+#panier p#prix {
+    /*padding: 15px;*/
+    width: 100px;
+    padding-left: 10px;
+}
+
+#panier p#quantite {
+    /*padding: 15px;*/
+    width: 150px;
+    padding-left: 10px;
+}
 
     #panier h3{
         padding-bottom: 10px;
