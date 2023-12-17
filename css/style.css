@@ -251,6 +251,69 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+
+/* Inscription **********************************************/
+#inscription fieldset {
+    width: 70%;
+    margin: 15px auto;
+    background-color: rgba(0, 0, 0, 0.387);
+    padding: 5px;
+    border: none;
+}
+
+#inscription legend {
+    font-weight: bold;
+}
+
+#inscription .register input,
+#inscription .register select {
+    margin: 0px 25px 10px 5px;
+    width: 215px;
+}
+
+#inscription .profil label {
+    min-width: 58px;
+}
+
+#inscription #nom {
+    width: 252px;
+}
+
+#inscription .coord label {
+    min-width: 81px;
+}
+
+#inscription .info-cond input,
+#inscription .info-cond select {
+    width: 165px;
+}
+
+#inscription .register button {
+    width: 80px;
+
+}
+
+#inscription .remise {
+    width: 70%;
+    margin: auto;
+}
+
+
+/* InfoCertification **********************************************/
+#infoCertification section {
+    width: 80%;
+    margin: auto;
+    }
+
+
+    #infoCertification section a {
+        color: var(--turquoise);
+    }
+
+    #infoCertification section a:hover {
+        transition: 1s;
+        color: var(--darkPink);
+    }
 /* RESPONSIVE **************************************************/
 
 /* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
@@ -473,52 +536,6 @@ nav a:hover {
         }
     }
 
-    /* Inscription **********************************************/
-    #inscription fieldset {
-        width: 70%;
-        margin: 15px auto;
-        background-color: rgba(0, 0, 0, 0.387);
-        padding: 5px;
-        border: none;
-    }
-
-    #inscription legend {
-        font-weight: bold;
-    }
-
-    #inscription .register input,
-    #inscription .register select {
-        margin: 0px 25px 10px 5px;
-        width: 215px;
-    }
-
-    #inscription .profil label {
-        min-width: 58px;
-    }
-
-    #inscription #nom {
-        width: 252px;
-    }
-
-    #inscription .coord label {
-        min-width: 81px;
-    }
-
-    #inscription .info-cond input,
-    #inscription .info-cond select {
-        width: 165px;
-    }
-
-    #inscription .register button {
-        width: 80px;
-
-    }
-
-    #inscription .remise {
-        width: 70%;
-        margin: auto;
-    }
-
     /* Connexion **********************************************/
 
     #seConnecter {
@@ -703,19 +720,5 @@ nav a:hover {
         padding-bottom: 10px;
     }
 
-    /* InfoCertification **********************************************/
-    #infoCertification section {
-    width: 80%;
-    margin: auto;
-    }
 
-
-    #infoCertification section a {
-        color: var(--turquoise);
-    }
-
-    #infoCertification section a:hover {
-        transition: 1s;
-        color: var(--darkPink);
-    }
 }
