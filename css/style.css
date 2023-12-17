@@ -137,6 +137,10 @@ h3 {
     display: none;
 }
 
+.menu-principal {
+    justify-content: space-between;
+}
+
 .menu-connexion ul {
     list-style: none;
 }
