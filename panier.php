@@ -6,10 +6,13 @@ $sm = new SBCManager($bdd); ?>
 <?php $panier = $_COOKIE;
 $i = 0;
 $prixTotal = 0;
+
 foreach ($panier as $sbc) {
     if (isset($_COOKIE["panier$i"])) {
         $sm->getSBCById($_COOKIE["panier$i"]);
-        $j = $sm->getSBCById($_COOKIE["panier$i"])->get_id_SBC() ?>
+        $j = $sm->getSBCById($_COOKIE["panier$i"])->get_id_SBC();
+
+        ?>
 
         <div id="infoSpecifique" class="flex">
             <a href="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"><img
@@ -24,11 +27,16 @@ foreach ($panier as $sbc) {
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>
                 </p>
 
-                <p id="petit">Quantité:
+                <p id="quantite">
+                    <a href="panier.php?action=moins&idSbc=<?= $j; ?>"><i class="fa fa-minus-square" aria-hidden="true"></i></a>
+                    Quantité:
                     <?php echo $_COOKIE["calcul$j"]; ?>
+                    <a href="panier.php?action=plus&idSbc=<?= $j; ?>"><span class="vide"></span><i class="fa fa-plus-square"
+                            aria-hidden="true"></i></a>
                 </p>
 
-                <p id="petit">Prix:
+
+                <p id="prix">Prix:
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_prix(); ?>$
                 </p>
 
