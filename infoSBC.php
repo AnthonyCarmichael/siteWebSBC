@@ -1,15 +1,24 @@
 <?php
-setcookie('favoris', '0', time() + 3600 * 24);
+    setcookie('favoris', '0', time() + 3600 * 24);
 
-include_once("inc/header.php");
-require_once './classe/PDOFactory.php';
-require_once './classe/SBCManager.php';
-require_once './classe/panier.php';
+    include_once("inc/header.php");
+    require_once './classe/PDOFactory.php';
+    require_once './classe/SBCManager.php';
+    require_once './classe/panier.php';
 
-$bdd = PDOFactory::getMySQLConnection();
-$SBCManager = new SBCManager($bdd);
+    $bdd = PDOFactory::getMySQLConnection();
+    $SBCManager = new SBCManager($bdd);
 
-$SBCs = $SBCManager->getSBCs();
+    $SBCs = $SBCManager->getSBCs();
+
+
+
+    $count=0;
+
+    foreach($SBCs as $sbc)
+        $count = $count + 1;
+
+    $nbPages = ceil($count/6);
 ?>
 
 <form class="flex wrap recherche" action="infoSBC.php" method="post" id="filtre">
