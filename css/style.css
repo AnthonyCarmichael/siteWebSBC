@@ -40,6 +40,7 @@ main {
     margin-top: 5px;
     background-color: #141444da;
     min-height: 80vh;
+    font-size: 0.7rem;
 
 }
 
@@ -124,12 +125,12 @@ h3 {
 }
 
 #hamburger {
-    width: 50px;
+    width: 20px;
 }
 
 #userIcon {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     align-self: center;
     margin-right: 25px ;
 }
@@ -180,11 +181,7 @@ nav a:hover {
 }
 
 #logo {
-    width: 100px;
-}
-
-#logoPanier img {
-    width: 40px;
+    width: 30px;
 }
 
 /* PAGE SPÉCIFIQUE (Mobile)
@@ -233,12 +230,12 @@ nav a:hover {
 
 #seConnecter {
     padding-top: 50px;
-    width: 400px;
+    width: 70%;
     margin: auto;
 }
 
 #seConnecter input {
-    width: 250px;
+    width: 70%;
 }
 
 #seConnecter div {
@@ -294,6 +291,7 @@ nav a:hover {
         max-width: 980px;
         margin-top: 5px;
         background-color: #141444da;
+        font-size: 1.0rem;
 
     }
 
@@ -512,6 +510,24 @@ nav a:hover {
         width: 70%;
         margin: auto;
     }
+
+    /* Connexion **********************************************/
+
+    #seConnecter {
+        padding-top: 50px;
+        width: 400px;
+        margin: auto;
+    }
+
+    #seConnecter input {
+        width: 250px;
+    }
+
+    #seConnecter div {
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
 
 
     /* Info SBC **********************************************/
