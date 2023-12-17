@@ -79,7 +79,7 @@ if (userHover) {
         evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
         evt.target.remove();
         let userRoseHover = document.querySelector("#userIcon");
-        console.log(userRoseHover);
+        //console.log(userRoseHover);
         userRoseHover.addEventListener("mouseout", resetUrlUser);
     }
     function resetUrlUser(evt) {
