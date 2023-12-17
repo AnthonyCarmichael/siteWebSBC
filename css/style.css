@@ -28,10 +28,26 @@ body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 2em;
     font-family: 'Whisper', cursive;
     color: var(--darkPink);
 
+}
+
+h2 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 0.8em;
+}
+
+h3 {
+    color: white;
+    font-size: 0.7em;
+}
+
+p {
+    font-size: 0.6em;
 }
 
 header {
@@ -119,21 +135,30 @@ footer {
     background-color: rgba(0, 0, 0, 0.387);
 }
 
-
 /* HEADER ************************************************************/
 
-h2 {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    color: white;
-}
 
-h3 {
-    color: white;
-}
 
 #hamburger {
     width: 20px;
+}
+
+#menuBurger {
+    position: absolute;
+    top: 80px;
+    left: 20%;
+    background-color: #05c1ca;
+    width: 60px;
+    font-size: 0.6rem;
+}
+
+#menuUser {
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    background-color: #05c1ca;
+    width: 80px;
+    font-size: 0.6rem;
 }
 
 #userIcon {
@@ -380,16 +405,22 @@ nav a:hover {
     }
 
     h2 {
+        font-size: 2em;
         padding-top: 10px;
         padding-bottom: 5px;
         color: white;
     }
 
     h3 {
+        font-size: 1.5em;
+
         color: white;
     }
-
-    #hamburger, #userIcon {
+    
+    p {
+        font-size: 1.4em;
+    }
+    #hamburger, #userIcon, #menuBurger {
         display: none;
     }
 

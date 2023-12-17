@@ -81,6 +81,9 @@ if (userHover) {
         let userRoseHover = document.querySelector("#userIcon");
         //console.log(userRoseHover);
         userRoseHover.addEventListener("mouseout", resetUrlUser);
+        userRoseHover.addEventListener("click", addClassUser);
+
+        
     }
     function resetUrlUser(evt) {
         newImg = document.createElement("img");
@@ -89,8 +92,23 @@ if (userHover) {
         newImg.setAttribute("id","userIcon");
         evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
         evt.target.remove();
+
+        let menuUser = document.querySelector("#menuUser");
+        if (!menuUser.classList.contains("display-none")) {
+            menuUser.classList.add("display-none");
+        }
         let userResetHover = document.querySelector("#userIcon");
         userResetHover.addEventListener("mouseover", changeImgUrlUser);
+        console.log( userResetHover);
+    }
+
+    function addClassUser(evt) {
+        let menuUser = document.querySelector("#menuUser");
+        console.log( menuUser);
+        menuUser.classList.remove("display-none");
+        evt.target.removeEventListener("mouseout", resetUrlUser);
+        evt.target.addEventListener("click", resetUrlUser);
+   
     }
 }
 
@@ -109,6 +127,7 @@ if (burgerHover) {
         let burgerRoseHover = document.querySelector("#hamburger");
         //console.log(panierRoseHover);
         burgerRoseHover.addEventListener("mouseout", resetUrlBurger);
+        burgerRoseHover.addEventListener("click", addClassBurger);
     }
     function resetUrlBurger(evt) {
         newImg = document.createElement("img");
@@ -117,8 +136,21 @@ if (burgerHover) {
         newImg.setAttribute("id","hamburger");
         evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
         evt.target.remove();
+
+        let menuBurger = document.querySelector("#menuBurger");
+        if (!menuBurger.classList.contains("display-none")) {
+            menuBurger.classList.add("display-none");
+        }
         let burgerResetHover = document.querySelector("#hamburger");
         burgerResetHover.addEventListener("mouseover", changeImgUrlBurger);
+    }
+    function addClassBurger(evt) {
+        let menuBurger = document.querySelector("#menuBurger");
+        console.log( menuBurger);
+        menuBurger.classList.remove("display-none");
+        evt.target.removeEventListener("mouseout", resetUrlBurger);
+        evt.target.addEventListener("click", resetUrlBurger);
+   
     }
 }
 
@@ -139,3 +171,5 @@ if (main.id == "index" || main.id == "traitement") {
         setTimeout(imgVu, 5000);
     }
 }
+
+
