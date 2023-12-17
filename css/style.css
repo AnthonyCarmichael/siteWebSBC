@@ -420,7 +420,7 @@ nav a:hover {
     p {
         font-size: 1.4em;
     }
-    #hamburger, #userIcon, #menuBurger {
+    #hamburger, #userIcon, #menuBurger, #menuUser {
         display: none;
     }
 
