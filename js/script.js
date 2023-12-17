@@ -45,8 +45,7 @@ window.onload = function() {
 let panierHover = document.querySelector("#logoPanier img");
 console.log(panierHover);
 if (panierHover) {
-    
-panierHover.addEventListener("mouseover", changeImgUrl);
+    panierHover.addEventListener("mouseover", changeImgUrl);
     function changeImgUrl(evt) {
         newImg = document.createElement("img");
         newImg.setAttribute("src","img/panierRose.png");
@@ -65,6 +64,61 @@ panierHover.addEventListener("mouseover", changeImgUrl);
         evt.target.remove();
         let panierResetHover = document.querySelector("#logoPanier img");
         panierResetHover.addEventListener("mouseover", changeImgUrl);
+    }
+}
+
+let userHover = document.querySelector("#userIcon");
+console.log(userHover);
+if (userHover) {
+    userHover.addEventListener("mouseover", changeImgUrlUser);
+    function changeImgUrlUser(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/userIconRose.png");
+        newImg.setAttribute("alt","user");
+        newImg.setAttribute("id","userIcon");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let userRoseHover = document.querySelector("#userIcon");
+        console.log(userRoseHover);
+        userRoseHover.addEventListener("mouseout", resetUrlUser);
+    }
+    function resetUrlUser(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/userIcon.png");
+        newImg.setAttribute("alt","user");
+        newImg.setAttribute("id","userIcon");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let userResetHover = document.querySelector("#userIcon");
+        userResetHover.addEventListener("mouseover", changeImgUrlUser);
+    }
+}
+
+let burgerHover = document.querySelector("#hamburger");
+
+console.log(burgerHover);
+if (burgerHover) {
+    burgerHover.addEventListener("mouseover", changeImgUrlBurger);
+    function changeImgUrlBurger(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/hamburgerIconRose.png");
+        newImg.setAttribute("alt","burger");
+        newImg.setAttribute("id","hamburger");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let burgerRoseHover = document.querySelector("#hamburger");
+        //console.log(panierRoseHover);
+        burgerRoseHover.addEventListener("mouseout", resetUrlBurger);
+    }
+    function resetUrlBurger(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src","img/hamburgerIcon.png");
+        newImg.setAttribute("alt","panier");
+        newImg.setAttribute("id","hamburger");
+        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        evt.target.remove();
+        let burgerResetHover = document.querySelector("#hamburger");
+        burgerResetHover.addEventListener("mouseover", changeImgUrlBurger);
     }
 }
 

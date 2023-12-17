@@ -11,7 +11,6 @@
     --paleBlue: #31aadf;
 }
 
-/* BALISE GÉNÉRIQUE **************************************************/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,22 +18,25 @@
 
 }
 
+/* BALISE GÉNÉRIQUE (mobile ) **************************************************/
+
 body {
-    min-width: 980px;
-    background-color: black;
+
     background: url("../img/background.jpg") no-repeat center;
     background-size: cover;
+    background-color: black;
 }
 
-header {
-    margin: auto;
-    max-width: 980px;
+h1 {
+    font-size: 4em;
+    font-family: 'Whisper', cursive;
+    color: var(--darkPink);
+
 }
+
 
 main {
     margin: auto;
-    max-width: 980px;
-    min-height: 80vh;
     margin-top: 5px;
     background-color: #141444da;
 
@@ -47,14 +49,68 @@ footer {
     max-width: 980px;
 }
 
-/* HEADER ************************************************************/
-h1 {
-    margin-top: 20px;
-    font-size: 6em;
-    font-family: 'Whisper', cursive;
-    color: var(--darkPink);
-
+/* CLASS *************************************************************/
+.white {
+    color: white;
 }
+
+.center {
+    text-align: center;
+}
+
+.end {
+    text-align: end;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.display-none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bouton {
+    background-color: #370d43;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    /*height: 15px;*/
+    /*margin-left: 20px;*/
+    padding: 5px;
+    text-align: center;
+}
+
+.bouton:hover {
+    background-color: var(--rose);
+    transition: 1s;
+}
+
+.modif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    /*width: 40%;*/
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.387);
+}
+
+
+/* HEADER ************************************************************/
 
 h2 {
     padding-top: 10px;
@@ -64,6 +120,21 @@ h2 {
 
 h3 {
     color: white;
+}
+
+#hamburger {
+    width: 50px;
+}
+
+#userIcon {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    margin-right: 25px ;
+}
+
+.menu-connexion, .pc, #logoPanier {
+    display: none;
 }
 
 .menu-connexion ul {
@@ -111,479 +182,501 @@ nav a:hover {
     width: 40px;
 }
 
+/* RESPONSIVE **************************************************/
 
-/* CLASS *************************************************************/
-.white {
-    color: white;
-}
+/* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
+@media only screen and (min-width: 968px) {
+    /* For desktop: */
+    .grid {
+      grid-template-columns: 15% 10% 50% 10% 15%;
+      grid-template-areas:
+      "header   header    header    header    header"
+      ".        nav       main      aside     ."
+      "footer   footer    footer    footer    footer";
+    }
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
 
-.center {
-    text-align: center;
-}
-
-.end {
-    text-align: end;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.display-none {
-    display: none;
-}
-
-.flex {
-    display: flex;
-}
-
-
-.wrap {
-    flex-wrap: wrap;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.bouton {
-    background-color: #370d43;
-    border-radius: 2px;
-    text-decoration: none;
-    color: white;
-    /*height: 15px;*/
-    /*margin-left: 20px;*/
-    padding: 5px;
-    text-align: center;
-}
-
-.bouton:hover {
-    background-color: var(--rose);
-    transition: 1s;
-}
-
-.modif {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 10px;
-    /*width: 40%;*/
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.387);
-}
-
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-
-/* SPÉCIFIQUE À LA PAGE **********************************************/
-
-
-/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
-/*p[class*='prix-'] {
-    seffa
-}*/
-/* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
-
-/*Page index*/
-
-#index p {
-    color: white;
-}
-
-#index section {
-    display: flex;
-}
-
-#traitement #rappelIndex div {
-    margin: 5px;
-    padding-top: 5px;
-}
-
-#index div {
-    margin: 5px;
-    padding-top: 5px;
-}
-
-
-/*Page infos clients*/
-#infoClient section {
-    color: white;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-#infoClient div {
-    margin: 10px;
-    /*width: 40%;*/
-    padding: 10px;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.387);
-}
-
-#infoClient form {
-    color: white;
-}
-
-#infoClient label {
-    width: 100%;
-}
-
-#infoClient button {
-    width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 5px;
-}
-
-/*Caroussel*/
-
-.caroussel {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
-.imgCaroussel {
-    display: none;
-
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
+    .container {
+      margin: auto;
+      width: 900px;
+      border: 2px solid black;
     }
 
-    to {
-        opacity: 1
+    /* BALISE GÉNÉRIQUE **************************************************/
+
+
+    body {
+        min-width: 980px;
     }
-}
 
-/* Inscription **********************************************/
-#inscription fieldset {
-    width: 70%;
-    margin: 15px auto;
-    background-color: rgba(0, 0, 0, 0.387);
-    padding: 5px;
-    border: none;
-}
+    header {
+        margin: auto;
+        max-width: 980px;
+    }
 
-#inscription legend {
-    font-weight: bold;
-}
+    main {
+        margin: auto;
+        max-width: 980px;
+        min-height: 80vh;
+        margin-top: 5px;
+        background-color: #141444da;
 
-#inscription .register input,
-#inscription .register select {
-    margin: 0px 25px 10px 5px;
-    width: 215px;
-}
+    }
 
-#inscription .profil label {
-    min-width: 58px;
-}
+    footer {
+        margin: auto;
+        padding: 10px;
+        color: white;
+        max-width: 980px;
+    }
 
-#inscription #nom {
-    width: 252px;
-}
+    /* HEADER ************************************************************/
+    h1 {
+        margin-top: 20px;
+        font-size: 6em;
+    }
 
-#inscription .coord label {
-    min-width: 81px;
-}
+    h2 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        color: white;
+    }
 
-#inscription .info-cond input,
-#inscription .info-cond select {
-    width: 165px;
-}
+    h3 {
+        color: white;
+    }
 
-#inscription .register button {
-    width: 80px;
+    #hamburger, #userIcon {
+        display: none;
+    }
 
-}
+    .menu-connexion, .pc, #logoPanier{
+        display: contents;
+    }
 
-#inscription .remise {
-    width: 70%;
-    margin: auto;
-}
+    .menu-connexion ul {
+        list-style: none;
+    }
 
-/* Connexion **********************************************/
+    .menu-principal {
+        background-color: var(--darkBlue);
+        border-radius: 5px;
+    }
 
-#seConnecter {
-    padding-top: 50px;
-    width: 400px;
-    margin: auto;
-}
+    .menu-principal ul:nth-of-type(1) {
+        width: 60%;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-#seConnecter input {
-    width: 250px;
-}
+    .menu-principal ul:nth-of-type(2) {
+        width: 40%;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-#seConnecter div {
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+    .menu-principal a {
+        text-decoration: none;
+        color: white;
+    }
 
-/* Info SBC **********************************************/
+    .menu-connexion a {
+        text-decoration: none;
+        color: white;
+    }
 
-#infoSBC img {
-    width: 100%;
-    height: 100%;
-}
+    nav a:hover {
+        color: var(--darkPink);
+    }
 
-#infoSBC h2 {
-    margin-bottom: 20px;
-}
+    #logo {
+        width: 100px;
+    }
 
-#infoSBC form.recherche {
-    width: 95%;
-    margin: auto;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
+    #logoPanier img {
+        width: 40px;
+    }
 
-#infoSBC input {
-    height: 35px;
-    border-radius: 5px;
-    margin: auto;
-}
 
-#infoSBC article div:first-of-type {
+
+
+    /* SPÉCIFIQUE À LA PAGE **********************************************/
+
+
+    /* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
+    /*p[class*='prix-'] {
+        seffa
+    }*/
+    /* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
+
+    /*Page index*/
+
+    #index p {
+        color: white;
+    }
+
+    #index section {
+        display: flex;
+    }
+
+    #traitement #rappelIndex div {
+        margin: 5px;
+        padding-top: 5px;
+    }
+
+    #index div {
+        margin: 5px;
+        padding-top: 5px;
+    }
+
+
+    /*Page infos clients*/
+    #infoClient section {
+        color: white;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    #infoClient div {
+        margin: 10px;
+        /*width: 40%;*/
+        padding: 10px;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.387);
+    }
+
+    #infoClient form {
+        color: white;
+    }
+
+    #infoClient label {
+        width: 100%;
+    }
+
+    #infoClient button {
+        width: 100%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 5px;
+    }
+
+    /*Caroussel*/
+
+    .caroussel {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    .imgCaroussel {
+        display: none;
+
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* Inscription **********************************************/
+    #inscription fieldset {
+        width: 70%;
+        margin: 15px auto;
+        background-color: rgba(0, 0, 0, 0.387);
+        padding: 5px;
+        border: none;
+    }
+
+    #inscription legend {
+        font-weight: bold;
+    }
+
+    #inscription .register input,
+    #inscription .register select {
+        margin: 0px 25px 10px 5px;
+        width: 215px;
+    }
+
+    #inscription .profil label {
+        min-width: 58px;
+    }
+
+    #inscription #nom {
+        width: 252px;
+    }
+
+    #inscription .coord label {
+        min-width: 81px;
+    }
+
+    #inscription .info-cond input,
+    #inscription .info-cond select {
+        width: 165px;
+    }
+
+    #inscription .register button {
+        width: 80px;
+
+    }
+
+    #inscription .remise {
+        width: 70%;
+        margin: auto;
+    }
+
+    /* Connexion **********************************************/
+
+    #seConnecter {
+        padding-top: 50px;
+        width: 400px;
+        margin: auto;
+    }
+
+    #seConnecter input {
+        width: 250px;
+    }
+
+    #seConnecter div {
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    /* Info SBC **********************************************/
+
+    #infoSBC img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #infoSBC h2 {
+        margin-bottom: 20px;
+    }
+
+    #infoSBC form.recherche {
+        width: 95%;
+        margin: auto;
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #infoSBC input {
+        height: 35px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    #infoSBC article div:first-of-type {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    #infoSBC .certification{
+        color: var(--turquoise);
+    }
+
+    #infoSBC .certification:hover{
+        color: var(--rose);
+        transition: 1s;
+    }
+
+    #infoSBC article div:last-of-type {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #infoSBC form.panier {
+        padding-left: 30px;
+        padding-bottom: 5px;
+    }
+
+    #infoSBC form.favoris {
+        padding-left: 30px;
+        padding-top: 5px;
+    }
+
+    /* Suggestion SBC **********************************************/
+
+    #suggestionSBC h2 {
+        padding: 15px;
+    }
+
+    #suggestionSBC form {
+        width: 95%;
+        margin: auto;
+    }
+
+    #suggestionSBC fieldset {
+        background-color: var(--turquoise);
+    }
+
+    #suggestionSBC fieldset>div {
+        padding: 2%;
+    }
+
+    #suggestionSBC div>div {
+        margin: 2%;
+    }
+
+    #suggestionSBC legend {
+        color: white;
+        font-size: xx-large;
+        font-style: italic;
+        margin-left: 15px;
+    }
+
+    #suggestionSBC input {
+        border-radius: 3px;
+        height: 25px;
+    }
+
+    #suggestionSBC input[class*='suggestion-'] {
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    #suggestionSBC .suggestion-annuler {
+        background-color: var(--darkPink);
+
+    }
+
+    #suggestionSBC .suggestion-envoyer {
+        background-color: var(--paleBlue);
+    }
+
+    /* Historique **********************************************/
+
+    #historique #commande {
+        background-color: #1c06208d;
+        margin: auto;
+        width: 90%;
+
+    }
+
+    #historique aside {
+        background-color: #481851be;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #historique #headCommande div {
+        justify-content: space-between;
+    }
+
+
+    #historique #headCommande div p {
+
+        width: 20%;
+    }
+
+    #historique img {
+        width: 100px;
+    }
+
+    #historique #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+
+        margin: 10px;
+    }
+
+    #historique #commande {
+        padding-bottom: 30px;
+    }
+
+    /* Wishlist **********************************************/
+    #wishList #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+    }
+
+    #wishList img {
+        width: 100px;
+    }
+
+    #wishList p {
+        /*padding: 15px;*/
+        width: 225px;
+    }
+
+    #wishList p#prix {
+        /*padding: 15px;*/
+        width: 100px;
+        padding-left: 10px;
+    }
+
+    /* Panier **********************************************/
+    #panier #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+    }
+
+    #panier img {
+        width: 100px;
+    }
+
+    #panier p {
+        /*padding: 15px;*/
+        width: 200px;
+    }
+
+    #panier p#petit {
+        /*padding: 15px;*/
+        width: 100px;
+        padding-left: 10px;
+    }
+
+    #panier h3{
+        padding-bottom: 10px;
+    }
+
+    /* InfoCertification **********************************************/
+    #infoCertification section {
     width: 80%;
-    height: 50%;
     margin: auto;
-    margin-bottom: 15px;
-}
-
-#infoSBC .certification{
-    color: var(--turquoise);
-}
-
-#infoSBC .certification:hover{
-    color: var(--rose);
-    transition: 1s;
-}
-
-#infoSBC article div:last-of-type {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-#infoSBC form.panier {
-    padding-left: 30px;
-    padding-bottom: 5px;
-}
-
-#infoSBC form.favoris {
-    padding-left: 30px;
-    padding-top: 5px;
-}
-
-/* Suggestion SBC **********************************************/
-
-#suggestionSBC h2 {
-    padding: 15px;
-}
-
-#suggestionSBC form {
-    width: 95%;
-    margin: auto;
-}
-
-#suggestionSBC fieldset {
-    background-color: var(--turquoise);
-}
-
-#suggestionSBC fieldset>div {
-    padding: 2%;
-}
-
-#suggestionSBC div>div {
-    margin: 2%;
-}
-
-#suggestionSBC legend {
-    color: white;
-    font-size: xx-large;
-    font-style: italic;
-    margin-left: 15px;
-}
-
-#suggestionSBC input {
-    border-radius: 3px;
-    height: 25px;
-}
-
-#suggestionSBC input[class*='suggestion-'] {
-    margin: auto;
-    margin-top: 15px;
-}
-
-#suggestionSBC .suggestion-annuler {
-    background-color: var(--darkPink);
-
-}
-
-#suggestionSBC .suggestion-envoyer {
-    background-color: var(--paleBlue);
-}
-
-/* Historique **********************************************/
-
-#historique #commande {
-    background-color: #1c06208d;
-    margin: auto;
-    width: 90%;
-
-}
-
-#historique aside {
-    background-color: #481851be;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#historique #headCommande div {
-    justify-content: space-between;
-}
+    }
 
 
-#historique #headCommande div p {
+    #infoCertification section a {
+        color: var(--turquoise);
+    }
 
-    width: 20%;
-}
-
-#historique img {
-    width: 100px;
-}
-
-#historique #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
-
-    margin: 10px;
-}
-
-#historique #commande {
-    padding-bottom: 30px;
-}
-
-/* Wishlist **********************************************/
-#wishList #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
-    /*width: 100%;*/
-    margin: 10px;
-    background-color: #1c06208d;
-}
-
-#wishList img {
-    width: 100px;
-}
-
-#wishList p {
-    /*padding: 15px;*/
-    width: 225px;
-}
-
-#wishList p#prix {
-    /*padding: 15px;*/
-    width: 100px;
-    padding-left: 10px;
-}
-
-/* Panier **********************************************/
-#panier #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
-    /*width: 100%;*/
-    margin: 10px;
-    background-color: #1c06208d;
-}
-
-#panier img {
-    width: 100px;
-}
-
-#panier p {
-    /*padding: 15px;*/
-    width: 200px;
-}
-
-#panier p#petit {
-    /*padding: 15px;*/
-    width: 100px;
-    padding-left: 10px;
-}
-
-#panier h3{
-    padding-bottom: 10px;
-}
-
-/* InfoCertification **********************************************/
-#infoCertification section {
- width: 80%;
- margin: auto;
-}
-
-
-#infoCertification section a {
-    color: var(--turquoise);
-}
-
-#infoCertification section a:hover {
-    transition: 1s;
-    color: var(--darkPink);
+    #infoCertification section a:hover {
+        transition: 1s;
+        color: var(--darkPink);
+    }
 }

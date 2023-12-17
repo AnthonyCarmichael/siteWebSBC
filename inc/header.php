@@ -48,21 +48,23 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
         <nav class="menu-principal flex">
             <ul class="flex">
                 <li><img id="logo" src="img/logo.png" alt="compagnie"></li>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="infoSBC.php">SBC</a></li>
-                <li><a href="comparaison.php">Comparaison</a></li>
-                <li><a href="suggestionSBC.php">Suggestion</a></li>
+                <li><img id="hamburger" src="img/hamburgerIcon.png" alt="compagnie"></li>
+                <li><a href="index.php" class="pc">Accueil</a></li>
+                <li><a href="infoSBC.php" class="pc">SBC</a></li>
+                <li><a href="comparaison.php" class="pc">Comparaison</a></li>
+                <li><a href="suggestionSBC.php" class="pc">Suggestion</a></li>
             </ul>
 
             <!-- Si le client est connecter, d'autre lien s'affiche -->
             <!-- Le if est en commentaire pour tester le css même si y'a pas de client connecter -->
             <?php if (isset($_SESSION['client'])) { ?>
                 <ul class="flex">
-                    <li><a href="infoClient.php">Gestion de compte</a></li>
-                    <li><a href="wishList.php">Liste de souhait</a></li>
+                    <li><a href="infoClient.php" class="pc" >Gestion de compte</a></li>
+                    <li><a href="wishList.php" class="pc">Liste de souhait</a></li>
                     <li><a id="logoPanier" href="panier.php"><img src="img/panier.png" alt="panier"></a></li>
                 </ul>
             <?php } ?>
+            <img id="userIcon" src="img/userIcon.png" alt="user">
         </nav>
     </header>
     <?php

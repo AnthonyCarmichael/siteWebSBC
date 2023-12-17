@@ -24,7 +24,7 @@
     </div>
 </div>
 <br>
-<section>
+<section class="white">
     <div>
         <h2>À propos de nous</h2>
         <p>Nous sommes trois étudiant passionnés d'informatique qui avont décidé de se spécialiser dans le
