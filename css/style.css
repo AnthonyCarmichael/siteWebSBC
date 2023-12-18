@@ -405,7 +405,7 @@ nav a:hover {
     }
 
     h2 {
-        font-size: 2em;
+        font-size: 1.5em;
         padding-top: 10px;
         padding-bottom: 5px;
         color: white;
@@ -418,7 +418,7 @@ nav a:hover {
     }
     
     p {
-        font-size: 1.4em;
+        font-size: 1em;
     }
     #hamburger, #userIcon, #menuBurger, #menuUser {
         display: none;
