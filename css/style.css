@@ -341,7 +341,7 @@ nav a:hover {
 
 /* Panier (mobile et PC) ********************************************************/
 
-#panier #infoSpecifique a{
+#panier #infoSpecifique>a{
     display: none;
 }
 
@@ -757,6 +757,11 @@ nav a:hover {
     #panier h3{
         padding-bottom: 10px;
     }
+
+    #panier #infoSpecifique>a{
+        display:contents
+    }
+    
 
 
 }
