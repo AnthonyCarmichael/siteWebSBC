@@ -20,7 +20,6 @@
     <article class="col-3 center">
         <select name="sbc-0" id="select-<?=$i?>" class="compareSelect">
             <?php
-                echo '<option value="' . $sbcs[0]['id_SBC'] . '" selected>' . $sbcs[0]['modeleSBC'] . '</option>';
                 foreach($sbcs as $sbc)
                     echo '<option value="' . $sbc['id_SBC'] . '">' . $sbc['modeleSBC'] . '</option>'
             ?>
@@ -56,8 +55,8 @@
         <?php
         foreach($sbcs as $sbc) {?>
             <td class="largeur1-<?=$sbc['id_SBC']?> display-none"><?=$sbc['largeur']?></td>
-            <td class="largeur3-<?=$sbc['id_SBC']?> display-none"><?=$sbc['largeur']?></td>
             <td class="largeur2-<?=$sbc['id_SBC']?> display-none"><?=$sbc['largeur']?></td>
+            <td class="largeur3-<?=$sbc['id_SBC']?> display-none"><?=$sbc['largeur']?></td>
         <?php }?>
     </tr>
     <tr>

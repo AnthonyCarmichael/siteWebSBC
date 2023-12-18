@@ -16,12 +16,12 @@
 
 
 
-    $count=0;
+    /*$count=0;
 
     foreach($SBCs as $sbc)
         $count = $count + 1;
 
-    $nbPages = ceil($count/6);
+    $nbPages = ceil($count/6);*/
 ?>
 
 <form class="flex wrap recherche" action="infoSBC.php" method="post" id="filtre">

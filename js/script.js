@@ -1,19 +1,21 @@
 window.onload = function () {
     //let selectMenu = document.querySelector("article select[name='sbc']");
     let selectMenu = document.querySelectorAll(".compareSelect");
-
+    
 
     for (let i = 0; i < selectMenu.length; i++) {
 
         if (selectMenu[i] != undefined) {
             selectMenu[i].addEventListener('change', function (e) {
-                //let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
+                let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
 
                 let pricesArray = document.querySelectorAll("#" + e.target.id + " ~ p[class*='prix-'");
                 let imgArray = document.querySelectorAll("#" + e.target.id + " ~ img[class*='img-'");
                 let formPanierArray = document.querySelectorAll("#" + e.target.id + " ~ form[class*='formPanier-'");
                 let formFavorisArray = document.querySelectorAll("#" + e.target.id + " ~ form[class*='formFavoris-'");
                 let savoirArray = document.querySelectorAll("#" + e.target.id + " ~ a[class*='savoir-'");
+
+                //let largeurArray = document.querySelectorAll("." + e.target.id + "-container + table tr .largeur:nth-child(2n+1)");
                 let largeur1Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='largeur1-'");
                 let largeur2Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='largeur2-'");
                 let largeur3Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='largeur3-'");
@@ -33,11 +35,14 @@ window.onload = function () {
                 let garantie2Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='garantie2-'");
                 let garantie3Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='garantie3-'");
 
-                let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace, formPanierClassListString, formPanierIndexOfSpace, formFavorisClassListString, formFavorisIndexOfSpace, savoirClassListString, savoirIndexOfSpace, largeur1classListString, largeur1IndexOfSpace, largeur2classListString, largeur2IndexOfSpace, largeur3classListString, largeur3IndexOfSpace, longueur1classListString, longueur1IndexOfSpace, longueur2classListString, longueur2IndexOfSpace, longueur3classListString, longueur3IndexOfSpace, pMarque1ClassListString, pMarque1IndexOfSpace, pMarque2ClassListString, pMarque2IndexOfSpace, pMarque3ClassListString, pMarque3IndexOfSpace, nbCoeur1ClassListString, nbCoeur1IndexOfSpace, nbCoeur2ClassListString, nbCoeur2IndexOfSpace, nbCoeur3ClassListString, nbCoeur3IndexOfSpace, ram1ClassListString, ram1IndexOfSpace, ram2ClassListString, ram2IndexOfSpace, ram3ClassListString, ram3IndexOfSpace, garantie1ClassListString, garantie1IndexOfSpace, garantie2ClassListString, garantie2IndexOfSpace, garantie3ClassListString, garantie3IndexOfSpace;
-                //let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace;
-
-                console.log(pricesArray);
-                console.log(imgArray);
+                let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace, formPanierClassListString, formPanierIndexOfSpace, 
+                    formFavorisClassListString, formFavorisIndexOfSpace, savoirClassListString, savoirIndexOfSpace, largeur1classListString, largeur1IndexOfSpace, 
+                    largeur2classListString, largeur2IndexOfSpace, largeur3classListString, largeur3IndexOfSpace, longueur1classListString, longueur1IndexOfSpace, 
+                    longueur2classListString, longueur2IndexOfSpace, longueur3classListString, longueur3IndexOfSpace, pMarque1ClassListString, pMarque1IndexOfSpace, 
+                    pMarque2ClassListString, pMarque2IndexOfSpace, pMarque3ClassListString, pMarque3IndexOfSpace, nbCoeur1ClassListString, nbCoeur1IndexOfSpace, 
+                    nbCoeur2ClassListString, nbCoeur2IndexOfSpace, nbCoeur3ClassListString, nbCoeur3IndexOfSpace, ram1ClassListString, ram1IndexOfSpace, 
+                    ram2ClassListString, ram2IndexOfSpace, ram3ClassListString, ram3IndexOfSpace, garantie1ClassListString, garantie1IndexOfSpace, garantie2ClassListString, 
+                    garantie2IndexOfSpace, garantie3ClassListString, garantie3IndexOfSpace;
 
                 for (let j = 0; j < pricesArray.length; j++) {
                     //Affichage prix
@@ -90,7 +95,15 @@ window.onload = function () {
                         savoirArray[j].classList.remove('display-none');
                     }
                     
-                    
+                    /*//Affichage largeur
+                    largeurArray[j].classList.add('display-none');
+    
+                    largeur1classListString = largeurArray[j].classList.toString();
+                    largeur1IndexOfSpace = largeur1classListString.indexOf(' ');
+
+                    if (e.target.value === largeur1classListString.substring(9, largeur1IndexOfSpace)) {
+                        largeurArray[j].classList.remove('display-none');
+                    }*/
 
                     if(e.target.id == "select-1"){
                     
@@ -282,6 +295,9 @@ window.onload = function () {
                     }
                 }
             });
+
+            selectMenu[i].querySelectorAll('option')[i].selected = 'selected';
+            selectMenu[i].dispatchEvent(new Event('change'));
         }
     }
 };
