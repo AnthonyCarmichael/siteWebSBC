@@ -375,6 +375,59 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+/* Comparaison **********************************************/
+
+#comparaison article{
+    margin: 20px 0px 0px 0px;
+}
+
+#comparaison select{
+    height: 25px;
+}
+
+#comparaison img{
+    width: 75%;
+    height: 50%;
+    margin: 15px 0px;
+}
+
+#comparaison form{
+    margin: 15px 0px;
+}
+
+#comparaison table{
+    border-collapse: collapse;
+    width: 100%;
+    cursor: pointer;
+    margin: 100px 0px;
+    border: 2px solid #ddd;
+}
+
+#comparaison tr{
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+}
+
+#comparaison td{
+    padding: 15px 90px;
+}
+
+#comparaison tr, td{
+    border: 1px solid #ddd;
+}
+
+#comparaison .plus{
+    color: var(--turquoise);
+}
+
+#comparaison .plus:hover{
+    color: var(--rose);
+    transition: 1s;
+}
+
+
+
 /* Info SBC **********************************************/
 
 #infoSBC img {

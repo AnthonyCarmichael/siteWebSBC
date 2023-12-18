@@ -4,10 +4,10 @@
     include_once("inc/header.php");
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';
-    require_once './classe/panier.php';
-include_once("inc/header.php");
-require_once './classe/PDOFactory.php';
-require_once './classe/SBCManager.php';
+    //require_once './classe/panier.php';
+    include_once("inc/header.php");
+    require_once './classe/PDOFactory.php';
+    require_once './classe/SBCManager.php';
 
     $bdd = PDOFactory::getMySQLConnection();
     $SBCManager = new SBCManager($bdd);
@@ -92,7 +92,55 @@ require_once './classe/SBCManager.php';
         </section>
         <?php
     }
-} else { ?>
+}elseif (isset($_REQUEST['idSBC'])) {
+    $sbc = $SBCManager->getSBCById($_REQUEST['idSBC']);?>
+    <article class="col-4 white">
+        <div>
+            <a href="img/<?= $sbc->get_modeleSBC(); ?>.jpg"><img src="img/<?= $sbc->get_modeleSBC(); ?>.jpg"
+                    alt="<?= $sbc->get_modeleSBC(); ?>.jpg"></a>
+        </div>
+
+        <div>
+            <p>
+                <?= $sbc->get_marqueSBC() . ' ' . $sbc->get_modeleSBC() . ' ' . $sbc->get_RAM() . ' Go ' . $sbc->get_longueur() . ' par ' . $sbc->get_largeur() . ' mm'; ?>
+            </p>
+            <p>Processeur
+                <?= $sbc->get_marqueProcesseur() . ' ' . $sbc->get_modeleProcesseur() . ' ' . $sbc->get_nbCoeur(); ?>
+                Coeurs
+            </p>
+            <p>Prix:
+                <?= $sbc->get_prix(); ?>$
+            </p>
+            <p>
+                <?php $annees = 0;
+                $jours = $sbc->get_garantie();
+                while ($jours >= 365) {
+                    $annees += 1;
+                    $jours -= 365;
+                }
+                if ($annees <= 0) {
+                    echo $jours . ' jours de garantie';
+                } elseif ($jours <= 0) {
+                    echo $annees . ' an de garantie';
+                } else {
+                    echo $annees . ' an ' . $jours . ' jours de garantie';
+                } ?>
+            </p>
+        <p><a class="certification" href="infoCertification.php?idSBC=<?=$sbc->get_id_SBC();?>">Certification</a></p>
+        </div>
+
+        <form class="panier" action="traitement.php" method="get">
+            <input type="hidden" name="action" value="panier">
+            <input type="hidden" name="panier" value="<?= $sbc->get_id_SBC(); ?>">
+            <input type="submit" class="bouton" value="Ajouter aux panier">
+        </form>
+        <form class="favoris" action="traitement.php" method="get">
+            <input type="hidden" name="action" value="favoris">
+            <input type="hidden" name="favoris" value="<?= $sbc->get_id_SBC(); ?>">
+            <input type="submit" class="bouton" value="Ajouter au favoris">
+        </form>
+    </article>
+<?php }else { ?>
     <section class="flex wrap white">
         <?php foreach ($SBCs as $SBC) { ?>
             <article class="col-4">

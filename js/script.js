@@ -92,7 +92,7 @@ window.onload = function () {
                     
                     
 
-                    if(e.target.id === "select-1"){
+                    if(e.target.id == "select-1"){
                     
                         //Affichage largeur1
                         largeur1Array[j].classList.add('display-none');
@@ -155,7 +155,7 @@ window.onload = function () {
                         }         
                     }
 
-                    if(e.target.id === "select-2"){
+                    if(e.target.id == "select-2"){
                     
                         //Affichage largeur2
                         largeur2Array[j].classList.add('display-none');
@@ -218,7 +218,7 @@ window.onload = function () {
                         }    
                     }
 
-                    if(e.target.id === "select-3"){
+                    if(e.target.id == "select-3"){
                     
                         //Affichage largeur3
                         largeur3Array[j].classList.add('display-none');
