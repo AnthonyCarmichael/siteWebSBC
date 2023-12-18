@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 include_once("inc/autoloader.php");
+
 $bdd = PDOFactory::getMySQLConnection();
 
 if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
@@ -16,6 +17,8 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
     $_SESSION = array();
     session_destroy();
 }
+
+include_once("prétraitement.php");
 ///////////////////////////////////////////////////////////////////////////////////
 ?>
 
@@ -26,6 +29,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
     <script src="js/script.js" defer></script>
     <title>SBC</title>
@@ -67,9 +71,14 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "connexion") {
     </header>
     <?php
     // Chaque main a un id correspondant a son nom de page
-    $page = substr($_SERVER['REQUEST_URI'], 12, -4);
+    $page = basename($_SERVER['REQUEST_URI'], '.php');
+
     if ($page == null) {
         $page = "index";
+    }
+    else {
+        $parts = explode('.', $page);
+        $page = $parts[0];
     }
     ?>
     <main id="<?= $page ?>">

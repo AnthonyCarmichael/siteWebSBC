@@ -5,6 +5,9 @@
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';
     require_once './classe/panier.php';
+include_once("inc/header.php");
+require_once './classe/PDOFactory.php';
+require_once './classe/SBCManager.php';
 
     $bdd = PDOFactory::getMySQLConnection();
     $SBCManager = new SBCManager($bdd);
@@ -75,8 +78,8 @@
                     </div>
 
                     <form class="panier" action="traitement.php" method="get">
-                        <input type="hidden" name="action" value="idPanier">
-                        <input type="hidden" name="idPanier" value="<?= $SBCObj->get_id_SBC(); ?>">
+                        <input type="hidden" name="action" value="panier">
+                        <input type="hidden" name="panier" value="<?= $SBCObj->get_id_SBC(); ?>">
                         <input type="submit" class="bouton" value="Ajouter aux panier">
                     </form>
                     <form class="favoris" action="traitement.php" method="get">
@@ -128,8 +131,8 @@
                 </div>
 
                 <form class="panier" action="traitement.php" method="get">
-                    <input type="hidden" name="action" value="idPanier">
-                    <input type="hidden" name="idPanier" value="<?= $SBC->get_id_SBC(); ?>">
+                    <input type="hidden" name="action" value="panier">
+                    <input type="hidden" name="panier" value="<?= $SBC->get_id_SBC(); ?>">
                     <input type="submit" class="bouton" value="Ajouter au panier">
                 </form>
                 <form class="favoris" action="traitement.php" method="get">

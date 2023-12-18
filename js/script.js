@@ -1,12 +1,12 @@
-window.onload = function() {
+window.onload = function () {
     //let selectMenu = document.querySelector("article select[name='sbc']");
     let selectMenu = document.querySelectorAll(".compareSelect");
 
 
-    for(let i = 0; i < selectMenu.length; i++){
+    for (let i = 0; i < selectMenu.length; i++) {
 
         if (selectMenu[i] != undefined) {
-            selectMenu[i].addEventListener('change', function(e) {
+            selectMenu[i].addEventListener('change', function (e) {
                 //let idSelect = e.target.id.toString().charAt(e.target.id.toString().length - 1);
 
                 let pricesArray = document.querySelectorAll("#" + e.target.id + " ~ p[class*='prix-'");
@@ -34,6 +34,10 @@ window.onload = function() {
                 let garantie3Array = document.querySelectorAll("." + e.target.id + "-container + table tr td[class*='garantie3-'");
 
                 let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace, formPanierClassListString, formPanierIndexOfSpace, formFavorisClassListString, formFavorisIndexOfSpace, savoirClassListString, savoirIndexOfSpace, largeur1classListString, largeur1IndexOfSpace, largeur2classListString, largeur2IndexOfSpace, largeur3classListString, largeur3IndexOfSpace, longueur1classListString, longueur1IndexOfSpace, longueur2classListString, longueur2IndexOfSpace, longueur3classListString, longueur3IndexOfSpace, pMarque1ClassListString, pMarque1IndexOfSpace, pMarque2ClassListString, pMarque2IndexOfSpace, pMarque3ClassListString, pMarque3IndexOfSpace, nbCoeur1ClassListString, nbCoeur1IndexOfSpace, nbCoeur2ClassListString, nbCoeur2IndexOfSpace, nbCoeur3ClassListString, nbCoeur3IndexOfSpace, ram1ClassListString, ram1IndexOfSpace, ram2ClassListString, ram2IndexOfSpace, ram3ClassListString, ram3IndexOfSpace, garantie1ClassListString, garantie1IndexOfSpace, garantie2ClassListString, garantie2IndexOfSpace, garantie3ClassListString, garantie3IndexOfSpace;
+                //let priceclassListString, priceIndexOfSpace, imgclassListString, imgIndexOfSpace;
+
+                console.log(pricesArray);
+                console.log(imgArray);
 
                 for (let j = 0; j < pricesArray.length; j++) {
                     //Affichage prix
@@ -50,7 +54,7 @@ window.onload = function() {
                     imgArray[j].classList.add('display-none');
 
                     imgclassListString = imgArray[j].classList.toString();
-                    imgIndexOfSpace = imgclassListString.indexOf(' ');                
+                    imgIndexOfSpace = imgclassListString.indexOf(' ');
 
                     if (e.target.value === imgclassListString.substring(4, imgIndexOfSpace)) {
                         imgArray[j].classList.remove('display-none');
@@ -285,23 +289,23 @@ window.onload = function() {
 let panierHover = document.querySelector("#logoPanier img");
 console.log(panierHover);
 if (panierHover) {
-    
-panierHover.addEventListener("mouseover", changeImgUrl);
+
+    panierHover.addEventListener("mouseover", changeImgUrl);
     function changeImgUrl(evt) {
         newImg = document.createElement("img");
-        newImg.setAttribute("src","img/panierRose.png");
-        newImg.setAttribute("alt","panier");
-        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        newImg.setAttribute("src", "img/panierRose.png");
+        newImg.setAttribute("alt", "panier");
+        evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
         evt.target.remove();
         let panierRoseHover = document.querySelector("#logoPanier img");
-    //console.log(panierRoseHover);
+        //console.log(panierRoseHover);
         panierRoseHover.addEventListener("mouseout", resetUrl);
     }
     function resetUrl(evt) {
         newImg = document.createElement("img");
-        newImg.setAttribute("src","img/panier.png");
-        newImg.setAttribute("alt","panier");
-        evt.target.parentNode.insertAdjacentElement("beforeend",newImg);
+        newImg.setAttribute("src", "img/panier.png");
+        newImg.setAttribute("alt", "panier");
+        evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
         evt.target.remove();
         let panierResetHover = document.querySelector("#logoPanier img");
         panierResetHover.addEventListener("mouseover", changeImgUrl);
@@ -309,20 +313,19 @@ panierHover.addEventListener("mouseover", changeImgUrl);
 }
 
 let main = document.querySelector("main");
-if(main.id == "index" || main.id == "traitement")
-{
+if (main.id == "index" || main.id == "traitement") {
     let imgActuel = 0;
     imgVu();
-    
+
     function imgVu() {
-      let i;
-      let img = document.getElementsByClassName("imgCaroussel");
-      for (i = 0; i < img.length; i++) {
-        img[i].style.display = "none";
-      }
-      imgActuel++;
-      if (imgActuel > img.length) {imgActuel = 1}
-      img[imgActuel-1].style.display = "block";
-      setTimeout(imgVu, 5000);
+        let i;
+        let img = document.getElementsByClassName("imgCaroussel");
+        for (i = 0; i < img.length; i++) {
+            img[i].style.display = "none";
+        }
+        imgActuel++;
+        if (imgActuel > img.length) { imgActuel = 1 }
+        img[imgActuel - 1].style.display = "block";
+        setTimeout(imgVu, 5000);
     }
 }
