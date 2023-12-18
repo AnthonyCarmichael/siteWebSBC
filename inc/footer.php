@@ -1,6 +1,8 @@
     </main>
     <footer class="center">
-        Copyright Anthony Carmichael, Maxime Malette, Richard Dongmo
+        <p>
+            Copyright Anthony Carmichael, Maxime Malette, Richard Dongmo
+        </p>
     </footer>
 </body>
 </html>

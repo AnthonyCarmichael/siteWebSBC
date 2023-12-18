@@ -173,146 +173,149 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.387);
 }
 
-.col-1 {
-    width: 8.33%;
+/* HEADER (mobile et PC) ************************************************************/
+
+
+
+#hamburger {
+    width: 20px;
 }
 
-.col-2 {
-    width: 16.66%;
+#menuBurger {
+    position: absolute;
+    top: 80px;
+    left: 20%;
+    background-color: #05c1ca;
+    width: 60px;
+    font-size: 0.6rem;
 }
 
-.col-3 {
-    width: 25%;
+#menuUser {
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    background-color: #05c1ca;
+    width: 80px;
+    font-size: 0.6rem;
 }
 
-.col-4 {
-    width: 33.33%;
+#userIcon {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin-right: 25px ;
 }
 
-.col-5 {
-    width: 41.66%;
+.menu-connexion, .pc, #logoPanier {
+    display: none;
 }
 
-.col-6 {
-    width: 50%;
+.menu-principal {
+    justify-content: space-between;
 }
 
-.col-7 {
-    width: 58.33%;
+.menu-connexion ul {
+    list-style: none;
 }
 
-.col-8 {
-    width: 66.66%;
+.menu-principal {
+    background-color: var(--darkBlue);
+    border-radius: 5px;
 }
 
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-
-/* SPÉCIFIQUE À LA PAGE **********************************************/
-
-
-/* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
-/*p[class*='prix-'] {
-    seffa
-}*/
-/* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
-
-/*Page index*/
-
-#index p {
-    color: white;
-}
-
-#index section {
-    display: flex;
-}
-
-#traitement #rappelIndex div {
-    margin: 5px;
-    padding-top: 5px;
-}
-
-#index div {
-    margin: 5px;
-    padding-top: 5px;
-}
-
-
-/*Page infos clients*/
-#infoClient section {
-    color: white;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-#infoClient div {
-    margin: 10px;
-    /*width: 40%;*/
-    padding: 10px;
+.menu-principal ul:nth-of-type(1) {
+    width: 60%;
+    list-style: none;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.387);
 }
 
-#infoClient form {
+.menu-principal ul:nth-of-type(2) {
+    width: 40%;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-principal a {
+    text-decoration: none;
     color: white;
 }
 
-#infoClient label {
-    width: 100%;
+.menu-connexion a {
+    text-decoration: none;
+    color: white;
 }
 
-#infoClient button {
-    width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 5px;
+nav a:hover {
+    color: var(--darkPink);
 }
 
-/*Caroussel*/
+#logo {
+    width: 40px;
+}
 
-.caroussel {
-    max-width: 1000px;
-    position: relative;
+/* PAGE SPÉCIFIQUE *******************************************************************/
+
+/* Historique (mobile et PC) **********************************************/
+
+#historique #commande {
+    background-color: #1c06208d;
+    margin: auto;
+    width: 90%;
+
+}
+
+#historique aside {
+    background-color: #481851be;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#historique #headCommande div {
+    justify-content: space-between;
+}
+
+
+#historique #headCommande div p {
+
+    width: 20%;
+}
+
+#historique img {
+    width: 100px;
+}
+
+#historique #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 10px;
+}
+
+#historique #commande {
+    padding-bottom: 30px;
+}
+
+/* Connexion (mobile et PC) **********************************************/
+
+#seConnecter {
+    padding-top: 50px;
+    width: 70%;
     margin: auto;
 }
 
-.imgCaroussel {
-    display: none;
-
+#seConnecter input {
+    width: 70%;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+#seConnecter div {
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-@keyframes fade {
-    from {
-        opacity: .4
-    }
 
-    to {
-        opacity: 1
-    }
-}
-
-/* Inscription **********************************************/
+/* Inscription (mobile et PC) **********************************************/
 #inscription fieldset {
     width: 70%;
     margin: 15px auto;
@@ -358,13 +361,265 @@ nav a:hover {
     margin: auto;
 }
 
-/* Connexion **********************************************/
 
-#seConnecter {
-    padding-top: 50px;
-    width: 400px;
+/* InfoCertification (mobile et PC) **********************************************/
+#infoCertification section {
+    width: 80%;
     margin: auto;
 }
+
+
+#infoCertification section a {
+    color: var(--turquoise);
+}
+
+#infoCertification section a:hover {
+    transition: 1s;
+    color: var(--darkPink);
+}
+
+/* Panier (mobile et PC) ********************************************************/
+
+#panier #infoSpecifique>a{
+    display: none;
+}
+
+
+
+
+/* RESPONSIVE **************************************************/
+
+/* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
+@media only screen and (min-width: 968px) {
+    /* For desktop: */
+    .grid {
+      grid-template-columns: 15% 10% 50% 10% 15%;
+      grid-template-areas:
+      "header   header    header    header    header"
+      ".        nav       main      aside     ."
+      "footer   footer    footer    footer    footer";
+    }
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .container {
+      margin: auto;
+      width: 900px;
+      border: 2px solid black;
+    }
+
+    /* BALISE GÉNÉRIQUE (PC) **************************************************/
+    body {
+        min-width: 980px;
+    }
+
+
+    main {
+        margin: auto;
+        margin-top: 5px;
+        background-color: #141444da;
+        font-size: 1.0rem;
+        max-width: 980px;
+    }
+
+    footer {
+        margin: auto;
+        padding: 10px;
+        color: white;
+        max-width: 980px;
+        font-size: 1.0rem;
+    }
+
+    header {
+        max-width: 980px;
+    }
+
+    /* HEADER (PC) ************************************************************/
+    h1 {
+        margin-top: 20px;
+        font-size: 6em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        color: white;
+    }
+
+    h3 {
+        font-size: 1.5em;
+
+        color: white;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    #hamburger, #userIcon, #menuBurger, #menuUser {
+        display: none;
+    }
+
+    .menu-connexion, .pc, #logoPanier{
+        display: contents;
+    }
+
+    .menu-connexion ul {
+        list-style: none;
+    }
+
+    .menu-principal {
+        background-color: var(--darkBlue);
+        border-radius: 5px;
+    }
+
+    .menu-principal ul:nth-of-type(1) {
+        width: 60%;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .menu-principal ul:nth-of-type(2) {
+        width: 40%;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .menu-principal a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .menu-connexion a {
+        text-decoration: none;
+        color: white;
+    }
+
+    nav a:hover {
+        color: var(--darkPink);
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #logoPanier img {
+        width: 40px;
+    }
+
+
+
+
+/* SPÉCIFIQUE À LA PAGE **********************************************/
+
+
+    /* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
+    /*p[class*='prix-'] {
+        seffa
+    }*/
+    /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
+
+    /*Page index*/
+
+    #index p {
+        color: white;
+    }
+
+    #index section {
+        display: flex;
+    }
+
+    #traitement #rappelIndex div {
+        margin: 5px;
+        padding-top: 5px;
+    }
+
+    #index div {
+        margin: 5px;
+        padding-top: 5px;
+    }
+
+
+    /*Page infos clients*/
+    #infoClient section {
+        color: white;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    #infoClient div {
+        margin: 10px;
+        /*width: 40%;*/
+        padding: 10px;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.387);
+    }
+
+#infoClient form {
+    color: white;
+}
+
+    #infoClient label {
+        width: 100%;
+    }
+
+    #infoClient button {
+        width: 100%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 5px;
+    }
+
+    /*Caroussel (PC) */
+
+    .caroussel {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    .imgCaroussel {
+        display: none;
+
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* Connexion (PC) **********************************************/
+
+    #seConnecter {
+        padding-top: 50px;
+        width: 400px;
+        margin: auto;
+    }
 
 #seConnecter input {
     width: 250px;
@@ -446,203 +701,157 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-#infoSBC input {
-    height: 35px;
-    border-radius: 5px;
-    margin: auto;
-}
+    #infoSBC input {
+        height: 35px;
+        border-radius: 5px;
+        margin: auto;
+    }
 
-#infoSBC article div:first-of-type {
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    margin-bottom: 15px;
-}
+    #infoSBC article div:first-of-type {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
 
-#infoSBC .certification{
-    color: var(--turquoise);
-}
+    #infoSBC .certification{
+        color: var(--turquoise);
+    }
 
-#infoSBC .certification:hover{
-    color: var(--rose);
-    transition: 1s;
-}
+    #infoSBC .certification:hover{
+        color: var(--rose);
+        transition: 1s;
+    }
 
-#infoSBC article div:last-of-type {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 20px;
-}
+    #infoSBC article div:last-of-type {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
 
-#infoSBC form.panier {
-    padding-left: 30px;
-    padding-bottom: 5px;
-}
+    #infoSBC form.panier {
+        padding-left: 30px;
+        padding-bottom: 5px;
+    }
 
-#infoSBC form.favoris {
-    padding-left: 30px;
-    padding-top: 5px;
-}
+    #infoSBC form.favoris {
+        padding-left: 30px;
+        padding-top: 5px;
+    }
 
-/* Suggestion SBC **********************************************/
+    /* Suggestion SBC (PC) **********************************************/
 
-#suggestionSBC h2 {
-    padding: 15px;
-}
+    #suggestionSBC h2 {
+        padding: 15px;
+    }
 
-#suggestionSBC form {
-    width: 95%;
-    margin: auto;
-}
+    #suggestionSBC form {
+        width: 95%;
+        margin: auto;
+    }
 
-#suggestionSBC fieldset {
-    background-color: var(--turquoise);
-}
+    #suggestionSBC fieldset {
+        background-color: var(--turquoise);
+    }
 
-#suggestionSBC fieldset>div {
-    padding: 2%;
-}
+    #suggestionSBC fieldset>div {
+        padding: 2%;
+    }
 
-#suggestionSBC div>div {
-    margin: 2%;
-}
+    #suggestionSBC div>div {
+        margin: 2%;
+    }
 
-#suggestionSBC legend {
-    color: white;
-    font-size: xx-large;
-    font-style: italic;
-    margin-left: 15px;
-}
+    #suggestionSBC legend {
+        color: white;
+        font-size: xx-large;
+        font-style: italic;
+        margin-left: 15px;
+    }
 
-#suggestionSBC input {
-    border-radius: 3px;
-    height: 25px;
-}
+    #suggestionSBC input {
+        border-radius: 3px;
+        height: 25px;
+    }
 
-#suggestionSBC input[class*='suggestion-'] {
-    margin: auto;
-    margin-top: 15px;
-}
+    #suggestionSBC input[class*='suggestion-'] {
+        margin: auto;
+        margin-top: 15px;
+    }
 
-#suggestionSBC .suggestion-annuler {
-    background-color: var(--darkPink);
+    #suggestionSBC .suggestion-annuler {
+        background-color: var(--darkPink);
 
-}
+    }
 
-#suggestionSBC .suggestion-envoyer {
-    background-color: var(--paleBlue);
-}
-
-/* Historique **********************************************/
-
-#historique #commande {
-    background-color: #1c06208d;
-    margin: auto;
-    width: 90%;
-
-}
-
-#historique aside {
-    background-color: #481851be;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#historique #headCommande div {
-    justify-content: space-between;
-}
+    #suggestionSBC .suggestion-envoyer {
+        background-color: var(--paleBlue);
+    }
 
 
-#historique #headCommande div p {
 
-    width: 20%;
-}
+    /* Wishlist (PC) **********************************************/
+    #wishList #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+    }
 
-#historique img {
-    width: 100px;
-}
+    #wishList img {
+        width: 100px;
+    }
 
-#historique #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
+    #wishList p {
+        /*padding: 15px;*/
+        width: 225px;
+    }
 
-    margin: 10px;
-}
+    #wishList p#prix {
+        /*padding: 15px;*/
+        width: 100px;
+        padding-left: 10px;
+    }
 
-#historique #commande {
-    padding-bottom: 30px;
-}
+    /* Panier (PC) **********************************************/
+    #panier #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+    }
 
-/* Wishlist **********************************************/
-#wishList #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
-    /*width: 100%;*/
-    margin: 10px;
-    background-color: #1c06208d;
-}
+    #panier img {
+        width: 100px;
+    }
 
-#wishList img {
-    width: 100px;
-}
+    #panier p {
+        /*padding: 15px;*/
+        width: 200px;
+    }
 
-#wishList p {
-    /*padding: 15px;*/
-    width: 225px;
-}
+    #panier p#prix {
+        /*padding: 15px;*/
+        width: 100px;
+        padding-left: 10px;
+    }
 
-#wishList p#prix {
-    /*padding: 15px;*/
-    width: 100px;
-    padding-left: 10px;
-}
+    #panier p#quantite {
+        /*padding: 15px;*/
+        width: 150px;
+        padding-left: 10px;
+    }
 
-/* Panier **********************************************/
-#panier #infoSpecifique {
-    align-items: center;
-    justify-content: space-around;
-    /*width: 100%;*/
-    margin: 10px;
-    background-color: #1c06208d;
-}
+    #panier h3{
+        padding-bottom: 10px;
+    }
 
-#panier img {
-    width: 100px;
-}
-
-#panier p {
-    /*padding: 15px;*/
-    width: 200px;
-}
-
-#panier p#prix {
-    /*padding: 15px;*/
-    width: 100px;
-    padding-left: 10px;
-}
-
-#panier p#quantite {
-    /*padding: 15px;*/
-    width: 150px;
-    padding-left: 10px;
-}
-
-#panier h3{
-    padding-bottom: 10px;
-}
-
-/* InfoCertification **********************************************/
-#infoCertification section {
- width: 80%;
- margin: auto;
-}
+    #panier #infoSpecifique>a{
+        display:contents
+    }
+    
 
 
-#infoCertification section a {
-    color: var(--turquoise);
-}
-
-#infoCertification section a:hover {
-    transition: 1s;
-    color: var(--darkPink);
 }
