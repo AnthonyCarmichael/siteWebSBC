@@ -3,7 +3,9 @@ $bdd = PDOFactory::getMySQLConnection();
 $sm = new SBCManager($bdd); ?>
 <h2 class="center">Votre panier</h2>
 
-<?php $panier = $_COOKIE;
+<?php
+
+$panier = $_COOKIE;
 $i = 0;
 $prixTotal = 0;
 
