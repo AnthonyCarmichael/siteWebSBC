@@ -18,7 +18,7 @@
 
 }
 
-/* BALISE GÉNÉRIQUE (mobile ) **************************************************/
+/* BALISE GÉNÉRIQUE (mobile et PC) **************************************************/
 
 body {
 
@@ -61,7 +61,6 @@ main {
     margin-top: 5px;
     background-color: #141444da;
     min-height: 80vh;
-    font-size: 0.7rem;
     width: 80%;
     padding: 10px;
 
@@ -75,7 +74,7 @@ footer {
     max-width: 980px;
 }
 
-/* CLASS *************************************************************/
+/* CLASS (mobile et PC) *************************************************************/
 .white {
     color: white;
 }
@@ -135,7 +134,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.387);
 }
 
-/* HEADER ************************************************************/
+/* HEADER (mobile et PC) ************************************************************/
 
 
 
@@ -217,9 +216,9 @@ nav a:hover {
     width: 40px;
 }
 
-/* PAGE SPÉCIFIQUE (Mobile)
+/* PAGE SPÉCIFIQUE *******************************************************************/
 
-/* Historique **********************************************/
+/* Historique (mobile et PC) **********************************************/
 
 #historique #commande {
     background-color: #1c06208d;
@@ -259,7 +258,7 @@ nav a:hover {
     padding-bottom: 30px;
 }
 
-/* Connexion **********************************************/
+/* Connexion (mobile et PC) **********************************************/
 
 #seConnecter {
     padding-top: 50px;
@@ -277,7 +276,7 @@ nav a:hover {
 }
 
 
-/* Inscription **********************************************/
+/* Inscription (mobile et PC) **********************************************/
 #inscription fieldset {
     width: 70%;
     margin: 15px auto;
@@ -324,21 +323,31 @@ nav a:hover {
 }
 
 
-/* InfoCertification **********************************************/
+/* InfoCertification (mobile et PC) **********************************************/
 #infoCertification section {
     width: 80%;
     margin: auto;
-    }
+}
 
 
-    #infoCertification section a {
-        color: var(--turquoise);
-    }
+#infoCertification section a {
+    color: var(--turquoise);
+}
 
-    #infoCertification section a:hover {
-        transition: 1s;
-        color: var(--darkPink);
-    }
+#infoCertification section a:hover {
+    transition: 1s;
+    color: var(--darkPink);
+}
+
+/* Panier (mobile et PC) ********************************************************/
+
+#panier #infoSpecifique a{
+    display: none;
+}
+
+
+
+
 /* RESPONSIVE **************************************************/
 
 /* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
@@ -370,9 +379,7 @@ nav a:hover {
       border: 2px solid black;
     }
 
-    /* BALISE GÉNÉRIQUE **************************************************/
-
-
+    /* BALISE GÉNÉRIQUE (PC) **************************************************/
     body {
         min-width: 980px;
     }
@@ -398,7 +405,7 @@ nav a:hover {
         max-width: 980px;
     }
 
-    /* HEADER ************************************************************/
+    /* HEADER (PC) ************************************************************/
     h1 {
         margin-top: 20px;
         font-size: 6em;
@@ -483,7 +490,7 @@ nav a:hover {
     /*p[class*='prix-'] {
         seffa
     }*/
-    /* SPÉCIFIQUE À LA PAGE infoSBC**********************************************/
+    /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
 
     /*Page index*/
 
@@ -539,7 +546,7 @@ nav a:hover {
         margin-top: 5px;
     }
 
-    /*Caroussel*/
+    /*Caroussel (PC) */
 
     .caroussel {
         max-width: 1000px;
@@ -567,7 +574,7 @@ nav a:hover {
         }
     }
 
-    /* Connexion **********************************************/
+    /* Connexion (PC) **********************************************/
 
     #seConnecter {
         padding-top: 50px;
@@ -586,7 +593,7 @@ nav a:hover {
 
 
 
-    /* Info SBC **********************************************/
+    /* Info SBC (PC) **********************************************/
 
     #infoSBC img {
         width: 100%;
@@ -642,7 +649,7 @@ nav a:hover {
         padding-top: 5px;
     }
 
-    /* Suggestion SBC **********************************************/
+    /* Suggestion SBC (PC) **********************************************/
 
     #suggestionSBC h2 {
         padding: 15px;
@@ -693,7 +700,7 @@ nav a:hover {
 
 
 
-    /* Wishlist **********************************************/
+    /* Wishlist (PC) **********************************************/
     #wishList #infoSpecifique {
         align-items: center;
         justify-content: space-around;
@@ -717,7 +724,7 @@ nav a:hover {
         padding-left: 10px;
     }
 
-    /* Panier **********************************************/
+    /* Panier (PC) **********************************************/
     #panier #infoSpecifique {
         align-items: center;
         justify-content: space-around;
