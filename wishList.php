@@ -29,7 +29,7 @@ foreach ($souhait as $sbc) {
             </div>
 
             <form class="panier" action="traitement.php" method="get">
-                <input type="hidden" name="action" value="panier">
+                <input type="hidden" name="action" value="panierWishList">
                 <input type="hidden" name="panier" value="<?= $sm->getSBCById($_COOKIE["favoris$i"])->get_id_SBC(); ?>">
                 <input type="submit" class="bouton" value="Ajouter aux panier">
             </form>
