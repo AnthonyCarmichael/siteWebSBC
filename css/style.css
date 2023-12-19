@@ -147,9 +147,10 @@ footer {
     position: absolute;
     top: 80px;
     left: 20%;
-    background-color: #05c1ca;
+    background-color: #1c0620;
     width: 60px;
     font-size: 0.6rem;
+    padding: 5px;
 }
 
 #menuUser {
@@ -165,10 +166,12 @@ footer {
     width: 20px;
     height: 20px;
     align-self: center;
-    margin-right: 25px ;
+    margin-right: 25px;
 }
 
-.menu-connexion, .pc, #logoPanier {
+.menu-connexion,
+.pc,
+#logoPanier {
     display: none;
 }
 
@@ -231,7 +234,7 @@ nav a:hover {
 }
 
 #headCommande div {
-    display: block; 
+    display: block;
     margin-left: 5px;
 
 }
@@ -241,7 +244,7 @@ nav a:hover {
 }
 
 #historique h3 {
-    background-color:#481851be ;
+    background-color: #481851be;
     padding-bottom: 5px;
 }
 
@@ -315,10 +318,11 @@ nav a:hover {
     font-weight: bold;
 }
 
-#inscription label, #inscription input {
+#inscription label,
+#inscription input {
     margin: 5px;
     font-size: 0.6em;
-} 
+}
 
 #inscription .register button {
     width: 80px;
@@ -353,7 +357,7 @@ nav a:hover {
 
 /* Panier (mobile et PC) ********************************************************/
 
-#panier #infoSpecifique>a{
+#panier #infoSpecifique>a {
     display: none;
 }
 
@@ -364,31 +368,68 @@ nav a:hover {
 
 /* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
 @media only screen and (min-width: 968px) {
+
     /* For desktop: */
     .grid {
-      grid-template-columns: 15% 10% 50% 10% 15%;
-      grid-template-areas:
-      "header   header    header    header    header"
-      ".        nav       main      aside     ."
-      "footer   footer    footer    footer    footer";
+        grid-template-columns: 15% 10% 50% 10% 15%;
+        grid-template-areas:
+            "header   header    header    header    header"
+            ".        nav       main      aside     ."
+            "footer   footer    footer    footer    footer";
     }
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
 
     .container {
-      margin: auto;
-      width: 900px;
-      border: 2px solid black;
+        margin: auto;
+        width: 900px;
+        border: 2px solid black;
     }
 
     .bouton {
@@ -439,15 +480,21 @@ nav a:hover {
 
         color: white;
     }
-    
+
     p {
         font-size: 1em;
     }
-    #hamburger, #userIcon, #menuBurger, #menuUser {
+
+    #hamburger,
+    #userIcon,
+    #menuBurger,
+    #menuUser {
         display: none;
     }
 
-    .menu-connexion, .pc, #logoPanier{
+    .menu-connexion,
+    .pc,
+    #logoPanier {
         display: contents;
     }
 
@@ -669,7 +716,8 @@ nav a:hover {
         margin: auto;
     }
 
-    #inscription input, #inscription label {
+    #inscription input,
+    #inscription label {
         font-size: 1em;
     }
 
@@ -709,11 +757,11 @@ nav a:hover {
         margin-bottom: 15px;
     }
 
-    #infoSBC .certification{
+    #infoSBC .certification {
         color: var(--turquoise);
     }
 
-    #infoSBC .certification:hover{
+    #infoSBC .certification:hover {
         color: var(--rose);
         transition: 1s;
     }
@@ -740,13 +788,17 @@ nav a:hover {
         padding: 15px;
     }
 
+    #suggestionSBC label {
+        color: white;
+    }
+
     #suggestionSBC form {
         width: 95%;
         margin: auto;
     }
 
     #suggestionSBC fieldset {
-        background-color: var(--turquoise);
+        background-color: #1c06208d;
     }
 
     #suggestionSBC fieldset>div {
@@ -764,24 +816,24 @@ nav a:hover {
         margin-left: 15px;
     }
 
-    #suggestionSBC input {
+    /*#suggestionSBC input {
         border-radius: 3px;
         height: 25px;
-    }
+    }*/
 
     #suggestionSBC input[class*='suggestion-'] {
         margin: auto;
         margin-top: 15px;
     }
 
-    #suggestionSBC .suggestion-annuler {
+    /*#suggestionSBC .suggestion-annuler {
         background-color: var(--darkPink);
 
     }
 
     #suggestionSBC .suggestion-envoyer {
         background-color: var(--paleBlue);
-    }
+    }*/
 
 
 
@@ -839,12 +891,12 @@ nav a:hover {
         padding-left: 10px;
     }
 
-    #panier h3{
+    #panier h3 {
         padding-bottom: 10px;
     }
 
-    #panier #infoSpecifique>a{
-        display:contents
+    #panier #infoSpecifique>a {
+        display: contents
     }
 
     #panier p#nom {
@@ -853,23 +905,23 @@ nav a:hover {
         padding-left: 10px;
     }
 
-    #panier div#infoSup{
+    #panier div#infoSup {
         padding-left: 150px;
         width: 600px;
     }
-    
+
     /* Historique (mobile et PC) **********************************************/
-    
+
     #headCommande {
-        display:block;
+        display: block;
     }
-    
+
     #headCommande div {
         display: flex;
     }
-    
+
     #historique h3 {
-        background-color:#481851be ;
+        background-color: #481851be;
     }
 
 
@@ -914,11 +966,11 @@ nav a:hover {
     #historique #commande #infoSpecifique {
         display: flex;
     }
-    
+
     #historique #infoSpecifique+div {
         margin: 0px;
     }
-    
+
 
 
 }

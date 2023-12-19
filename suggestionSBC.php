@@ -73,8 +73,8 @@
         <div class="flex wrap">
             <span class="col-9"></span>
             <input type="hidden" name="action" value="suggestion">
-            <input class="col-1 suggestion-annuler" type="reset" value="Annuler">
-            <input class="col-1 suggestion-envoyer" type="submit" value="Envoyer">
+            <input class="col-1 suggestion-annuler bouton" type="reset" value="Annuler">
+            <input class="col-1 suggestion-envoyer bouton" type="submit" value="Envoyer">
         </div>
     </form>
 
