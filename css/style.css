@@ -58,7 +58,7 @@ header {
 
 main {
     margin: auto;
-    margin-top: 5px;
+    margin-top: 2px;
     background-color: #141444da;
     min-height: 80vh;
     width: 80%;
@@ -222,11 +222,34 @@ nav a:hover {
 
 /* Historique (mobile et PC) **********************************************/
 
+#historique #commande #infoSpecifique {
+    display: none;
+}
+
+#headCommande {
+    display: flex;
+    justify-content: center;
+}
+
+#headCommande div {
+    display: block; 
+
+}
+
+#historique #infoSpecifique+div {
+    margin: 10px;
+}
+
+#historique h3 {
+    background-color:#481851be ;
+    padding-bottom: 5px;
+}
+
+
 #historique #commande {
     background-color: #1c06208d;
     margin: auto;
     width: 90%;
-
 }
 
 #historique aside {
@@ -237,12 +260,6 @@ nav a:hover {
 
 #historique #headCommande div {
     justify-content: space-between;
-}
-
-
-#historique #headCommande div p {
-
-    width: 20%;
 }
 
 #historique img {
@@ -822,6 +839,67 @@ nav a:hover {
 
     #panier #infoSpecifique>a{
         display:contents
+    }
+    
+    /* Historique (mobile et PC) **********************************************/
+    
+    #headCommande {
+        display:block;
+    }
+    
+    #headCommande div {
+        display: flex;
+    }
+    
+    #historique h3 {
+        background-color:#481851be ;
+    }
+
+
+    #historique #commande {
+        background-color: #1c06208d;
+        margin: auto;
+        width: 90%;
+
+    }
+
+    #historique aside {
+        background-color: #481851be;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #historique #headCommande div {
+        justify-content: space-between;
+    }
+
+
+    #historique #headCommande div p {
+
+        width: 20%;
+    }
+
+    #historique img {
+        width: 100px;
+    }
+
+    #historique #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+
+        margin: 10px;
+    }
+
+    #historique #commande {
+        padding-bottom: 30px;
+    }
+
+    #historique #commande #infoSpecifique {
+        display: flex;
+    }
+    
+    #historique #infoSpecifique+div {
+        margin: 0px;
     }
     
 

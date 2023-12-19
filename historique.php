@@ -24,10 +24,11 @@ $dateToday = new DateTime("now");
         $arrCommande = array_reverse($arrCommande);
         foreach ($arrCommande as $commande) { ?>
             <article id="commande">
+            <h3 class="center">Commande</h3>
                 <aside id="headCommande">
                     <?php
                     ?>
-                    <h3 class="center">Commande</h3>
+
                     <div class="flex">
                         <p class="white bold underline">Date de commande:</p>
                         <p class="white bold underline">Total:</p>
