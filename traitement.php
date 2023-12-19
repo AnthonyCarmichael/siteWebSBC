@@ -93,9 +93,7 @@ if (isset($_REQUEST['action'])) {
             </section>
             <?php
         }
-    }
-    elseif ($_REQUEST['action'] == "logout") 
-    { ?>
+    } elseif ($_REQUEST['action'] == "logout") { ?>
         <h2 class="center">Au plaisir de vous revoir
         </h2>
 
@@ -135,8 +133,7 @@ if (isset($_REQUEST['action'])) {
         </section>
 
         <?php
-    }
-    elseif ($_REQUEST['action'] == "suggestion") {
+    } elseif ($_REQUEST['action'] == "suggestion") {
         $SBCObj = new SBC($_REQUEST);
 
         if ($SBCManager->addSBC($SBCObj)) {
@@ -238,10 +235,12 @@ if (isset($_REQUEST['action'])) {
         echo 'Le produit a été ajouté au panier. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
 
     } elseif ($_REQUEST['action'] == "retirePanier") {
+        $sm = new SBCManager($bdd);
         $panierRetire = $_REQUEST['retirePanier'];
+        $id = $sm->getSBCById($_COOKIE["panier$panierRetire"])->get_id_SBC();
 
         setcookie("panier$panierRetire");
-
+        setcookie("calcul$id");
         echo 'Le produit a été retiré de votre panier. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
     } elseif (($_GET['action']) == "delCommande") {
         $client = unserialize($_SESSION['client']);
