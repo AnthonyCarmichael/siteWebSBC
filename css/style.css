@@ -232,6 +232,7 @@ nav a:hover {
 
 #headCommande div {
     display: block; 
+    margin-left: 5px;
 
 }
 
@@ -559,6 +560,12 @@ nav a:hover {
         margin-left: 25%;
         margin-right: 25%;
         margin-top: 5px;
+    }
+
+    #infoClient a {
+        display: block;
+        margin: auto;
+        width: 200px;
     }
 
     /*Caroussel (PC) */

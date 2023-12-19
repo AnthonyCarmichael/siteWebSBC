@@ -49,7 +49,7 @@ $dateToday = new DateTime("now");
                         <p class="white">
                             <?php echo $client->get_adresse() . " " . $client->get_ville() . " " . $client->get_province() . " " . $client->get_pays(); ?>
                         </p>
-                        <p class="white center">
+                        <p class="white">
                             <?php echo $commande->get_id_commande(); ?>
                         </p>
                     </div>

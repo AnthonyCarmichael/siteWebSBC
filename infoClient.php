@@ -121,10 +121,8 @@ if (isset($_REQUEST['action'])) {
             </form>
         </div>
     </section>
-    <form class="historique center" action="historique.php" method="post">
-        <input type="hidden" name="action" value="historique">
-        <input type="submit" class="bouton" value="Mon historique de commande">
-    </form>
+
+    <a class="bouton center" href="historique.php">Mon historique de commande</a>
 <?php }
 
 include_once("inc/footer.php"); ?>
