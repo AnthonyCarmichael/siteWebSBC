@@ -63,6 +63,7 @@ main {
     min-height: 80vh;
     width: 80%;
     padding: 10px;
+    font-size: 0.6em;
 
 }
 
@@ -116,6 +117,7 @@ footer {
     /*margin-left: 20px;*/
     padding: 5px;
     text-align: center;
+    font-size: 0.6em;
 }
 
 .bouton:hover {
@@ -266,8 +268,14 @@ nav a:hover {
     margin: auto;
 }
 
+#seConnecter label {
+    font-size: 0.6em;
+    width: 70%;
+}
+
 #seConnecter input {
     width: 70%;
+    font-size: 0.6em;
 }
 
 #seConnecter div {
@@ -277,8 +285,9 @@ nav a:hover {
 
 
 /* Inscription (mobile et PC) **********************************************/
+
 #inscription fieldset {
-    width: 70%;
+    max-width: 60%;
     margin: 15px auto;
     background-color: rgba(0, 0, 0, 0.387);
     padding: 5px;
@@ -289,37 +298,22 @@ nav a:hover {
     font-weight: bold;
 }
 
-#inscription .register input,
-#inscription .register select {
-    margin: 0px 25px 10px 5px;
-    width: 215px;
-}
-
-#inscription .profil label {
-    min-width: 58px;
-}
-
-#inscription #nom {
-    width: 252px;
-}
-
-#inscription .coord label {
-    min-width: 81px;
-}
-
-#inscription .info-cond input,
-#inscription .info-cond select {
-    width: 165px;
-}
+#inscription label, #inscription input {
+    margin: 5px;
+    font-size: 0.6em;
+} 
 
 #inscription .register button {
     width: 80px;
-
 }
 
 #inscription .remise {
     width: 70%;
     margin: auto;
+}
+
+#inscription .bouton {
+    font-size: 0.6em;
 }
 
 
@@ -332,6 +326,7 @@ nav a:hover {
 
 #infoCertification section a {
     color: var(--turquoise);
+    font-size: 0.6em;
 }
 
 #infoCertification section a:hover {
@@ -379,6 +374,10 @@ nav a:hover {
       border: 2px solid black;
     }
 
+    .bouton {
+        font-size: 1em;
+    }
+
     /* BALISE GÉNÉRIQUE (PC) **************************************************/
     body {
         min-width: 980px;
@@ -389,7 +388,7 @@ nav a:hover {
         margin: auto;
         margin-top: 5px;
         background-color: #141444da;
-        font-size: 1.0rem;
+        font-size: 1.0em;
         max-width: 980px;
     }
 
@@ -582,7 +581,14 @@ nav a:hover {
         margin: auto;
     }
 
+
+    #seConnecter label {
+        font-size: 1em;
+    }
+
+
     #seConnecter input {
+        font-size: 1em;
         width: 250px;
     }
 
@@ -591,6 +597,62 @@ nav a:hover {
         margin-bottom: 10px;
     }
 
+    /* Inscription (PC) **********************************************/
+
+    #inscription form {
+        font-size: 1em;
+    }
+
+    #inscription fieldset {
+        width: 70%;
+        margin: 15px auto;
+        background-color: rgba(0, 0, 0, 0.387);
+        padding: 5px;
+        border: none;
+    }
+
+    #inscription legend {
+        font-weight: bold;
+    }
+
+    #inscription .register input {
+        margin: 0px 25px 10px 5px;
+        width: 215px;
+    }
+
+    #inscription .profil label {
+        min-width: 58px;
+    }
+
+    #inscription #nom {
+        width: 252px;
+    }
+
+    #inscription .coord label {
+        min-width: 81px;
+    }
+
+    #inscription .info-cond input {
+        width: 165px;
+    }
+
+    #inscription .register button {
+        width: 80px;
+
+    }
+
+    #inscription .remise {
+        width: 70%;
+        margin: auto;
+    }
+
+    #inscription input, #inscription label {
+        font-size: 1em;
+    }
+
+    #inscription .bouton {
+        font-size: 1em;
+    }
 
 
     /* Info SBC (PC) **********************************************/

@@ -17,7 +17,7 @@
     <input type="hidden" name="action" value="connexion">
 
     <div class="row">
-        <button type="submit">Se connecter</button>
+        <button class="bouton" type="submit">Se connecter</button>
     </div>
 </form>
 
