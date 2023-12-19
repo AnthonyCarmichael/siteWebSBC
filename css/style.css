@@ -737,14 +737,14 @@ nav a:hover {
         width: 100px;
     }
 
-    #panier p {
-        /*padding: 15px;*/
+    /*#panier p {
+        padding: 15px;
         width: 200px;
-    }
+    }*/
 
     #panier p#prix {
         /*padding: 15px;*/
-        width: 100px;
+        width: 150px;
         padding-left: 10px;
     }
 
@@ -762,6 +762,15 @@ nav a:hover {
         display:contents
     }
     
-
+    #panier p#nom {
+        /*padding: 15px;*/
+        width: 400px;
+        padding-left: 10px;
+    }
+ 
+    #panier div#infoSup{
+        padding-left: 150px;
+        width: 600px;
+    }
 
 }
