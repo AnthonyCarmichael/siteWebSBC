@@ -157,9 +157,10 @@ footer {
     position: absolute;
     top: 80px;
     right: 10%;
-    background-color: #05c1ca;
+    background-color: #1c0620;
     width: 80px;
     font-size: 0.6rem;
+    padding: 5px;
 }
 
 #userIcon {
