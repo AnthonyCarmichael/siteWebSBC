@@ -32,8 +32,8 @@
                 echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none white">' . $sbc['prix'] . '$</p>';?>
 
                 <form class="formPanier-<?=$sbc['id_SBC']?> display-none" action="traitement.php" method="get">
-                    <input type="hidden" name="action" value="idPanier">
-                    <input type="hidden" name="idPanier" value="<?= $sbc['id_SBC']; ?>">
+                    <input type="hidden" name="action" value="panier">
+                    <input type="hidden" name="panier" value="<?= $sbc['id_SBC']; ?>">
                     <input type="submit" class="bouton" value="Ajouter au panier">
                 </form>
 

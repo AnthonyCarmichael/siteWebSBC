@@ -206,7 +206,7 @@ if (isset($_REQUEST['action'])) {
             setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
         }
 
-        header('Location: http://localhost/siteWebSBC/infoSBC.php');
+        header('Location: http://localhost/siteWebSBC/wishList.php');
     } elseif ($_REQUEST['action'] == "retireFavoris") {
         $favorisRetire = $_REQUEST['retireFavoris'];
 
@@ -233,7 +233,7 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        header('Location: http://localhost/siteWebSBC/infoSBC.php');
+        header('Location: http://localhost/siteWebSBC/panier.php');
 
     } elseif ($_REQUEST['action'] == "panierHistorique") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
