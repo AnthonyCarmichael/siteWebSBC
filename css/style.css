@@ -358,12 +358,125 @@ nav a:hover {
 
 /* Panier (mobile et PC) ********************************************************/
 
+#panier #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+    margin-bottom: 0px;
+}
+
+/*#panier p {
+    padding: 15px;
+    width: 200px;
+}*/
+
+#panier p#prix {
+    /*padding: 15px;*/
+    width: 75px;
+    padding-left: 10px;
+}
+
+#panier p#quantite {
+    /*padding: 15px;*/
+    width: 100px;
+    padding-left: 10px;
+}
+
+#panier h3 {
+    padding-bottom: 10px;
+}
+
+#panier p#nom {
+    /*padding: 15px;*/
+    width: 200px;
+    padding-left: 10px;
+}
+
+#panier div#infoSup {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+    margin-top: 0px;
+    padding-left: 17px;
+}
+
+#panier #nom:hover {
+    color: var(--darkPink);
+}
+
 #panier #infoSpecifique>a {
     display: none;
 }
 
+#panier h3{
+    margin-top: 5px;
+}
 
+/*Page infos clients (mobile et PC)*/
+#infoClient section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
 
+#infoClient div {
+    margin: 10px;
+    width: 50%;
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.387);
+}
+
+#infoClient form {
+    color: white;
+}
+
+#infoClient label {
+    width: 100%;
+}
+
+#infoClient button {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
+}
+
+#infoClient a {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+/*Page wishlist (mobile et PC)*/
+
+#wishList #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+}
+
+#wishList img {
+    width: 50px;
+}
+
+#wishList p {
+    /*padding: 15px;*/
+    width: 100px;
+}
+
+#wishList p#prix {
+    /*padding: 15px;*/
+    width: 75px;
+    padding-left: 10px;
+}
 
 /* RESPONSIVE **************************************************/
 
@@ -869,6 +982,7 @@ nav a:hover {
         /*width: 100%;*/
         margin: 10px;
         background-color: #1c06208d;
+        margin-bottom: 0px;
     }
 
     #panier img {
@@ -907,8 +1021,17 @@ nav a:hover {
     }
 
     #panier div#infoSup {
-        padding-left: 150px;
-        width: 600px;
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+        margin-top: 0px;
+        padding-left: 110px;
+    }
+
+    #panier #nom:hover {
+        color: var(--darkPink);
     }
 
     /* Historique (mobile et PC) **********************************************/

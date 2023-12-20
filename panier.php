@@ -48,7 +48,12 @@ foreach ($panier as $sbc) {
             </form>
         </div>
         <div id="infoSup" class="white display-none">
-            <?= $sm->getSBCById($_COOKIE["panier$i"])->get_RAM() . ' Go ' . $sm->getSBCById($_COOKIE["panier$i"])->get_longueur() . ' par ' . $sm->getSBCById($_COOKIE["panier$i"])->get_largeur() . ' mm'; ?>
+            <p>
+                <?= $sm->getSBCById($_COOKIE["panier$i"])->get_RAM() . ' Go ' ?>
+            </p>
+            <p>
+                <?= $sm->getSBCById($_COOKIE["panier$i"])->get_longueur() . ' par ' . $sm->getSBCById($_COOKIE["panier$i"])->get_largeur() . ' mm'; ?>
+            </p>
             <p>Processeur
                 <?= $sm->getSBCById($_COOKIE["panier$i"])->get_marqueProcesseur() . ' ' . $sm->getSBCById($_COOKIE["panier$i"])->get_modeleProcesseur() . ' ' . $sm->getSBCById($_COOKIE["panier$i"])->get_nbCoeur(); ?>
                 Coeurs

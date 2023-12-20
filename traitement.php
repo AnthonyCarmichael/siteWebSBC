@@ -206,7 +206,7 @@ if (isset($_REQUEST['action'])) {
             setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
         }
 
-        echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+        header('Location: http://localhost/siteWebSBC/infoSBC.php');
     } elseif ($_REQUEST['action'] == "retireFavoris") {
         $favorisRetire = $_REQUEST['retireFavoris'];
 
