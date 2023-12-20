@@ -17,7 +17,7 @@
 <div class="select-1-container select-2-container select-3-container flex wrap">
     <span class="col-3 col-3m"></span>
     <?php for($i = 1; $i <= 2; $i++ ) {?>
-    <article class="col-3 col-3m center">
+    <article class="col-3 col-4m center">
         <select name="sbc-0" id="select-<?=$i?>" class="compareSelect">
             <?php
                 foreach($sbcs as $sbc)
@@ -47,7 +47,7 @@
         <?php }?>
     </article>
     <?php }?>
-    <article class="col-3 col-3m center visibility">
+    <article class="col-3 col-1m center visibility">
         <select name="sbc-0" id="select-3" class="compareSelect">
             <?php
                 foreach($sbcs as $sbc)
