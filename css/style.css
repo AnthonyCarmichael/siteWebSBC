@@ -408,12 +408,20 @@ nav a:hover {
     color: var(--darkPink);
 }
 
-#panier #infoSpecifique>a {
+#panier #infoSpecifique>a.SBC {
     display: none;
 }
 
-#panier h3{
+#panier h3 {
     margin-top: 5px;
+}
+
+#panier #poubelle img{
+    width: 15px;
+}
+
+#panier .retirer {
+    display: none;
 }
 
 /*Page infos clients (mobile et PC)*/
@@ -1010,10 +1018,6 @@ nav a:hover {
         padding-bottom: 10px;
     }
 
-    #panier #infoSpecifique>a {
-        display: contents
-    }
-
     #panier p#nom {
         /*padding: 15px;*/
         width: 400px;
@@ -1032,6 +1036,18 @@ nav a:hover {
 
     #panier #nom:hover {
         color: var(--darkPink);
+    }
+
+    #panier #infoSpecifique>a#poubelle {
+        display: none;
+    }
+
+    #panier #infoSpecifique>a.SBC{
+        display: contents;
+    }
+
+    #panier .retirer {
+        display: contents;
     }
 
     /* Historique (mobile et PC) **********************************************/

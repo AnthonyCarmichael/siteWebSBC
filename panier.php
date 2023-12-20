@@ -17,7 +17,7 @@ foreach ($panier as $sbc) {
         ?>
 
         <div id="infoSpecifique" class="flex">
-            <a href="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"><img
+            <a class="SBC" href="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"><img
                     src="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"
                     alt="<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"></a>
             <div class="white flex">
@@ -41,11 +41,13 @@ foreach ($panier as $sbc) {
 
             </div>
 
-            <form class="favoris" action="traitement.php" method="get">
+            <form class="retirer" action="traitement.php" method="get">
                 <input type="hidden" name="action" value="retirePanier">
                 <input type="hidden" name="retirePanier" value="<?= $i ?>">
                 <input type="submit" class="bouton" value="Retirer du panier">
             </form>
+
+            <a id="poubelle"><img id="logo" src="img/panier.png" alt="compagnie"></a>
         </div>
         <div id="infoSup" class="white display-none">
             <p>
