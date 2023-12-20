@@ -75,6 +75,20 @@ h3 {
     border-radius: 5px;
 }
 
+
+main {
+    margin: auto;
+    margin-top: 2px;
+    background-color: #141444da;
+    min-height: 80vh;
+    width: 80%;
+    padding: 10px;
+
+}
+
+footer {
+    margin: auto;
+    padding: 10px;
 .menu-principal ul:nth-of-type(1) {
     width: 60%;
     list-style: none;
@@ -155,6 +169,7 @@ nav a:hover {
     /*margin-left: 20px;*/
     padding: 5px;
     text-align: center;
+    font-size: 0.6em;
 }
 
 .bouton:hover {
@@ -185,28 +200,32 @@ nav a:hover {
     position: absolute;
     top: 80px;
     left: 20%;
-    background-color: #05c1ca;
+    background-color: #1c0620;
     width: 60px;
     font-size: 0.6rem;
+    padding: 5px;
 }
 
 #menuUser {
     position: absolute;
     top: 80px;
     right: 10%;
-    background-color: #05c1ca;
+    background-color: #1c0620;
     width: 80px;
     font-size: 0.6rem;
+    padding: 5px;
 }
 
 #userIcon {
     width: 20px;
     height: 20px;
     align-self: center;
-    margin-right: 25px ;
+    margin-right: 25px;
 }
 
-.menu-connexion, .pc, #logoPanier {
+.menu-connexion,
+.pc,
+#logoPanier {
     display: none;
 }
 
@@ -259,11 +278,35 @@ nav a:hover {
 
 /* Historique (mobile et PC) **********************************************/
 
+#historique #commande #infoSpecifique {
+    display: none;
+}
+
+#headCommande {
+    display: flex;
+    justify-content: center;
+}
+
+#headCommande div {
+    display: block;
+    margin-left: 5px;
+
+}
+
+#historique #infoSpecifique+div {
+    margin: 10px;
+}
+
+#historique h3 {
+    background-color: #481851be;
+    padding-bottom: 5px;
+}
+
+
 #historique #commande {
     background-color: #1c06208d;
     margin: auto;
     width: 90%;
-
 }
 
 #historique aside {
@@ -274,12 +317,6 @@ nav a:hover {
 
 #historique #headCommande div {
     justify-content: space-between;
-}
-
-
-#historique #headCommande div p {
-
-    width: 20%;
 }
 
 #historique img {
@@ -305,8 +342,14 @@ nav a:hover {
     margin: auto;
 }
 
+#seConnecter label {
+    font-size: 0.6em;
+    width: 70%;
+}
+
 #seConnecter input {
     width: 70%;
+    font-size: 0.6em;
 }
 
 #seConnecter div {
@@ -316,8 +359,9 @@ nav a:hover {
 
 
 /* Inscription (mobile et PC) **********************************************/
+
 #inscription fieldset {
-    width: 70%;
+    max-width: 60%;
     margin: 15px auto;
     background-color: rgba(0, 0, 0, 0.387);
     padding: 5px;
@@ -328,37 +372,23 @@ nav a:hover {
     font-weight: bold;
 }
 
-#inscription .register input,
-#inscription .register select {
-    margin: 0px 25px 10px 5px;
-    width: 215px;
-}
-
-#inscription .profil label {
-    min-width: 58px;
-}
-
-#inscription #nom {
-    width: 252px;
-}
-
-#inscription .coord label {
-    min-width: 81px;
-}
-
-#inscription .info-cond input,
-#inscription .info-cond select {
-    width: 165px;
+#inscription label,
+#inscription input {
+    margin: 5px;
+    font-size: 0.6em;
 }
 
 #inscription .register button {
     width: 80px;
-
 }
 
 #inscription .remise {
     width: 70%;
     margin: auto;
+}
+
+#inscription .bouton {
+    font-size: 0.6em;
 }
 
 
@@ -371,6 +401,7 @@ nav a:hover {
 
 #infoCertification section a {
     color: var(--turquoise);
+    font-size: 0.6em;
 }
 
 #infoCertification section a:hover {
@@ -380,10 +411,125 @@ nav a:hover {
 
 /* Panier (mobile et PC) ********************************************************/
 
-#panier #infoSpecifique>a{
+#panier #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+    margin-bottom: 0px;
+}
+
+/*#panier p {
+    padding: 15px;
+    width: 200px;
+}*/
+
+#panier p#prix {
+    /*padding: 15px;*/
+    width: 75px;
+    padding-left: 10px;
+}
+
+#panier p#quantite {
+    /*padding: 15px;*/
+    width: 100px;
+    padding-left: 10px;
+}
+
+#panier h3 {
+    padding-bottom: 10px;
+}
+
+#panier p#nom {
+    /*padding: 15px;*/
+    width: 200px;
+    padding-left: 10px;
+}
+
+#panier div#infoSup {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+    margin-top: 0px;
+    padding-left: 17px;
+}
+
+#panier #nom:hover {
+    color: var(--darkPink);
+}
+
+#panier #infoSpecifique>a {
     display: none;
 }
 
+#panier h3{
+    margin-top: 5px;
+}
+
+/*Page infos clients (mobile et PC)*/
+#infoClient section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+#infoClient div {
+    margin: 10px;
+    width: 50%;
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.387);
+}
+
+#infoClient form {
+    color: white;
+}
+
+#infoClient label {
+    width: 100%;
+}
+
+#infoClient button {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
+}
+
+#infoClient a {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+/*Page wishlist (mobile et PC)*/
+
+#wishList #infoSpecifique {
+    align-items: center;
+    justify-content: space-around;
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: #1c06208d;
+}
+
+#wishList img {
+    width: 50px;
+}
+
+#wishList p {
+    /*padding: 15px;*/
+    width: 100px;
+}
+
+#wishList p#prix {
+    /*padding: 15px;*/
+    width: 75px;
+    padding-left: 10px;
+}
 /* Comparaison (mobile) **********************************************/
 #comparaison .visibility{
     visibility: hidden;
@@ -458,31 +604,72 @@ nav a:hover {
 
 /* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
 @media only screen and (min-width: 968px) {
+
     /* For desktop: */
     .grid {
-      grid-template-columns: 15% 10% 50% 10% 15%;
-      grid-template-areas:
-      "header   header    header    header    header"
-      ".        nav       main      aside     ."
-      "footer   footer    footer    footer    footer";
+        grid-template-columns: 15% 10% 50% 10% 15%;
+        grid-template-areas:
+            "header   header    header    header    header"
+            ".        nav       main      aside     ."
+            "footer   footer    footer    footer    footer";
     }
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
 
     .container {
-      margin: auto;
-      width: 900px;
-      border: 2px solid black;
+        margin: auto;
+        width: 900px;
+        border: 2px solid black;
+    }
+
+    .bouton {
+        font-size: 1em;
     }
 
     /* BALISE GÉNÉRIQUE (PC) **************************************************/
@@ -495,7 +682,7 @@ nav a:hover {
         margin: auto;
         margin-top: 5px;
         background-color: #141444da;
-        font-size: 1.0rem;
+        font-size: 1.0em;
         max-width: 980px;
     }
 
@@ -529,15 +716,21 @@ nav a:hover {
 
         color: white;
     }
-    
+
     p {
         font-size: 1em;
     }
-    #hamburger, #userIcon, #menuBurger, #menuUser {
+
+    #hamburger,
+    #userIcon,
+    #menuBurger,
+    #menuUser {
         display: none;
     }
 
-    .menu-connexion, .pc, #logoPanier{
+    .menu-connexion,
+    .pc,
+    #logoPanier {
         display: contents;
     }
 
@@ -645,6 +838,12 @@ nav a:hover {
         margin-top: 5px;
     }
 
+    #infoClient a {
+        display: block;
+        margin: auto;
+        width: 200px;
+    }
+
     /*Caroussel (PC) */
 
     .caroussel {
@@ -681,15 +880,82 @@ nav a:hover {
         margin: auto;
     }
 
-#seConnecter input {
-    width: 250px;
-}
+
+    #seConnecter label {
+        font-size: 1em;
+    }
+
+
+    #seConnecter input {
+        font-size: 1em;
+        width: 250px;
+    }
 
 #seConnecter div {
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
+    /* Inscription (PC) **********************************************/
+
+    #inscription form {
+        font-size: 1em;
+    }
+
+    #inscription fieldset {
+        width: 70%;
+        margin: 15px auto;
+        background-color: rgba(0, 0, 0, 0.387);
+        padding: 5px;
+        border: none;
+    }
+
+    #inscription legend {
+        font-weight: bold;
+    }
+
+    #inscription .register input {
+        margin: 0px 25px 10px 5px;
+        width: 215px;
+    }
+
+    #inscription .profil label {
+        min-width: 58px;
+    }
+
+    #inscription #nom {
+        width: 252px;
+    }
+
+    #inscription .coord label {
+        min-width: 81px;
+    }
+
+    #inscription .info-cond input {
+        width: 165px;
+    }
+
+    #inscription .register button {
+        width: 80px;
+
+    }
+
+    #inscription .remise {
+        width: 70%;
+        margin: auto;
+    }
+
+    #inscription input,
+    #inscription label {
+        font-size: 1em;
+    }
+
+    #inscription .bouton {
+        font-size: 1em;
+    }
+
+
+    /* Info SBC (PC) **********************************************/
 /* Comparaison **********************************************/
 
 #comparaison .visibility{
@@ -737,11 +1003,11 @@ nav a:hover {
         margin-bottom: 15px;
     }
 
-    #infoSBC .certification{
+    #infoSBC .certification {
         color: var(--turquoise);
     }
 
-    #infoSBC .certification:hover{
+    #infoSBC .certification:hover {
         color: var(--rose);
         transition: 1s;
     }
@@ -768,13 +1034,17 @@ nav a:hover {
         padding: 15px;
     }
 
+    #suggestionSBC label {
+        color: white;
+    }
+
     #suggestionSBC form {
         width: 95%;
         margin: auto;
     }
 
     #suggestionSBC fieldset {
-        background-color: var(--turquoise);
+        background-color: #1c06208d;
     }
 
     #suggestionSBC fieldset>div {
@@ -792,24 +1062,24 @@ nav a:hover {
         margin-left: 15px;
     }
 
-    #suggestionSBC input {
+    /*#suggestionSBC input {
         border-radius: 3px;
         height: 25px;
-    }
+    }*/
 
     #suggestionSBC input[class*='suggestion-'] {
         margin: auto;
         margin-top: 15px;
     }
 
-    #suggestionSBC .suggestion-annuler {
+    /*#suggestionSBC .suggestion-annuler {
         background-color: var(--darkPink);
 
     }
 
     #suggestionSBC .suggestion-envoyer {
         background-color: var(--paleBlue);
-    }
+    }*/
 
 
 
@@ -844,20 +1114,21 @@ nav a:hover {
         /*width: 100%;*/
         margin: 10px;
         background-color: #1c06208d;
+        margin-bottom: 0px;
     }
 
     #panier img {
         width: 100px;
     }
 
-    #panier p {
-        /*padding: 15px;*/
+    /*#panier p {
+        padding: 15px;
         width: 200px;
-    }
+    }*/
 
     #panier p#prix {
         /*padding: 15px;*/
-        width: 100px;
+        width: 150px;
         padding-left: 10px;
     }
 
@@ -867,14 +1138,93 @@ nav a:hover {
         padding-left: 10px;
     }
 
-    #panier h3{
+    #panier h3 {
         padding-bottom: 10px;
     }
 
-    #panier #infoSpecifique>a{
-        display:contents
+    #panier #infoSpecifique>a {
+        display: contents
     }
-    
 
+    #panier p#nom {
+        /*padding: 15px;*/
+        width: 400px;
+        padding-left: 10px;
+    }
+
+    #panier div#infoSup {
+        align-items: center;
+        justify-content: space-around;
+        /*width: 100%;*/
+        margin: 10px;
+        background-color: #1c06208d;
+        margin-top: 0px;
+        padding-left: 110px;
+    }
+
+    #panier #nom:hover {
+        color: var(--darkPink);
+    }
+
+    /* Historique (mobile et PC) **********************************************/
+
+    #headCommande {
+        display: block;
+    }
+
+    #headCommande div {
+        display: flex;
+    }
+
+    #historique h3 {
+        background-color: #481851be;
+    }
+
+
+    #historique #commande {
+        background-color: #1c06208d;
+        margin: auto;
+        width: 90%;
+
+    }
+
+    #historique aside {
+        background-color: #481851be;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #historique #headCommande div {
+        justify-content: space-between;
+    }
+
+
+    #historique #headCommande div p {
+
+        width: 20%;
+    }
+
+    #historique img {
+        width: 100px;
+    }
+
+    #historique #infoSpecifique {
+        align-items: center;
+        justify-content: space-around;
+
+        margin: 10px;
+    }
+
+    #historique #commande {
+        padding-bottom: 30px;
+    }
+
+    #historique #commande #infoSpecifique {
+        display: flex;
+    }
+
+    #historique #infoSpecifique+div {
+        margin: 0px;
+    }
 
 }

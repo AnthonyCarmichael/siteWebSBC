@@ -5,6 +5,7 @@ $sm = new SBCManager($bdd); ?>
 
 <?php $souhait = $_COOKIE;
 $i = 0;
+$j = 0;
 foreach ($souhait as $sbc) {
     if (isset($_COOKIE["favoris$i"])) {
         $sm->getSBCById($_COOKIE["favoris$i"]) ?>
@@ -14,11 +15,8 @@ foreach ($souhait as $sbc) {
                     src="img/<?= $sm->getSBCById($_COOKIE["favoris$i"])->get_modeleSBC(); ?>.jpg"
                     alt="<?= $sm->getSBCById($_COOKIE["favoris$i"])->get_modeleSBC(); ?>.jpg"></a>
             <div class="white flex">
-                <p>Marque:
+                <p>Nom du produit:
                     <?php echo $sm->getSBCById($_COOKIE["favoris$i"])->get_marqueSBC(); ?>
-                </p>
-
-                <p>Modèle:
                     <?php echo $sm->getSBCById($_COOKIE["favoris$i"])->get_modeleSBC(); ?>
                 </p>
 
@@ -29,7 +27,7 @@ foreach ($souhait as $sbc) {
             </div>
 
             <form class="panier" action="traitement.php" method="get">
-                <input type="hidden" name="action" value="panier">
+                <input type="hidden" name="action" value="panierWishList">
                 <input type="hidden" name="panier" value="<?= $sm->getSBCById($_COOKIE["favoris$i"])->get_id_SBC(); ?>">
                 <input type="submit" class="bouton" value="Ajouter aux panier">
             </form>
@@ -39,7 +37,12 @@ foreach ($souhait as $sbc) {
                 <input type="submit" class="bouton" value="Retirer de la liste">
             </form>
         </div>
-    <?php }
+        <?php $j++;
+    }
     $i++;
-} ?>
+}
+if ($j == 0) { ?>
+    <h3 class="center white"> Votre liste de souhait est vide</h3>
+<?php } ?>
+
 <?php include_once("inc/footer.php"); ?>

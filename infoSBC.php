@@ -38,7 +38,7 @@
     $SBCObjArray = $SBCManager->selectSBCs($_REQUEST);
 
     if (empty($SBCObjArray))
-        echo '<p>Vos filtres n\'ont retourné aucun résultat.</p>';
+        echo '<h3 class="center white">Vos filtres n\'ont retourné aucun résultat.</h3>';
     else { ?>
         <section class="flex wrap white">
             <?php foreach ($SBCObjArray as $SBCObj) { ?>

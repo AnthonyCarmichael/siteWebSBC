@@ -3,7 +3,9 @@ $bdd = PDOFactory::getMySQLConnection();
 $sm = new SBCManager($bdd); ?>
 <h2 class="center">Votre panier</h2>
 
-<?php $panier = $_COOKIE;
+<?php
+
+$panier = $_COOKIE;
 $i = 0;
 $prixTotal = 0;
 
@@ -19,11 +21,8 @@ foreach ($panier as $sbc) {
                     src="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"
                     alt="<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"></a>
             <div class="white flex">
-                <p>Marque:
+                <p id="nom">Nom du produit:
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_marqueSBC(); ?>
-                </p>
-
-                <p>Modèle:
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>
                 </p>
 
@@ -47,6 +46,33 @@ foreach ($panier as $sbc) {
                 <input type="hidden" name="retirePanier" value="<?= $i ?>">
                 <input type="submit" class="bouton" value="Retirer du panier">
             </form>
+        </div>
+        <div id="infoSup" class="white display-none">
+            <p>
+                <?= $sm->getSBCById($_COOKIE["panier$i"])->get_RAM() . ' Go ' ?>
+            </p>
+            <p>
+                <?= $sm->getSBCById($_COOKIE["panier$i"])->get_longueur() . ' par ' . $sm->getSBCById($_COOKIE["panier$i"])->get_largeur() . ' mm'; ?>
+            </p>
+            <p>Processeur
+                <?= $sm->getSBCById($_COOKIE["panier$i"])->get_marqueProcesseur() . ' ' . $sm->getSBCById($_COOKIE["panier$i"])->get_modeleProcesseur() . ' ' . $sm->getSBCById($_COOKIE["panier$i"])->get_nbCoeur(); ?>
+                Coeurs
+            </p>
+            <p>
+                <?php $annees = 0;
+                $jours = $sm->getSBCById($_COOKIE["panier$i"])->get_garantie();
+                while ($jours >= 365) {
+                    $annees += 1;
+                    $jours -= 365;
+                }
+                if ($annees <= 0) {
+                    echo $jours . ' jours de garantie';
+                } elseif ($jours <= 0) {
+                    echo $annees . ' an de garantie';
+                } else {
+                    echo $annees . ' an ' . $jours . ' jours de garantie';
+                } ?>
+            </p>
         </div>
         <?php $prixTotal += ($sm->getSBCById($_COOKIE["panier$i"])->get_prix() * $_COOKIE["calcul$j"]);
     }

@@ -67,10 +67,10 @@ if (isset($_REQUEST['action'])) {
     <h2 class="center">Vos informations</h2>
     <section>
         <div class="col-6 center">
-            <p><span>Prénom: </span>
+            <p class="white"><span>Prénom: </span>
                 <?= $client->get_prenom(); ?>
             </p>
-            <p><span>Nom: </span>
+            <p class="white"><span>Nom: </span>
                 <?= $client->get_nom(); ?>
             </p>
             <form class="modificationInfoPerso" action="infoClient.php" method="post">
@@ -79,10 +79,10 @@ if (isset($_REQUEST['action'])) {
             </form>
         </div>
         <div class="col-6 center">
-            <p><span>Courriel: </span>
+            <p class="white"><span>Courriel: </span>
                 <?= $client->get_courriel(); ?>
             </p>
-            <p><span>Téléphone: </span>
+            <p class="white"><span>Téléphone: </span>
                 <?= $client->get_tel(); ?>
             </p>
             <form class="modificationContact" action="infoClient.php" method="post">
@@ -91,10 +91,10 @@ if (isset($_REQUEST['action'])) {
             </form>
         </div>
         <div class="col-6 center">
-            <p><span>Nom d'utilisateur: </span>
+            <p class="white"><span>Nom d'utilisateur: </span>
                 <?= $client->get_nom_utilisateur(); ?>
             </p>
-            <p><span>Mot de passe: </span>
+            <p class="white"><span>Mot de passe: </span>
                 <?= $client->get_mdp(); ?>
             </p>
             <form class="modificationConnexion" action="infoClient.php" method="post">
@@ -103,16 +103,16 @@ if (isset($_REQUEST['action'])) {
             </form>
         </div>
         <div class="col-6 center">
-            <p><span>Adresse: </span>
+            <p class="white"><span>Adresse: </span>
                 <?= $client->get_adresse(); ?>
-            </p>
-            <p><span>Ville: </span>
+            </p class="white">
+            <p class="white"><span>Ville: </span>
                 <?= $client->get_ville(); ?>
             </p>
-            <p><span>Province: </span>
+            <p class="white"><span>Province: </span>
                 <?= $client->get_province(); ?>
             </p>
-            <p><span>Pays: </span>
+            <p class="white"><span>Pays: </span>
                 <?= $client->get_pays(); ?>
             </p>
             <form class="modificationAdresse" action="infoClient.php" method="post">
@@ -121,10 +121,8 @@ if (isset($_REQUEST['action'])) {
             </form>
         </div>
     </section>
-    <form class="historique center" action="historique.php" method="post">
-        <input type="hidden" name="action" value="historique">
-        <input type="submit" class="bouton" value="Mon historique de commande">
-    </form>
+
+    <a class="bouton center" href="historique.php">Mon historique de commande</a>
 <?php }
 
 include_once("inc/footer.php"); ?>

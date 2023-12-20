@@ -393,4 +393,12 @@ if (main.id == "index" || main.id == "traitement") {
     }
 }
 
+let infoSup = document.querySelectorAll("#infoSup");
+let nomSBC = document.querySelectorAll("#nom");
+for (let i = 0; i < nomSBC.length; i++){
+nomSBC[i].addEventListener("click", afficheInfo);
+}
 
+function afficheInfo(evt){
+evt.target.parentElement.parentElement.nextElementSibling.classList.toggle("display-none")
+}

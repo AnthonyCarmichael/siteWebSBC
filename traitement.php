@@ -15,11 +15,8 @@ if (isset($_REQUEST['action'])) {
         print_r($client);
         $cm->addClient($client);
         ?>
-        <?php $client = unserialize($_SESSION['client']); ?>
-        <h2 class="center">Bienvenue
-            <?= $client->get_prenom() . " " . $client->get_nom(); ?>
-        </h2>
-        <?php
+        <?php $client = unserialize($_SESSION['client']);
+        header('Location: http://localhost/siteWebSBC/index.php');
     } elseif ($_REQUEST['action'] == "connexion") {
         if (isset($_SESSION['client'])) { ?>
             <?php $client = unserialize($_SESSION['client']); ?>
@@ -93,9 +90,7 @@ if (isset($_REQUEST['action'])) {
             </section>
             <?php
         }
-    }
-    elseif ($_REQUEST['action'] == "logout") 
-    { ?>
+    } elseif ($_REQUEST['action'] == "logout") { ?>
         <h2 class="center">Au plaisir de vous revoir
         </h2>
 
@@ -135,8 +130,7 @@ if (isset($_REQUEST['action'])) {
         </section>
 
         <?php
-    }
-    elseif ($_REQUEST['action'] == "suggestion") {
+    } elseif ($_REQUEST['action'] == "suggestion") {
         $SBCObj = new SBC($_REQUEST);
 
         if ($SBCManager->addSBC($SBCObj)) {
@@ -146,7 +140,7 @@ if (isset($_REQUEST['action'])) {
             $sujet = "Nouvelle suggestion d'SBC";
             $message = "Marque: " . $_REQUEST['marqueSBC'] . ", Modèle: " . $_REQUEST['modeleSBC'] . ", Garantie: " . $_REQUEST['garantie'] . ", Mémoire vive: " . $_REQUEST['RAM'] . ", Longueur: " . $_REQUEST['longueur'] . ", Largeur: " . $_REQUEST['largeur'] . ", Prix: " . $_REQUEST['prix'] . ", Marque du processeur: " . $_REQUEST['marqueProcesseur'] . ", Modèle du processeur: " . $_REQUEST['modeleProcesseur'] . ", Nombre de coeurs: " . $_REQUEST['nbCoeur'];
             $hote = "";
-
+            header('Location: http://localhost/siteWebSBC/suggestionSBC.php');
             //mail($destinataire, $sujet, $message, $hote);
         }
     } elseif ($_REQUEST['action'] == "changementInfoPerso") {
@@ -159,6 +153,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoPerso($client->get_id_client(), $_REQUEST['prenom'], $_REQUEST['nom']);
         $_SESSION['client'] = serialize($client);
+        header('Location: http://localhost/siteWebSBC/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementInfoContact") {
         $cm = new ClientManager($bdd);
 
@@ -169,6 +164,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoContact($client->get_id_client(), $_REQUEST['courriel'], $_REQUEST['tel']);
         $_SESSION['client'] = serialize($client);
+        header('Location: http://localhost/siteWebSBC/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementInfoConnexion") {
         $cm = new ClientManager($bdd);
 
@@ -179,6 +175,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoConnexion($client->get_id_client(), $_REQUEST['nom_utilisateur'], $_REQUEST['mdp']);
         $_SESSION['client'] = serialize($client);
+        header('Location: http://localhost/siteWebSBC/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementAdresse") {
         $cm = new ClientManager($bdd);
 
@@ -191,6 +188,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
         $_SESSION['client'] = serialize($client);
+        header('Location: http://localhost/siteWebSBC/infoClient.php');
     } elseif ($_REQUEST['action'] == "favoris") {
         $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
         $i = 0;
@@ -208,13 +206,13 @@ if (isset($_REQUEST['action'])) {
             setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
         }
 
-        echo 'Le produit a été ajouté à la liste des souhaits. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+        header('Location: http://localhost/siteWebSBC/infoSBC.php');
     } elseif ($_REQUEST['action'] == "retireFavoris") {
         $favorisRetire = $_REQUEST['retireFavoris'];
 
         setcookie("favoris$favorisRetire");
 
-        echo 'Le produit a été retiré de votre liste de souhaits. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+        header('Location: http://localhost/siteWebSBC/wishList.php');
     } elseif ($_REQUEST['action'] == "panier") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
@@ -235,24 +233,70 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        echo 'Le produit a été ajouté au panier. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+        header('Location: http://localhost/siteWebSBC/infoSBC.php');
+
+    } elseif ($_REQUEST['action'] == "panierHistorique") {
+        $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
+        $i = 0;
+        $j = 1;
+        $k = $_REQUEST['panier'];
+        foreach ($_COOKIE as $cookie) {
+            $i++;
+            if (isset($_COOKIE["panier$i"]) && $_COOKIE["panier$i"] == $_REQUEST['panier']) {
+                $j = $_COOKIE["calcul$k"] + 1;
+            }
+        }
+
+        $i -= 2;
+
+        if ($j == 1) {
+            setcookie("panier$i", $_REQUEST['panier'], time() + (86400 * 30));
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        } else {
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        }
+        header('Location: http://localhost/siteWebSBC/historique.php');
+
+    } elseif ($_REQUEST['action'] == "panierWishList") {
+        $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
+        $i = 0;
+        $j = 1;
+        $k = $_REQUEST['panier'];
+        foreach ($_COOKIE as $cookie) {
+            $i++;
+            if (isset($_COOKIE["panier$i"]) && $_COOKIE["panier$i"] == $_REQUEST['panier']) {
+                $j = $_COOKIE["calcul$k"] + 1;
+            }
+        }
+
+        $i -= 2;
+
+        if ($j == 1) {
+            setcookie("panier$i", $_REQUEST['panier'], time() + (86400 * 30));
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        } else {
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        }
+        header('Location: http://localhost/siteWebSBC/wishList.php');
 
     } elseif ($_REQUEST['action'] == "retirePanier") {
+        $sm = new SBCManager($bdd);
         $panierRetire = $_REQUEST['retirePanier'];
+        $id = $sm->getSBCById($_COOKIE["panier$panierRetire"])->get_id_SBC();
 
         setcookie("panier$panierRetire");
-
-        echo 'Le produit a été retiré de votre panier. <a href="javascript:history.back()">Retourner sur la page précédente</a> ';
+        setcookie("calcul$id");
+        header('Location: http://localhost/siteWebSBC/panier.php');
     } elseif (($_GET['action']) == "delCommande") {
         $client = unserialize($_SESSION['client']);
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
-        echo '<h2 class="center">Commande supprimé</h2>';
+        header('Location: http://localhost/siteWebSBC/historique.php');
     } elseif (($_GET['action']) == "commander") {
         $client = unserialize($_SESSION['client']);
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->addCommande($client->get_id_client());
-        echo '<h2 class="center">Commande passée</h2>';
+        header('Location: http://localhost/siteWebSBC/historique.php');
     }
 
 }
