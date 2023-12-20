@@ -25,11 +25,11 @@
 ?>
 
 <form class="flex wrap recherche" action="infoSBC.php" method="post" id="filtre">
-    <input class="col-4" type="text" placeholder="Recherche par marque" name="marqueSBC" id="marqueSBC">
-    <input class="col-4" type="text" placeholder="Recherche par modéle" name="modeleSBC" id="modeleSBC">
+    <input class="col-4 col-4m" type="text" placeholder="Recherche par marque" name="marqueSBC" id="marqueSBC">
+    <input class="col-4 col-4m" type="text" placeholder="Recherche par modéle" name="modeleSBC" id="modeleSBC">
 
     <input type="hidden" name="action" value="filtre">
-    <input class="col-2 bouton" type="submit" value="Rechercher">
+    <input class="col-2 col-2m bouton" type="submit" value="Rechercher">
 </form>
 
 <?php if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'filtre') {
@@ -42,7 +42,7 @@
     else { ?>
         <section class="flex wrap white">
             <?php foreach ($SBCObjArray as $SBCObj) { ?>
-                <article class="col-4">
+                <article class="col-4 col-6m">
                     <div>
                         <a href="img/<?= $SBCObj->get_modeleSBC(); ?>.jpg"><img src="img/<?= $SBCObj->get_modeleSBC(); ?>.jpg"
                                 alt="<?= $SBCObj->get_modeleSBC(); ?>.jpg"></a>
@@ -94,7 +94,7 @@
     }
 }elseif (isset($_REQUEST['idSBC'])) {
     $sbc = $SBCManager->getSBCById($_REQUEST['idSBC']);?>
-    <article class="col-4 white">
+    <article class="col-4 col-6m white">
         <div>
             <a href="img/<?= $sbc->get_modeleSBC(); ?>.jpg"><img src="img/<?= $sbc->get_modeleSBC(); ?>.jpg"
                     alt="<?= $sbc->get_modeleSBC(); ?>.jpg"></a>
@@ -143,7 +143,7 @@
 <?php }else { ?>
     <section class="flex wrap white">
         <?php foreach ($SBCs as $SBC) { ?>
-            <article class="col-4">
+            <article class="col-4 col-6m">
                 <div>
                     <a href="img/<?= $SBC->get_modeleSBC(); ?>.jpg"><img src="img/<?= $SBC->get_modeleSBC(); ?>.jpg"
                             alt="<?= $SBC->get_modeleSBC(); ?>.jpg"></a>

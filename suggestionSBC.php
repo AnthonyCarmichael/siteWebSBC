@@ -17,64 +17,64 @@
 
             <div class="col-6">
                 <div class="flex wrap">
-                    <label class="col-4" for="marqueSBC">Marque: </label>
-                    <input class="col-7" required placeholder="Marque du produit" type="text" name="marqueSBC" id="marqueSBC">
+                    <label class="col-4 col-4m" for="marqueSBC">Marque: </label>
+                    <input class="col-7 col-7m" required placeholder="Marque du produit" type="text" name="marqueSBC" id="marqueSBC">
                 </div>
 
                 <div class="flex wrap">
-                    <label class="col-4" for="modeleSBC">Modele: </label>
-                    <input class="col-7" required placeholder="Modèle du produit" type="text" name="modeleSBC" id="modeleSBC">
+                    <label class="col-4 col-4m" for="modeleSBC">Modele: </label>
+                    <input class="col-7 col-7m" required placeholder="Modèle du produit" type="text" name="modeleSBC" id="modeleSBC">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="garantie">Garantie: </label>
-                    <input class="col-7" required placeholder="Durée de la garantie (en jours)" type="number" name="garantie" id="garantie">
+                    <label class="col-4 col-4m" for="garantie">Garantie: </label>
+                    <input class="col-7 col-7m" required placeholder="Durée de la garantie (en jours)" type="number" name="garantie" id="garantie">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="RAM">Mémoire vive: </label>
-                    <input class="col-7" required placeholder="Quantité de memoire vive (en Go)" type="number" name="RAM" id="RAM">
+                    <label class="col-4 col-4m" for="RAM">Mémoire vive: </label>
+                    <input class="col-7 col-7m" required placeholder="Quantité de memoire vive (en Go)" type="number" name="RAM" id="RAM">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="longueur">Longueur: </label>
-                    <input class="col-7" required placeholder="Longueur du produit (en cm)" type="number" name="longueur" id="longueur">
+                    <label class="col-4 col-4m" for="longueur">Longueur: </label>
+                    <input class="col-7 col-7m" required placeholder="Longueur du produit (en cm)" type="number" name="longueur" id="longueur">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="largeur">Largeur: </label>
-                    <input class="col-7" required placeholder="Largeur du produit (en cm)" type="number" name="largeur" id="largeur">
+                    <label class="col-4 col-4m" for="largeur">Largeur: </label>
+                    <input class="col-7 col-7m" required placeholder="Largeur du produit (en cm)" type="number" name="largeur" id="largeur">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="prix">Prix: </label>
-                    <input class="col-7" required placeholder="Prix du produit" type="number" name="prix" id="prix">
+                    <label class="col-4 col-4m" for="prix">Prix: </label>
+                    <input class="col-7 col-7m" required placeholder="Prix du produit" type="number" name="prix" id="prix">
                 </div>
             </div>
 
             <div class="col-6">
                 <div class="flex wrap">
-                    <label class="col-4" for="marqueProcesseur">Marque processeur: </label>
-                    <input class="col-7" required placeholder="Marque du processeur" type="text" name="marqueProcesseur" id="marqueProcesseur">
+                    <label class="col-4 col-4m" for="marqueProcesseur">Marque processeur: </label>
+                    <input class="col-7 col-7m" required placeholder="Marque du processeur" type="text" name="marqueProcesseur" id="marqueProcesseur">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="modeleProcesseur">Modele processeur: </label>
-                    <input class="col-7" required placeholder="Modéle du processeur" type="text" name="modeleProcesseur" id="modeleProcesseur">
+                    <label class="col-4 col-4m" for="modeleProcesseur">Modele processeur: </label>
+                    <input class="col-7 col-7m" required placeholder="Modéle du processeur" type="text" name="modeleProcesseur" id="modeleProcesseur">
                 </div>
                 
                 <div class="flex wrap">
-                    <label class="col-4" for="nbCoeur">Nombre de coeurs: </label>
-                    <input class="col-7" required placeholder="Nombre de coeurs du processeur" type="number" name="nbCoeur" id="nbCoeur">
+                    <label class="col-4 col-4m" for="nbCoeur">Nombre de coeurs: </label>
+                    <input class="col-7 col-7m" required placeholder="Nombre de coeurs du processeur" type="number" name="nbCoeur" id="nbCoeur">
                 </div>
             </div>
         </fieldset>
             
         <div class="flex wrap">
-            <span class="col-9"></span>
+            <span class="col-9 col-9m"></span>
             <input type="hidden" name="action" value="suggestion">
-            <input class="col-1 suggestion-annuler bouton" type="reset" value="Annuler">
-            <input class="col-1 suggestion-envoyer bouton" type="submit" value="Envoyer">
+            <input class="col-1 col-1m suggestion-annuler bouton" type="reset" value="Annuler">
+            <input class="col-1 col-1m suggestion-envoyer bouton" type="submit" value="Envoyer">
         </div>
     </form>
 
