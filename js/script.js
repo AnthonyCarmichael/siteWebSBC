@@ -402,3 +402,28 @@ nomSBC[i].addEventListener("click", afficheInfo);
 function afficheInfo(evt){
 evt.target.parentElement.parentElement.nextElementSibling.classList.toggle("display-none")
 }
+
+let poubelleHover = document.querySelector("#poubelle img");
+console.log(poubelleHover);
+if (poubelleHover) {
+    poubelleHover.addEventListener("mouseover", changeImgUrl);
+    function changeImgUrl(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src", "img/panierRose.png");
+        newImg.setAttribute("alt", "poubelle");
+        evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
+        evt.target.remove();
+        let poubelleRoseHover = document.querySelector("#poubelle img");
+        //console.log(panierRoseHover);
+        poubelleRoseHover.addEventListener("mouseout", resetUrl);
+    }
+    function resetUrl(evt) {
+        newImg = document.createElement("img");
+        newImg.setAttribute("src", "img/panier.png");
+        newImg.setAttribute("alt", "poubelle");
+        evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
+        evt.target.remove();
+        let poubelleResetHover = document.querySelector("#poubelle img");
+        poubelleResetHover.addEventListener("mouseover", changeImgUrl);
+    }
+}
