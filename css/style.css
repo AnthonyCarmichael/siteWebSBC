@@ -11,6 +11,7 @@
     --paleBlue: #31aadf;
 }
 
+/* BALISE GÉNÉRIQUE **************************************************/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,17 +19,38 @@
 
 }
 
-/* BALISE GÉNÉRIQUE (mobile et PC) **************************************************/
-
 body {
-
+    min-width: 980px;
+    background-color: black;
     background: url("../img/background.jpg") no-repeat center;
     background-size: cover;
-    background-color: black;
 }
 
+header {
+    margin: auto;
+    max-width: 980px;
+}
+
+main {
+    margin: auto;
+    max-width: 980px;
+    min-height: 80vh;
+    margin-top: 5px;
+    background-color: #141444da;
+
+}
+
+footer {
+    margin: auto;
+    padding: 10px;
+    color: white;
+    max-width: 980px;
+}
+
+/* HEADER ************************************************************/
 h1 {
-    font-size: 2em;
+    margin-top: 20px;
+    font-size: 6em;
     font-family: 'Whisper', cursive;
     color: var(--darkPink);
 
@@ -38,21 +60,19 @@ h2 {
     padding-top: 10px;
     padding-bottom: 5px;
     color: white;
-    font-size: 0.8em;
 }
 
 h3 {
     color: white;
-    font-size: 0.7em;
 }
 
-p {
-    font-size: 0.6em;
+.menu-connexion ul {
+    list-style: none;
 }
 
-header {
-    margin: auto;
-    width: 80%;
+.menu-principal {
+    background-color: var(--darkBlue);
+    border-radius: 5px;
 }
 
 
@@ -69,12 +89,46 @@ main {
 footer {
     margin: auto;
     padding: 10px;
-    color: white;
-    width: 80%;
-    max-width: 980px;
 }
 
-/* CLASS (mobile et PC) *************************************************************/
+.menu-principal ul:nth-of-type(1) {
+    width: 60%;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-principal ul:nth-of-type(2) {
+    width: 40%;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-connexion a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: var(--darkPink);
+}
+
+#logo {
+    width: 100px;
+}
+
+#logoPanier img {
+    width: 40px;
+}
+
+
+/* CLASS *************************************************************/
 .white {
     color: white;
 }
@@ -98,6 +152,7 @@ footer {
 .flex {
     display: flex;
 }
+
 
 .wrap {
     flex-wrap: wrap;
@@ -486,6 +541,176 @@ nav a:hover {
     padding-left: 10px;
 }
 
+/* Comparaison (mobile) **********************************************/
+#comparaison .visibility{
+    visibility: hidden;
+}
+
+#comparaison article{
+    margin: 20px 0px 0px 0px;
+}
+
+#comparaison select{
+    height: 25px;
+}
+
+#comparaison img{
+    width: 75%;
+    height: 50%;
+    margin: 15px 0px;
+}
+
+#comparaison form{
+    margin: 15px 0px;
+}
+
+#comparaison table{
+    cursor: pointer;
+    margin: 50px 0px;
+}
+
+#comparaison tr{
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+}
+
+#comparaison td{
+    padding: 15px 85px;
+}
+
+#comparaison .element{
+    width: 25%;
+}
+
+#comparaison .valeur{
+    width: 25%;
+}
+
+#comparaison .plus{
+    color: var(--turquoise);
+}
+
+#comparaison .plus:hover{
+    color: var(--rose);
+    transition: 0.8s;
+}
+
+    /* Suggestion SBC (mobile) **********************************************/
+
+#suggestionSBC h2 {
+    padding: 15px;
+}
+
+#suggestionSBC label {
+    color: white;
+}
+
+#suggestionSBC form {
+    width: 75%;
+    margin: auto;
+}
+
+#suggestionSBC fieldset {
+    background-color: #1c06208d;
+    flex-direction: column;
+}
+
+#suggestionSBC fieldset>div {
+    padding: 2%;
+}
+
+#suggestionSBC div>div {
+    margin: 2%;
+}
+
+#suggestionSBC legend {
+    color: white;
+    font-size: xx-large;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+#suggestionSBC input[class*='suggestion-'] {
+    margin: auto;
+    margin-top: 15px;
+}
+
+/* Info SBC (mobile) **********************************************/
+
+#infoSBC img {
+    width: 100%;
+    height: 100%;
+}
+
+#infoSBC h2 {
+    margin-bottom: 20px;
+}
+
+#infoSBC form.recherche {
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+    #infoSBC input {
+        height: 35px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    #infoSBC article div:first-of-type {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    #infoSBC .certification {
+        color: var(--turquoise);
+    }
+
+    #infoSBC .certification:hover {
+        color: var(--rose);
+        transition: 1s;
+    }
+
+    #infoSBC article div:last-of-type {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #infoSBC form.panier {
+        padding-left: 30px;
+        padding-bottom: 5px;
+    }
+
+    #infoSBC form.favoris {
+        padding-left: 30px;
+        padding-top: 5px;
+    }
+
+
+
+
+
+
+/* Pour périphérique mobile: */
+.col-1m {width: 8.33%;}
+.col-2m {width: 16.66%;}
+.col-3m {width: 25%;}
+.col-4m {width: 33.33%;}
+.col-5m {width: 41.66%;}
+.col-6m {width: 50%;}
+.col-7m {width: 58.33%;}
+.col-8m {width: 66.66%;}
+.col-9m {width: 75%;}
+.col-10m {width: 83.33%;}
+.col-11m {width: 91.66%;}
+.col-12m {width: 100%;}
+
 /* RESPONSIVE **************************************************/
 
 /* CSS à appliquer si la largeur de l'écran est supérieure à 968px (PC) */
@@ -668,14 +893,7 @@ nav a:hover {
 
 
 
-    /* SPÉCIFIQUE À LA PAGE **********************************************/
-
-
-    /* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
-    /*p[class*='prix-'] {
-        seffa
-    }*/
-    /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
+/* SPÉCIFIQUE À LA PAGE **********************************************/
 
     /*Page index*/
 
@@ -849,22 +1067,39 @@ nav a:hover {
 
 
     /* Info SBC (PC) **********************************************/
+/* Comparaison **********************************************/
 
-    #infoSBC img {
+    #comparaison .visibility{
+        visibility: visible;
+    }
+
+    #comparaison table{
+        border-collapse: collapse;
         width: 100%;
-        height: 100%;
+        border: 2px solid #ddd;
     }
 
-    #infoSBC h2 {
-        margin-bottom: 20px;
+    #comparaison tr, td{
+        border: 1px solid #ddd;
     }
 
-    #infoSBC form.recherche {
-        width: 95%;
-        margin: auto;
-        padding-top: 20px;
-        margin-bottom: 20px;
-    }
+/* Info SBC **********************************************/
+
+#infoSBC img {
+    width: 100%;
+    height: 100%;
+}
+
+#infoSBC h2 {
+    margin-bottom: 20px;
+}
+
+#infoSBC form.recherche {
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
 
     #infoSBC input {
         height: 35px;
@@ -906,58 +1141,14 @@ nav a:hover {
 
     /* Suggestion SBC (PC) **********************************************/
 
-    #suggestionSBC h2 {
-        padding: 15px;
-    }
-
-    #suggestionSBC label {
-        color: white;
-    }
-
     #suggestionSBC form {
         width: 95%;
         margin: auto;
     }
 
     #suggestionSBC fieldset {
-        background-color: #1c06208d;
+        flex-direction: row;
     }
-
-    #suggestionSBC fieldset>div {
-        padding: 2%;
-    }
-
-    #suggestionSBC div>div {
-        margin: 2%;
-    }
-
-    #suggestionSBC legend {
-        color: white;
-        font-size: xx-large;
-        font-style: italic;
-        margin-left: 15px;
-    }
-
-    /*#suggestionSBC input {
-        border-radius: 3px;
-        height: 25px;
-    }*/
-
-    #suggestionSBC input[class*='suggestion-'] {
-        margin: auto;
-        margin-top: 15px;
-    }
-
-    /*#suggestionSBC .suggestion-annuler {
-        background-color: var(--darkPink);
-
-    }
-
-    #suggestionSBC .suggestion-envoyer {
-        background-color: var(--paleBlue);
-    }*/
-
-
 
     /* Wishlist (PC) **********************************************/
     #wishList #infoSpecifique {
@@ -1110,7 +1301,4 @@ nav a:hover {
     #historique #infoSpecifique+div {
         margin: 0px;
     }
-
-
-
 }
