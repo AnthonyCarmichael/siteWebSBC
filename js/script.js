@@ -188,7 +188,7 @@ if (poubelleHover) {
     poubelleHover.addEventListener("mouseover", changeImgUrl);
     function changeImgUrl(evt) {
         newImg = document.createElement("img");
-        newImg.setAttribute("src", "img/panierRose.png");
+        newImg.setAttribute("src", "img/corbeilleRose.png");
         newImg.setAttribute("alt", "poubelle");
         evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
         evt.target.remove();
@@ -198,7 +198,7 @@ if (poubelleHover) {
     }
     function resetUrl(evt) {
         newImg = document.createElement("img");
-        newImg.setAttribute("src", "img/panier.png");
+        newImg.setAttribute("src", "img/corbeille.png");
         newImg.setAttribute("alt", "poubelle");
         evt.target.parentNode.insertAdjacentElement("beforeend", newImg);
         evt.target.remove();

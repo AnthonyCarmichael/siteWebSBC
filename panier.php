@@ -47,7 +47,8 @@ foreach ($panier as $sbc) {
                 <input type="submit" class="bouton" value="Retirer du panier">
             </form>
 
-            <a id="poubelle"><img id="logo" src="img/panier.png" alt="compagnie"></a>
+            <a id="poubelle" href="traitement.php?action=retirePanier&retirePanier=<?= $i ?>"><img id="logo"
+                    src="img/corbeille.png" alt="compagnie"></a>
         </div>
         <div id="infoSup" class="white display-none">
             <p>
