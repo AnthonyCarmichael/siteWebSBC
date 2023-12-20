@@ -89,6 +89,8 @@ main {
 footer {
     margin: auto;
     padding: 10px;
+}
+
 .menu-principal ul:nth-of-type(1) {
     width: 60%;
     list-style: none;
@@ -823,9 +825,9 @@ nav a:hover {
         background-color: rgba(0, 0, 0, 0.387);
     }
 
-#infoClient form {
-    color: white;
-}
+    #infoClient form {
+        color: white;
+    }
 
     #infoClient label {
         width: 100%;
@@ -891,10 +893,10 @@ nav a:hover {
         width: 250px;
     }
 
-#seConnecter div {
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+    #seConnecter div {
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
 
     /* Inscription (PC) **********************************************/
 
@@ -958,19 +960,19 @@ nav a:hover {
     /* Info SBC (PC) **********************************************/
 /* Comparaison **********************************************/
 
-#comparaison .visibility{
-    visibility: visible;
-}
+    #comparaison .visibility{
+        visibility: visible;
+    }
 
-#comparaison table{
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid #ddd;
-}
+    #comparaison table{
+        border-collapse: collapse;
+        width: 100%;
+        border: 2px solid #ddd;
+    }
 
-#comparaison tr, td{
-    border: 1px solid #ddd;
-}
+    #comparaison tr, td{
+        border: 1px solid #ddd;
+    }
 
 /* Info SBC **********************************************/
 
@@ -1226,5 +1228,4 @@ nav a:hover {
     #historique #infoSpecifique+div {
         margin: 0px;
     }
-
 }
