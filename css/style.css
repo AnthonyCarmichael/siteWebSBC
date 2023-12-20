@@ -384,8 +384,75 @@ nav a:hover {
     display: none;
 }
 
+/* Comparaison (mobile) **********************************************/
+#comparaison .visibility{
+    visibility: hidden;
+}
+
+#comparaison article{
+    margin: 20px 0px 0px 0px;
+}
+
+#comparaison select{
+    height: 25px;
+}
+
+#comparaison img{
+    width: 75%;
+    height: 50%;
+    margin: 15px 0px;
+}
+
+#comparaison form{
+    margin: 15px 0px;
+}
+
+#comparaison table{
+    cursor: pointer;
+    margin: 50px 0px;
+}
+
+#comparaison tr{
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+}
+
+#comparaison td{
+    padding: 15px 85px;
+}
+
+#comparaison .element{
+    width: 25%;
+}
+
+#comparaison .valeur{
+    width: 25%;
+}
+
+#comparaison .plus{
+    color: var(--turquoise);
+}
+
+#comparaison .plus:hover{
+    color: var(--rose);
+    transition: 0.8s;
+}
 
 
+/* Pour périphérique mobile: */
+.col-1m {width: 8.33%;}
+.col-2m {width: 16.66%;}
+.col-3m {width: 25%;}
+.col-4m {width: 33.33%;}
+.col-5m {width: 41.66%;}
+.col-6m {width: 50%;}
+.col-7m {width: 58.33%;}
+.col-8m {width: 66.66%;}
+.col-9m {width: 75%;}
+.col-10m {width: 83.33%;}
+.col-11m {width: 91.66%;}
+.col-12m {width: 100%;}
 
 /* RESPONSIVE **************************************************/
 
@@ -524,13 +591,6 @@ nav a:hover {
 
 /* SPÉCIFIQUE À LA PAGE **********************************************/
 
-
-    /* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
-    /*p[class*='prix-'] {
-        seffa
-    }*/
-    /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
-
     /*Page index*/
 
     #index p {
@@ -632,56 +692,19 @@ nav a:hover {
 
 /* Comparaison **********************************************/
 
-#comparaison article{
-    margin: 20px 0px 0px 0px;
-}
-
-#comparaison select{
-    height: 25px;
-}
-
-#comparaison img{
-    width: 75%;
-    height: 50%;
-    margin: 15px 0px;
-}
-
-#comparaison form{
-    margin: 15px 0px;
+#comparaison .visibility{
+    visibility: visible;
 }
 
 #comparaison table{
     border-collapse: collapse;
     width: 100%;
-    cursor: pointer;
-    margin: 100px 0px;
     border: 2px solid #ddd;
-}
-
-#comparaison tr{
-    background-color: midnightblue;
-    color: white;
-    text-align: center;
-}
-
-#comparaison td{
-    padding: 15px 90px;
 }
 
 #comparaison tr, td{
     border: 1px solid #ddd;
 }
-
-#comparaison .plus{
-    color: var(--turquoise);
-}
-
-#comparaison .plus:hover{
-    color: var(--rose);
-    transition: 1s;
-}
-
-
 
 /* Info SBC **********************************************/
 
