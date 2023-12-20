@@ -1,10 +1,4 @@
 <?php
-    setcookie('favoris', '0', time() + 3600 * 24);
-
-    include_once("inc/header.php");
-    require_once './classe/PDOFactory.php';
-    require_once './classe/SBCManager.php';
-    //require_once './classe/panier.php';
     include_once("inc/header.php");
     require_once './classe/PDOFactory.php';
     require_once './classe/SBCManager.php';

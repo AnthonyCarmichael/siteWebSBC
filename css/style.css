@@ -11,7 +11,6 @@
     --paleBlue: #31aadf;
 }
 
-/* BALISE GÉNÉRIQUE **************************************************/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,38 +18,17 @@
 
 }
 
+/* BALISE GÉNÉRIQUE (mobile et PC) **************************************************/
+
 body {
-    min-width: 980px;
-    background-color: black;
+
     background: url("../img/background.jpg") no-repeat center;
     background-size: cover;
+    background-color: black;
 }
 
-header {
-    margin: auto;
-    max-width: 980px;
-}
-
-main {
-    margin: auto;
-    max-width: 980px;
-    min-height: 80vh;
-    margin-top: 5px;
-    background-color: #141444da;
-
-}
-
-footer {
-    margin: auto;
-    padding: 10px;
-    color: white;
-    max-width: 980px;
-}
-
-/* HEADER ************************************************************/
 h1 {
-    margin-top: 20px;
-    font-size: 6em;
+    font-size: 2em;
     font-family: 'Whisper', cursive;
     color: var(--darkPink);
 
@@ -60,19 +38,21 @@ h2 {
     padding-top: 10px;
     padding-bottom: 5px;
     color: white;
+    font-size: 0.8em;
 }
 
 h3 {
     color: white;
+    font-size: 0.7em;
 }
 
-.menu-connexion ul {
-    list-style: none;
+p {
+    font-size: 0.6em;
 }
 
-.menu-principal {
-    background-color: var(--darkBlue);
-    border-radius: 5px;
+header {
+    margin: auto;
+    width: 80%;
 }
 
 
@@ -89,46 +69,12 @@ main {
 footer {
     margin: auto;
     padding: 10px;
-}
-
-.menu-principal ul:nth-of-type(1) {
-    width: 60%;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.menu-principal ul:nth-of-type(2) {
-    width: 40%;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.menu-principal a {
-    text-decoration: none;
     color: white;
+    width: 80%;
+    max-width: 980px;
 }
 
-.menu-connexion a {
-    text-decoration: none;
-    color: white;
-}
-
-nav a:hover {
-    color: var(--darkPink);
-}
-
-#logo {
-    width: 100px;
-}
-
-#logoPanier img {
-    width: 40px;
-}
-
-
-/* CLASS *************************************************************/
+/* CLASS (mobile et PC) *************************************************************/
 .white {
     color: white;
 }
@@ -152,7 +98,6 @@ nav a:hover {
 .flex {
     display: flex;
 }
-
 
 .wrap {
     flex-wrap: wrap;
@@ -471,7 +416,7 @@ nav a:hover {
     margin-top: 5px;
 }
 
-#panier #poubelle img{
+#panier #poubelle img {
     width: 15px;
 }
 
@@ -542,61 +487,61 @@ nav a:hover {
 }
 
 /* Comparaison (mobile) **********************************************/
-#comparaison .visibility{
+#comparaison .visibility {
     visibility: hidden;
 }
 
-#comparaison article{
+#comparaison article {
     margin: 20px 0px 0px 0px;
 }
 
-#comparaison select{
+#comparaison select {
     height: 25px;
 }
 
-#comparaison img{
+#comparaison img {
     width: 75%;
     height: 50%;
     margin: 15px 0px;
 }
 
-#comparaison form{
+#comparaison form {
     margin: 15px 0px;
 }
 
-#comparaison table{
+#comparaison table {
     cursor: pointer;
     margin: 50px 0px;
 }
 
-#comparaison tr{
+#comparaison tr {
     background-color: midnightblue;
     color: white;
     text-align: center;
 }
 
-#comparaison td{
+#comparaison td {
     padding: 15px 85px;
 }
 
-#comparaison .element{
+#comparaison .element {
     width: 25%;
 }
 
-#comparaison .valeur{
+#comparaison .valeur {
     width: 25%;
 }
 
-#comparaison .plus{
+#comparaison .plus {
     color: var(--turquoise);
 }
 
-#comparaison .plus:hover{
+#comparaison .plus:hover {
     color: var(--rose);
     transition: 0.8s;
 }
 
-    /* Suggestion SBC (mobile) **********************************************/
+/* Suggestion SBC (mobile) **********************************************/
 
 #suggestionSBC h2 {
     padding: 15px;
@@ -654,62 +599,44 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-    #infoSBC input {
-        height: 35px;
-        border-radius: 5px;
-        margin: auto;
-    }
+#infoSBC input {
+    height: 35px;
+    border-radius: 5px;
+    margin: auto;
+}
 
-    #infoSBC article div:first-of-type {
-        width: 80%;
-        height: 50%;
-        margin: auto;
-        margin-bottom: 15px;
-    }
+#infoSBC article div:first-of-type {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+}
 
-    #infoSBC .certification {
-        color: var(--turquoise);
-    }
+#infoSBC .certification {
+    color: var(--turquoise);
+}
 
-    #infoSBC .certification:hover {
-        color: var(--rose);
-        transition: 1s;
-    }
+#infoSBC .certification:hover {
+    color: var(--rose);
+    transition: 1s;
+}
 
-    #infoSBC article div:last-of-type {
-        width: 80%;
-        margin: auto;
-        margin-bottom: 20px;
-    }
+#infoSBC article div:last-of-type {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
 
-    #infoSBC form.panier {
-        padding-left: 30px;
-        padding-bottom: 5px;
-    }
+#infoSBC form.panier {
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
 
-    #infoSBC form.favoris {
-        padding-left: 30px;
-        padding-top: 5px;
-    }
+#infoSBC form.favoris {
+    padding-left: 30px;
+    padding-top: 5px;
+}
 
-
-
-
-
-
-/* Pour périphérique mobile: */
-.col-1m {width: 8.33%;}
-.col-2m {width: 16.66%;}
-.col-3m {width: 25%;}
-.col-4m {width: 33.33%;}
-.col-5m {width: 41.66%;}
-.col-6m {width: 50%;}
-.col-7m {width: 58.33%;}
-.col-8m {width: 66.66%;}
-.col-9m {width: 75%;}
-.col-10m {width: 83.33%;}
-.col-11m {width: 91.66%;}
-.col-12m {width: 100%;}
 
 /* RESPONSIVE **************************************************/
 
@@ -893,7 +820,14 @@ nav a:hover {
 
 
 
-/* SPÉCIFIQUE À LA PAGE **********************************************/
+    /* SPÉCIFIQUE À LA PAGE **********************************************/
+
+
+    /* SPÉCIFIQUE À LA PAGE Comparaison**********************************************/
+    /*p[class*='prix-'] {
+        seffa
+    }*/
+    /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
 
     /*Page index*/
 
@@ -1067,39 +1001,22 @@ nav a:hover {
 
 
     /* Info SBC (PC) **********************************************/
-/* Comparaison **********************************************/
 
-    #comparaison .visibility{
-        visibility: visible;
-    }
-
-    #comparaison table{
-        border-collapse: collapse;
+    #infoSBC img {
         width: 100%;
-        border: 2px solid #ddd;
+        height: 100%;
     }
 
-    #comparaison tr, td{
-        border: 1px solid #ddd;
+    #infoSBC h2 {
+        margin-bottom: 20px;
     }
 
-/* Info SBC **********************************************/
-
-#infoSBC img {
-    width: 100%;
-    height: 100%;
-}
-
-#infoSBC h2 {
-    margin-bottom: 20px;
-}
-
-#infoSBC form.recherche {
-    width: 95%;
-    margin: auto;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
+    #infoSBC form.recherche {
+        width: 95%;
+        margin: auto;
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
 
     #infoSBC input {
         height: 35px;
@@ -1141,14 +1058,58 @@ nav a:hover {
 
     /* Suggestion SBC (PC) **********************************************/
 
+    #suggestionSBC h2 {
+        padding: 15px;
+    }
+
+    #suggestionSBC label {
+        color: white;
+    }
+
     #suggestionSBC form {
         width: 95%;
         margin: auto;
     }
 
     #suggestionSBC fieldset {
-        flex-direction: row;
+        background-color: #1c06208d;
     }
+
+    #suggestionSBC fieldset>div {
+        padding: 2%;
+    }
+
+    #suggestionSBC div>div {
+        margin: 2%;
+    }
+
+    #suggestionSBC legend {
+        color: white;
+        font-size: xx-large;
+        font-style: italic;
+        margin-left: 15px;
+    }
+
+    /*#suggestionSBC input {
+        border-radius: 3px;
+        height: 25px;
+    }*/
+
+    #suggestionSBC input[class*='suggestion-'] {
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    /*#suggestionSBC .suggestion-annuler {
+        background-color: var(--darkPink);
+
+    }
+
+    #suggestionSBC .suggestion-envoyer {
+        background-color: var(--paleBlue);
+    }*/
+
+
 
     /* Wishlist (PC) **********************************************/
     #wishList #infoSpecifique {
@@ -1233,7 +1194,7 @@ nav a:hover {
         display: none;
     }
 
-    #panier #infoSpecifique>a.SBC{
+    #panier #infoSpecifique>a.SBC {
         display: contents;
     }
 
@@ -1301,4 +1262,7 @@ nav a:hover {
     #historique #infoSpecifique+div {
         margin: 0px;
     }
+
+
+
 }
