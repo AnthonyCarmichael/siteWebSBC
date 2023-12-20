@@ -496,7 +496,7 @@ nav a:hover {
 }
 
 #comparaison select {
-    height: 25px;
+    width: 100%;
 }
 
 #comparaison img {
@@ -512,24 +512,27 @@ nav a:hover {
 #comparaison table {
     cursor: pointer;
     margin: 50px 0px;
+    /*width: 50%;*/
 }
 
 #comparaison tr {
     background-color: midnightblue;
     color: white;
     text-align: center;
+    /*width: 20%;*/
 }
 
 #comparaison td {
-    padding: 15px 85px;
+    padding: 15px 10%;
 }
 
+
 #comparaison .element {
-    width: 25%;
+    width: 30%;
 }
 
 #comparaison .valeur {
-    width: 25%;
+    width: 30%;
 }
 
 #comparaison .plus {
@@ -567,6 +570,11 @@ nav a:hover {
 
 #suggestionSBC div>div {
     margin: 2%;
+}
+
+#suggestionSBC #boutonSuggestion {
+    width: 125px;
+    margin: auto;
 }
 
 #suggestionSBC legend {
@@ -620,7 +628,9 @@ nav a:hover {
     color: var(--rose);
     transition: 1s;
 }
-
+#infoSBC article{
+    margin-bottom: 30px;
+}
 #infoSBC article div:last-of-type {
     width: 80%;
     margin: auto;
@@ -637,6 +647,53 @@ nav a:hover {
     padding-top: 5px;
 }
 
+.col-1m {
+    width: 8.33%;
+}
+
+.col-2m {
+    width: 16.66%;
+}
+
+.col-3m {
+    width: 25%;
+}
+
+.col-4m {
+    width: 33.33%;
+}
+
+.col-5m {
+    width: 41.66%;
+}
+
+.col-6m {
+    width: 50%;
+}
+
+.col-7m {
+    width: 58.33%;
+}
+
+.col-8m {
+    width: 66.66%;
+}
+
+.col-9m {
+    width: 75%;
+}
+
+.col-10m {
+    width: 83.33%;
+}
+
+.col-11m {
+    width: 91.66%;
+}
+
+.col-12m {
+    width: 100%;
+}
 
 /* RESPONSIVE **************************************************/
 
@@ -828,6 +885,31 @@ nav a:hover {
         seffa
     }*/
     /* SPÉCIFIQUE À LA PAGE infoSBC (PC) **********************************************/
+
+    /* comparaison*/
+
+    #comparaison .visibility {
+        visibility: visible;
+    }
+
+    #comparaison table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 2px solid #ddd;
+    }
+
+    #comparaison tr,
+    td {
+        border: 1px solid #ddd;
+    }
+
+    #comparaison .element {
+        width: 25%;
+    }
+    
+    #comparaison .valeur {
+        width: 25%;
+    }
 
     /*Page index*/
 
@@ -1058,58 +1140,19 @@ nav a:hover {
 
     /* Suggestion SBC (PC) **********************************************/
 
-    #suggestionSBC h2 {
-        padding: 15px;
-    }
-
-    #suggestionSBC label {
-        color: white;
-    }
-
     #suggestionSBC form {
         width: 95%;
         margin: auto;
     }
 
     #suggestionSBC fieldset {
-        background-color: #1c06208d;
+        flex-direction: row;
     }
 
-    #suggestionSBC fieldset>div {
-        padding: 2%;
-    }
-
-    #suggestionSBC div>div {
-        margin: 2%;
-    }
-
-    #suggestionSBC legend {
-        color: white;
-        font-size: xx-large;
-        font-style: italic;
-        margin-left: 15px;
-    }
-
-    /*#suggestionSBC input {
-        border-radius: 3px;
-        height: 25px;
-    }*/
-
-    #suggestionSBC input[class*='suggestion-'] {
+    #suggestionSBC #boutonSuggestion {
+        width: 175px;
         margin: auto;
-        margin-top: 15px;
     }
-
-    /*#suggestionSBC .suggestion-annuler {
-        background-color: var(--darkPink);
-
-    }
-
-    #suggestionSBC .suggestion-envoyer {
-        background-color: var(--paleBlue);
-    }*/
-
-
 
     /* Wishlist (PC) **********************************************/
     #wishList #infoSpecifique {
@@ -1146,35 +1189,38 @@ nav a:hover {
     }
 
     #panier img {
-        width: 100px;
+        width: 90px;
     }
 
-    /*#panier p {
-        padding: 15px;
-        width: 200px;
-    }*/
+    #panier p#nom {
+        /*padding: 15px;*/
+        width: 65%;
+        margin: auto;
+    }
 
     #panier p#prix {
         /*padding: 15px;*/
-        width: 150px;
-        padding-left: 10px;
+        width: 23%;
+        
+        margin: auto;
     }
 
     #panier p#quantite {
         /*padding: 15px;*/
-        width: 150px;
-        padding-left: 10px;
+        width: 32%;
+        margin: auto;
+        /*padding-left: 10px;*/
     }
 
     #panier h3 {
         padding-bottom: 10px;
     }
 
-    #panier p#nom {
-        /*padding: 15px;*/
+    /*#panier p#nom {
+        padding: 15px;
         width: 400px;
         padding-left: 10px;
-    }
+    }*/
 
     #panier div#infoSup {
         align-items: center;
@@ -1262,7 +1308,5 @@ nav a:hover {
     #historique #infoSpecifique+div {
         margin: 0px;
     }
-
-
 
 }

@@ -141,7 +141,7 @@ if (isset($_REQUEST['action'])) {
             $message = "Marque: " . $_REQUEST['marqueSBC'] . ", Modèle: " . $_REQUEST['modeleSBC'] . ", Garantie: " . $_REQUEST['garantie'] . ", Mémoire vive: " . $_REQUEST['RAM'] . ", Longueur: " . $_REQUEST['longueur'] . ", Largeur: " . $_REQUEST['largeur'] . ", Prix: " . $_REQUEST['prix'] . ", Marque du processeur: " . $_REQUEST['marqueProcesseur'] . ", Modèle du processeur: " . $_REQUEST['modeleProcesseur'] . ", Nombre de coeurs: " . $_REQUEST['nbCoeur'];
             $hote = "";
             header('Location: http://localhost/siteWebSBC/suggestionSBC.php');
-            //mail($destinataire, $sujet, $message, $hote);
+            mail($destinataire, $sujet, $message, $hote);
         }
     } elseif ($_REQUEST['action'] == "changementInfoPerso") {
         $cm = new ClientManager($bdd);

@@ -21,7 +21,7 @@ foreach ($panier as $sbc) {
                     src="img/<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"
                     alt="<?= $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>.jpg"></a>
             <div class="white flex">
-                <p id="nom">Nom du produit:
+                <p id="nom">
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_marqueSBC(); ?>
                     <?php echo $sm->getSBCById($_COOKIE["panier$i"])->get_modeleSBC(); ?>
                 </p>

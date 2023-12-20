@@ -13,7 +13,7 @@
     <form action="traitement.php" method="post">
 
         <fieldset class="flex wrap">
-            <legend>Infos SBC</legend>
+            <legend>Suggestion SBC</legend>
 
             <div class="col-6">
                 <div class="flex wrap">
@@ -70,11 +70,11 @@
             </div>
         </fieldset>
             
-        <div class="flex wrap">
-            <span class="col-9 col-9m"></span>
+        <div id="boutonSuggestion" class="flex wrap center">
+        
             <input type="hidden" name="action" value="suggestion">
-            <input class="col-1 col-1m suggestion-annuler bouton" type="reset" value="Annuler">
-            <input class="col-1 col-1m suggestion-envoyer bouton" type="submit" value="Envoyer">
+            <input class="suggestion-annuler bouton" type="reset" value="Annuler">
+            <input class="suggestion-envoyer bouton" type="submit" value="Envoyer">
         </div>
     </form>
 
