@@ -40,11 +40,12 @@ include_once("prétraitement.php");
         <h1 class="center">Chip Wave</h1>
         <nav class="menu-connexion">
             <ul class="end">
-                <li><a href="inscription.php">Inscription</a></li>
+
 
                 <?php if (isset($_SESSION['client'])) { ?>
                     <li><a href="traitement.php?action=logout">Se déconnecter</a></li>
                 <?php } else { ?>
+                    <li><a href="inscription.php">Inscription</a></li>
                     <li><a href="connexion.php">Se connecter</a></li>
                 <?php } ?>
             </ul>
@@ -77,7 +78,6 @@ include_once("prétraitement.php");
                     <li>
                         <a id="logoPanier" href="panier.php" class="pc"><img src="img/panier.png" alt="panier"></a>
                         <ul id="menuUser" class="display-none">
-                            <li><a href="inscription.php">Inscription</a></li>
                             <li><a href="traitement.php?action=logout">Se déconnecter</a></li>
                             <li><a href="infoClient.php">Gestion de compte</a></li>
                             <li><a href="wishList.php">Liste de souhait</a></li>
@@ -85,16 +85,16 @@ include_once("prétraitement.php");
                         </ul>
                     </li>
                 </ul>
-                <?php 
-            }
-            else {
+                <?php
+            } else {
                 ?>
                 <ul id="menuUser" class="display-none">
                     <li><a href="inscription.php">Inscription</a></li>
                     <li><a href="connexion.php">Se connecter</a></li>
-                </ul> <?php
+                </ul>
+                <?php
             }
-                 ?>
+            ?>
             <img id="userIcon" src="img/userIcon.png" alt="user">
         </nav>
     </header>
