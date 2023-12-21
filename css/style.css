@@ -390,7 +390,7 @@ nav a:hover {
 
 #panier p#nom {
     /*padding: 15px;*/
-    width: 200px;
+    width: 150px;
     padding-left: 10px;
 }
 
@@ -1181,9 +1181,9 @@ nav a:hover {
     /* Panier (PC) **********************************************/
     #panier #infoSpecifique {
         align-items: center;
-        justify-content: space-around;
+        /*justify-content: space-around;*/
         /*width: 100%;*/
-        margin: 10px;
+        /*margin: 10px;*/
         background-color: #1c06208d;
         margin-bottom: 0px;
     }
@@ -1194,20 +1194,20 @@ nav a:hover {
 
     #panier p#nom {
         /*padding: 15px;*/
-        width: 65%;
+        width: 250px;
         margin: auto;
     }
 
     #panier p#prix {
         /*padding: 15px;*/
-        width: 23%;
+        width: 100px;
         
         margin: auto;
     }
 
     #panier p#quantite {
         /*padding: 15px;*/
-        width: 32%;
+        width: 150px;
         margin: auto;
         /*padding-left: 10px;*/
     }
