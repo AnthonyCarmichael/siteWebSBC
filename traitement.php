@@ -207,6 +207,24 @@ if (isset($_REQUEST['action'])) {
         }
 
         header('Location: http://localhost/siteWebSBC/infoSBC.php');
+    } elseif ($_REQUEST['action'] == "favorisComparaison") {
+        $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
+        $i = 0;
+        $j = 0;
+        foreach ($_COOKIE as $cookie) {
+            $i++;
+            if (isset($_COOKIE["favoris$i"]) && $_COOKIE["favoris$i"] == $_REQUEST['favoris']) {
+                $j++;
+            }
+            //setcookie("favoris$i");
+        }
+        $i -= 2;
+
+        if ($j == 0) {
+            setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
+        }
+
+        header('Location: http://localhost/siteWebSBC/comparaison.php');
     } elseif ($_REQUEST['action'] == "retireFavoris") {
         $favorisRetire = $_REQUEST['retireFavoris'];
 
@@ -278,6 +296,28 @@ if (isset($_REQUEST['action'])) {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
         header('Location: http://localhost/siteWebSBC/wishList.php');
+
+    } elseif ($_REQUEST['action'] == "panierComparaison") {
+        $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
+        $i = 0;
+        $j = 1;
+        $k = $_REQUEST['panier'];
+        foreach ($_COOKIE as $cookie) {
+            $i++;
+            if (isset($_COOKIE["panier$i"]) && $_COOKIE["panier$i"] == $_REQUEST['panier']) {
+                $j = $_COOKIE["calcul$k"] + 1;
+            }
+        }
+
+        $i -= 2;
+
+        if ($j == 1) {
+            setcookie("panier$i", $_REQUEST['panier'], time() + (86400 * 30));
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        } else {
+            setcookie("calcul$k", $j, time() + (86400 * 30));
+        }
+        header('Location: http://localhost/siteWebSBC/comparaison.php');
 
     } elseif ($_REQUEST['action'] == "retirePanier") {
         $sm = new SBCManager($bdd);

@@ -30,13 +30,13 @@ $sbcs = $SBCManager->selectAllSBC();
                     echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none white">' . $sbc['prix'] . '$</p>'; ?>
 
                 <form class="formPanier-<?= $sbc['id_SBC'] ?> display-none" action="traitement.php" method="get">
-                    <input type="hidden" name="action" value="panier">
+                    <input type="hidden" name="action" value="panierComparaison">
                     <input type="hidden" name="panier" value="<?= $sbc['id_SBC']; ?>">
                     <input type="submit" class="bouton" value="Ajouter au panier">
                 </form>
 
                 <form class="formFavoris-<?= $sbc['id_SBC'] ?> display-none" action="traitement.php" method="get">
-                    <input type="hidden" name="action" value="favoris">
+                    <input type="hidden" name="action" value="favorisComparaison">
                     <input type="hidden" name="favoris" value="<?= $sbc['id_SBC']; ?>">
                     <input type="submit" class="bouton" value="Ajouter aux favoris">
                 </form>
@@ -59,13 +59,13 @@ $sbcs = $SBCManager->selectAllSBC();
                 echo '<p class="prix-' . $sbc['id_SBC'] . ' display-none white">' . $sbc['prix'] . '$</p>'; ?>
 
             <form class="formPanier-<?= $sbc['id_SBC'] ?> display-none" action="traitement.php" method="get">
-                <input type="hidden" name="action" value="idPanier">
-                <input type="hidden" name="idPanier" value="<?= $sbc['id_SBC']; ?>">
+                <input type="hidden" name="action" value="panierComparaison">
+                <input type="hidden" name="panier" value="<?= $sbc['id_SBC']; ?>">
                 <input type="submit" class="bouton" value="Ajouter au panier">
             </form>
 
             <form class="formFavoris-<?= $sbc['id_SBC'] ?> display-none" action="traitement.php" method="get">
-                <input type="hidden" name="action" value="favoris">
+                <input type="hidden" name="action" value="favorisComparaison">
                 <input type="hidden" name="favoris" value="<?= $sbc['id_SBC']; ?>">
                 <input type="submit" class="bouton" value="Ajouter aux favoris">
             </form>
