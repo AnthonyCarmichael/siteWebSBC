@@ -17,7 +17,7 @@ class SBCManager
                                 WHERE id_SBC = :id";
     
     const SELECT_ID_SBC = "SELECT id_SBC 
-                            FROM SBC 
+                            FROM sbc 
                             WHERE id_SBC = ";
 
     const SELECT_MARQUE = "SELECT id_marque 

@@ -13,9 +13,9 @@ class CommandeManager
 
     const GET_SBC_PRIX_BY_ID = "SELECT prix FROM sbc WHERE id_SBC = :idSBC";
     const ADD_COMMANDE = "INSERT INTO commande (nbProduit, prix, date_commande, id_client) VALUES (:nbProduit, :prix, CURRENT_DATE(), :idClient)"; // TESTÉ
-    const ADD_COMMANDE_SBC = "INSERT INTO commande_SBC (id_commande, id_SBC) VALUES (:id_commande, :id_SBC)"; // TESTÉ
+    const ADD_COMMANDE_SBC = "INSERT INTO commande_sbc (id_commande, id_SBC) VALUES (:id_commande, :id_SBC)"; // TESTÉ
     const DEL_COMMANDE = "DELETE FROM commande WHERE id_commande = :id_commande AND id_client = :id_client"; // À TESTER
-    const DEL_COMMANDE_SBC = "DELETE FROM commande_SBC WHERE id_commande = :id_commande"; // À TESTER
+    const DEL_COMMANDE_SBC = "DELETE FROM commande_sbc WHERE id_commande = :id_commande"; // À TESTER
 
     private function set_db($db)
     {

@@ -17,7 +17,7 @@ if (isset($_REQUEST["action"]) && $_REQUEST["action"] == "moins") {
         setcookie("calcul$id", $nouveauTotal, time() + (86400 * 30));
     }
 
-    header('Location: http://localhost/siteWebSBC/panier.php');
+    header('Location: http://chipwave.free.nf/panier.php');
 
 }
 
@@ -28,6 +28,6 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == "plus") {
     unset($_REQUEST['action']);
 
 
-    header('Location: http://localhost/siteWebSBC/panier.php');
+    header('Location: http://chipwave.free.nf/panier.php');
 }
 ?>

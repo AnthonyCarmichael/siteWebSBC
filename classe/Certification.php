@@ -1,6 +1,6 @@
 <?php
 
-class Certification {
+class certification {
 
     private $_id_certification;
     private $_nom;    

@@ -14,9 +14,9 @@ if (isset($_REQUEST['action'])) {
         $client = new Client($_REQUEST);
         print_r($client);
         $cm->addClient($client);
-        ?>
+?>
         <?php $client = unserialize($_SESSION['client']);
-        header('Location: http://localhost/siteWebSBC/index.php');
+        header('Location: http://chipwave.free.nf/index.php');
     } elseif ($_REQUEST['action'] == "connexion") {
         if (isset($_SESSION['client'])) { ?>
             <?php $client = unserialize($_SESSION['client']); ?>
@@ -59,9 +59,9 @@ if (isset($_REQUEST['action'])) {
                 </div>
             </section>
 
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
             <section id="connexion">
 
                 <h2 class="center">Entrez votre utilisateur et mot de passe <br> pour accéder aux fonctionnalités</h2>
@@ -88,7 +88,7 @@ if (isset($_REQUEST['action'])) {
                     </div>
                 </form>
             </section>
-            <?php
+        <?php
         }
     } elseif ($_REQUEST['action'] == "logout") { ?>
         <h2 class="center">Au plaisir de vous revoir
@@ -129,20 +129,19 @@ if (isset($_REQUEST['action'])) {
             </div>
         </section>
 
-        <?php
+<?php
     } elseif ($_REQUEST['action'] == "suggestion") {
         $SBCObj = new SBC($_REQUEST);
 
-        if ($SBCManager->addSBC($SBCObj)) {
-            echo '<p>Le SBC a bien été ajouté.</p>';
 
-            $destinataire = "dongmorichard6@gmail.com";
-            $sujet = "Nouvelle suggestion d'SBC";
-            $message = "Marque: " . $_REQUEST['marqueSBC'] . ", Modèle: " . $_REQUEST['modeleSBC'] . ", Garantie: " . $_REQUEST['garantie'] . ", Mémoire vive: " . $_REQUEST['RAM'] . ", Longueur: " . $_REQUEST['longueur'] . ", Largeur: " . $_REQUEST['largeur'] . ", Prix: " . $_REQUEST['prix'] . ", Marque du processeur: " . $_REQUEST['marqueProcesseur'] . ", Modèle du processeur: " . $_REQUEST['modeleProcesseur'] . ", Nombre de coeurs: " . $_REQUEST['nbCoeur'];
-            $hote = "";
-            header('Location: http://localhost/siteWebSBC/suggestionSBC.php');
-            mail($destinataire, $sujet, $message, $hote);
-        }
+        echo '<h2 class="white center">La suggestion a été reçue.</h2>';
+
+        $destinataire = "dongmorichard6@gmail.com";
+        $sujet = "Nouvelle suggestion d'SBC";
+        $message = "Marque: " . $_REQUEST['marqueSBC'] . ", Modèle: " . $_REQUEST['modeleSBC'] . ", Garantie: " . $_REQUEST['garantie'] . ", Mémoire vive: " . $_REQUEST['RAM'] . ", Longueur: " . $_REQUEST['longueur'] . ", Largeur: " . $_REQUEST['largeur'] . ", Prix: " . $_REQUEST['prix'] . ", Marque du processeur: " . $_REQUEST['marqueProcesseur'] . ", Modèle du processeur: " . $_REQUEST['modeleProcesseur'] . ", Nombre de coeurs: " . $_REQUEST['nbCoeur'];
+        $hote = "";
+        mail($destinataire, $sujet, $message, $hote);
+       
     } elseif ($_REQUEST['action'] == "changementInfoPerso") {
         $cm = new ClientManager($bdd);
 
@@ -153,7 +152,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoPerso($client->get_id_client(), $_REQUEST['prenom'], $_REQUEST['nom']);
         $_SESSION['client'] = serialize($client);
-        header('Location: http://localhost/siteWebSBC/infoClient.php');
+        header('Location: http://chipwave.free.nf/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementInfoContact") {
         $cm = new ClientManager($bdd);
 
@@ -164,7 +163,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoContact($client->get_id_client(), $_REQUEST['courriel'], $_REQUEST['tel']);
         $_SESSION['client'] = serialize($client);
-        header('Location: http://localhost/siteWebSBC/infoClient.php');
+        header('Location: http://chipwave.free.nf/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementInfoConnexion") {
         $cm = new ClientManager($bdd);
 
@@ -175,7 +174,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifInfoConnexion($client->get_id_client(), $_REQUEST['nom_utilisateur'], $_REQUEST['mdp']);
         $_SESSION['client'] = serialize($client);
-        header('Location: http://localhost/siteWebSBC/infoClient.php');
+        header('Location: http://chipwave.free.nf/infoClient.php');
     } elseif ($_REQUEST['action'] == "changementAdresse") {
         $cm = new ClientManager($bdd);
 
@@ -188,7 +187,7 @@ if (isset($_REQUEST['action'])) {
 
         $cm->modifAdresse($client, $client->get_id_client(), $_REQUEST['adresse'], $_REQUEST['ville'], $_REQUEST['province'], $_REQUEST['pays']);
         $_SESSION['client'] = serialize($client);
-        header('Location: http://localhost/siteWebSBC/infoClient.php');
+        header('Location: http://chipwave.free.nf/infoClient.php');
     } elseif ($_REQUEST['action'] == "favoris") {
         $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
         $i = 0;
@@ -206,7 +205,7 @@ if (isset($_REQUEST['action'])) {
             setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
         }
 
-        header('Location: http://localhost/siteWebSBC/infoSBC.php');
+        header('Location: http://chipwave.free.nf/infoSBC.php');
     } elseif ($_REQUEST['action'] == "favorisComparaison") {
         $SBC = $SBCManager->getSBCId($_REQUEST['favoris']);
         $i = 0;
@@ -224,23 +223,24 @@ if (isset($_REQUEST['action'])) {
             setcookie("favoris$i", $_REQUEST['favoris'], time() + (86400 * 30));
         }
 
-        header('Location: http://localhost/siteWebSBC/comparaison.php');
+        header('Location: http://chipwave.free.nf/comparaison.php');
     } elseif ($_REQUEST['action'] == "retireFavoris") {
         $favorisRetire = $_REQUEST['retireFavoris'];
 
         setcookie("favoris$favorisRetire");
 
-        header('Location: http://localhost/siteWebSBC/wishList.php');
+        header('Location: http://chipwave.free.nf/wishList.php');
     } elseif ($_REQUEST['action'] == "panier") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
         $j = 1;
         $k = $_REQUEST['panier'];
         foreach ($_COOKIE as $cookie) {
-            $i++;
+
             if (isset($_COOKIE["panier$i"]) && $_COOKIE["panier$i"] == $_REQUEST['panier']) {
                 $j = $_COOKIE["calcul$k"] + 1;
             }
+            $i++;
         }
 
         $i -= 2;
@@ -251,8 +251,7 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        header('Location: http://localhost/siteWebSBC/infoSBC.php');
-
+        header('Location: http://chipwave.free.nf/infoSBC.php');
     } elseif ($_REQUEST['action'] == "panierHistorique") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
@@ -273,8 +272,7 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        header('Location: http://localhost/siteWebSBC/historique.php');
-
+        header('Location: http://chipwave.free.nf/historique.php');
     } elseif ($_REQUEST['action'] == "panierWishList") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
@@ -295,8 +293,7 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        header('Location: http://localhost/siteWebSBC/wishList.php');
-
+        header('Location: http://chipwave.free.nf/wishList.php');
     } elseif ($_REQUEST['action'] == "panierComparaison") {
         $SBC = $SBCManager->getSBCId($_REQUEST['panier']);
         $i = 0;
@@ -317,8 +314,7 @@ if (isset($_REQUEST['action'])) {
         } else {
             setcookie("calcul$k", $j, time() + (86400 * 30));
         }
-        header('Location: http://localhost/siteWebSBC/comparaison.php');
-
+        header('Location: http://chipwave.free.nf/comparaison.php');
     } elseif ($_REQUEST['action'] == "retirePanier") {
         $sm = new SBCManager($bdd);
         $panierRetire = $_REQUEST['retirePanier'];
@@ -326,19 +322,18 @@ if (isset($_REQUEST['action'])) {
 
         setcookie("panier$panierRetire");
         setcookie("calcul$id");
-        header('Location: http://localhost/siteWebSBC/panier.php');
+        header('Location: http://chipwave.free.nf/panier.php');
     } elseif (($_GET['action']) == "delCommande") {
         $client = unserialize($_SESSION['client']);
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->delCommande($client->get_id_client(), $_GET['idCommande']);
-        header('Location: http://localhost/siteWebSBC/historique.php');
+        header('Location: http://chipwave.free.nf/historique.php');
     } elseif (($_GET['action']) == "commander") {
         $client = unserialize($_SESSION['client']);
         $commandeManager = new CommandeManager($bdd);
         $commandeManager->addCommande($client->get_id_client());
-        header('Location: http://localhost/siteWebSBC/historique.php');
+        header('Location: http://chipwave.free.nf/historique.php');
     }
-
 }
 include_once("inc/footer.php");
 ?>

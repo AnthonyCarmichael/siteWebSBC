@@ -102,7 +102,7 @@ include_once("prétraitement.php");
     // Chaque main a un id correspondant a son nom de page
     $page = basename($_SERVER['REQUEST_URI'], '.php');
 
-    if ($page == "siteWebSBC") {
+    if (!$page) {
         $page = "index";
     } else {
         $parts = explode('.', $page);
